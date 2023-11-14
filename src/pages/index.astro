@@ -5,6 +5,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting.jsx';
 import Shield from '../assets/shield-icon.svg';
 import Arrow from '../assets/red-circle-arrow.svg'
+import RightBlob from '../assets/right-blob.svg'
+import LeftBlob from '../assets/left-blob.png'
 
 
 ---
@@ -13,7 +15,8 @@ import Arrow from '../assets/red-circle-arrow.svg'
 <style>
 .header {
   height: 831px;
-  background-color: gray;
+  background-color: #FAFAFC;
+  z-index: 100;
 }
 
 .hero-content-wrapper {
@@ -67,10 +70,27 @@ import Arrow from '../assets/red-circle-arrow.svg'
   margin-right: 10px;
 }
 
+.right-top-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none
+
+}
+
+.left-bottom-blob {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  z-index: 1;
+}
+
 </style>
 
 <BaseLayout>
   <div class="header">
+   
   <div class="hero-content-wrapper">
     <p class="subheadline third-color">COIG S.A</p>
     <h2 class="headline-1 headline-1--bold">COIG <span class="third-color block line-height-1"> Cyber Security</span></h2> 
@@ -100,7 +120,18 @@ import Arrow from '../assets/red-circle-arrow.svg'
     </div>
   </div>
 </div>
-
+<Image 
+  class="right-top-blob"
+  src={RightBlob} 
+  alt="Right blob"
+  widths={[240, 540, 720, RightBlob.width]}
+/>
+<Image 
+class="left-bottom-blob"
+src={LeftBlob} 
+alt="Left blob"
+widths={[240, 540, 720, LeftBlob.width]}
+/>
 
 
 
