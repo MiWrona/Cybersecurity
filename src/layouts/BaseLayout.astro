@@ -1,0 +1,37 @@
+---
+import '@fontsource/Mulish';
+import '@fontsource/Karla';
+import '@fontsource/mulish/300.css';
+import '@fontsource/mulish/400.css';
+import '@fontsource/mulish/600.css';
+import '@fontsource/mulish/900.css';
+
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { fade } from 'astro:transitions';
+const { pageTitle } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <Header />
+      <!-- <h1 class="page-name" transition:animate={fade({ duration: '0.5s' })} >{pageTitle}</h1>
+      <h2 class="page-name" transition:animate={fade({ duration: '0.5s' })} >{pageTitle}</h2> -->
+      <slot />
+      <Footer />
+    </div>
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro.jsx';
+import Greeting from '../components/Greeting.jsx';
+const pageTitle = "COIG";
+const pageName = "COIG";
+
+---
+
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>COIG <br><span class="color-red"> Cyber Security</span></h2> 
+  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+</BaseLayout>

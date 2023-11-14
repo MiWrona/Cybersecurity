@@ -1,0 +1,57 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+
+---
+
+<style> 
+    .nav-link {
+        color: #000;
+        font-family: Karla;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 100% */
+        text-wrap: nowrap;
+    }
+
+    .nav-link--button {
+        color: #D41434;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 50px;
+        border: 1px solid #D41434;
+        padding: 10px 24px;
+        text-wrap: nowrap;
+    }
+
+    .nav-link--anchor {
+        display: block;
+    }
+
+    @media screen and (max-width: 1195px) {
+    .nav-link--anchor {
+        display: none;
+    }
+    }
+
+    .nav-links.expanded a {
+        color: aliceblue;
+        background-color: #D41434;
+    }
+    
+</style>
+
+<div class="nav-links">
+    <a class="nav-link" href="/">SOC</a>
+    <a class="nav-link" href="/about/" data-astro-reload>Audyt IT</a> 
+    <a class="nav-link" href="/blog/">Pentesty</a>
+    <a class="nav-link" href="/blog/">CSIRT COIG</a>
+    <a class="nav-link" href="/blog/">Kontakt</a>
+    <a class="nav-link" href="/tags/">News</a>
+</div>
+
+<div class="buttons-nav-link">
+    <a class="nav-link nav-link--button nav-link--anchor" href="/blog/">Coig S.A</a>
+
+    <ThemeIcon />
+</div>
