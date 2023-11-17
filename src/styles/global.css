@@ -1,15 +1,14 @@
-
 :root {
-  --primary-color: #111B24;
-  --secondar-color: #646B82;
-  --third-color: #D41434;
+  --primary-color: #111b24;
+  --secondar-color: #646b82;
+  --third-color: #d41434;
 
   --primary-font: "Mulish";
   --secondary-font: "Karla";
 }
 
 html {
-  background-color: #FAFAFC;;
+  background-color: #fafafc;
   font-family: sans-serif;
 }
 
@@ -22,7 +21,6 @@ body {
 
 .body-wrapper {
   margin: 0 82px;
-
 }
 
 * {
@@ -38,14 +36,12 @@ html.dark {
   color: #fff;
 }
 
- 
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
 
-
-/* Headlines */ 
+/* Headlines */
 
 .headline-1 {
   font-family: var(--primary-font);
@@ -54,7 +50,7 @@ h1 {
 
 .headline-1--bold {
   font-weight: 900;
-} 
+}
 
 .headline-2 {
   font-family: var(--primary-font);
@@ -63,7 +59,7 @@ h1 {
 
 .headline-2--bold {
   font-weight: 900;
-}  
+}
 
 .subheadline {
   font-size: 14px;
@@ -80,7 +76,7 @@ h1 {
 /* Colors */
 
 .primary-color {
-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .secondary-color {
@@ -93,15 +89,13 @@ color: var(--primary-color);
 
 /* nav styles */
 
-    
 nav {
   height: 95px;
   display: flex;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(37.5px);
 }
-
 
 .hamburger {
   padding-right: 20px;
@@ -116,8 +110,6 @@ nav {
   margin-bottom: 10px;
   background-color: #ff9776;
 }
-
-
 
 .nav-links {
   width: 100%;
@@ -153,7 +145,6 @@ nav {
   max-height: 37px;
 }
 
-
 .expanded {
   display: unset;
 }
@@ -177,7 +168,6 @@ nav {
     display: inline-block;
     padding: 15px 20px;
   }
-
 }
 
 @media screen and (max-width: 1195px) {
@@ -186,10 +176,14 @@ nav {
     flex-direction: column;
     justify-content: center;
   }
-  
 }
 
+/* Buttons */
 
+.button {
+  display: flex;
+  align-items: center;
+}
 
 /* Helpers */
 
@@ -212,4 +206,3 @@ nav {
 .margin-bottom-10 {
   margin-bottom: 10px;
 }
-

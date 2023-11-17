@@ -1,138 +1,69 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.jsx';
-import Shield from '../assets/shield-icon.svg';
-import Arrow from '../assets/red-circle-arrow.svg'
-import RightBlob from '../assets/right-blob.svg'
-import LeftBlob from '../assets/left-blob.png'
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RightBlob from "../assets/right-blob.svg";
+import LeftBlob from "../assets/left-blob.png";
 
-
+import HeroFirst from "../components/HeroFirst.astro";
+import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
+import IconBorderBox from "../components/IconBorderBox.astro";
+import CenteredCol from "../components/CenteredCol.astro";
 ---
 
-
 <style>
-.header {
-  height: 831px;
-  background-color: #FAFAFC;
-  z-index: 100;
-}
+  .header {
+    height: 831px;
+    background-color: #fafafc;
+    z-index: 100;
+  }
 
-.hero-content-wrapper {
-  max-width: 658px;
-  margin: 0 auto;
-  padding: 151px 10px;
-}
+  .button .logo-image {
+    margin-right: 10px;
+  }
 
-.hero-content-wrapper h2 {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
+  .right-top-blob {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
 
-.hero-secondary-content {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-}
-
-.hero-secondary-content-wrapper {
-  display: flex;
-  width: 450px;
-  justify-content: flex-end;
-}
-
-.hero-secondary-content-text {
-  margin-right: 71px;
-}
-
-.hero-secondary-content-text .paragraph { 
-  max-width: 293px;
-  margin-top: 5px;
-}
-
-.hero-secondary-content-text .headline-3 { 
-  margin-bottom: 5px;
-}
-
-.hero-secondary-img {
-  margin-top: 19px;
-  margin-right: 30px;
-}
-
-
-.button {
-  display: flex;
-  align-items: center;
-}
-
-.button .logo-image {
-  margin-right: 10px;
-}
-
-.right-top-blob {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none
-
-}
-
-.left-bottom-blob {
-  position: absolute;
-  bottom: 50%;
-  left: 0;
-  z-index: 1;
-}
-
+  .left-bottom-blob {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    z-index: 1;
+  }
 </style>
 
 <BaseLayout>
   <div class="header">
-   
-  <div class="hero-content-wrapper">
-    <p class="subheadline third-color">COIG S.A</p>
-    <h2 class="headline-1 headline-1--bold">COIG <span class="third-color block line-height-1"> Cyber Security</span></h2> 
-    <p class="paragraph margin-top-10">Your trusted guardians of digital security with <br>more than <b> 70 years of experience </b> </p>
+    <HeroFirst
+      subheadline="COIG S.A"
+      headline="COIG CYBER"
+      headlineAccent="Security"
+      description="Chroń swoją firmę dzięki dedykowanym rozwiązaniom"
+      descriptionAccent="bezpieczeństwa"
+    />
+    <BoxWithLeftIconButton
+      headline="Security Operations Center"
+      description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
+    />
   </div>
-  <div class="hero-secondary-content">
-    <div class="hero-secondary-content-wrapper">
-      <div class="hero-secondary-image">
-        <Image 
-          class="hero-secondary-img"
-          src={Shield} 
-          alt="Shield"
-          widths={[240, 540, 720, Shield.width]}
-        />
-      </div>
-      <div class="hero-secondary-content-text">
-      <h3 class="headline-3">Security Operations Center</h3>
-      <p class="paragraph">SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami.</p>
-      <a class="button">  
-        <Image 
-          class="logo-image"
-          src={Arrow} 
-          alt="Arrow"
-          widths={[240, 540, 720, Arrow.width]}
-      /> Czytaj więcej </a>
-    </div>
-    </div>
-  </div>
-</div>
-<Image 
-  class="right-top-blob"
-  src={RightBlob} 
-  alt="Right blob"
-  widths={[240, 540, 720, RightBlob.width]}
-/>
-<Image 
-class="left-bottom-blob"
-src={LeftBlob} 
-alt="Left blob"
-widths={[240, 540, 720, LeftBlob.width]}
-/>
-
-
-
+  <Image
+    class="right-top-blob"
+    src={RightBlob}
+    alt="Right blob"
+    widths={[240, 540, 720, RightBlob.width]}
+  />
+  <Image
+    class="left-bottom-blob"
+    src={LeftBlob}
+    alt="Left blob"
+    widths={[240, 540, 720, LeftBlob.width]}
+  />
+  <CenteredCol />
+  <IconBorderBox />
 </BaseLayout>

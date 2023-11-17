@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+
+const {
+    subheadline,
+    headline,
+    headlineAccent,
+    description,
+    descriptionSecond,
+    descriptionAccent,
+} = Astro.props;
+---
+
+<style>
+    .hero-content-wrapper {
+        max-width: 658px;
+        margin: 0 auto;
+        padding: 151px 10px;
+    }
+
+    .hero-content-wrapper h2 {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="hero-content-wrapper">
+    <p class="subheadline third-color">{subheadline}</p>
+    <h2 class="headline-1 headline-1--bold">
+        {headline}
+        <span class="third-color block line-height-1"> {headlineAccent}</span>
+    </h2>
+    <p class="paragraph margin-top-10">
+        {description}<br />
+        {descriptionSecond}<b> {descriptionAccent}</b>
+    </p>
+</div>
