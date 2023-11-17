@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import Arrow from "../assets/red-circle-arrow.svg";
+
+const { href, description } = Astro.props;
+---
+<style>
+    a {
+        text-decoration: none;
+
+    }
+
+    .button .logo-image {
+        margin-right: 10px;
+    }
+
+    .button-text {
+        font-weight: 600;
+        font-family: var(--primary-font);
+        font-size: 16px;
+    }
+
+    a:hover {
+        background-color: rgb(241, 197, 197);
+    }
+</style>
+
+<a href={href} class="button third-color">
+    <Image
+        class="logo-image"
+        src={Arrow}
+        alt="Arrow"
+        widths={[240, 540, 720, Arrow.width]}
+    /> <span class="button-text">{description} </span>
+</a>
