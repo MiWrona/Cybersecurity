@@ -4,6 +4,7 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import Shield from "../assets/shield-icon.svg";
 import Arrow from "../assets/red-circle-arrow.svg";
+import ButtonLeftArrow from "./ButtonLeftArrow.astro";
 
 const { headline, description } = Astro.props;
 ---
@@ -55,14 +56,13 @@ const { headline, description } = Astro.props;
             <p class="paragraph">
                 {description}
             </p>
-            <a class="button">
-                <Image
-                    class="logo-image"
-                    src={Arrow}
-                    alt="Arrow"
-                    widths={[240, 540, 720, Arrow.width]}
-                /> Czytaj więcej
-            </a>
+
+            <ButtonLeftArrow 
+            href="#"
+            description="Czytaj więcej"
+            
+            />
+         
         </div>
     </div>
 </div>
