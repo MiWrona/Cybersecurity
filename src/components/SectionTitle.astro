@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+
+import { Image } from "astro:assets";
+
+const { headline, description, imageSrc, imageAlt } = Astro.props;
+---
+
+<style>
+    .section-description {
+        color: #646b82;
+        font-family: Karla;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 27px; /* 150% */
+        letter-spacing: 0.64px;
+        max-width: 422px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="section-title-wrapper">
+    <h3 class="section-title">{headline}</h3>
+    <p class="paragraph section-description">
+        {description}
+    </p>
+    <div class="section-image-wrapper">
+        <div class="hero-secondary-image">
+            <Image class="hero-secondary-img" src={imageSrc} alt={imageAlt} />
+        </div>
+    </div>
+</div>

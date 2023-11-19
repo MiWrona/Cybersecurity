@@ -4,11 +4,14 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RightBlob from "../assets/right-blob.svg";
 import LeftBlob from "../assets/left-blob.png";
+import CyberPadlock from "../assets/cyber-padlock.png";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
 import IconBorderBox from "../components/IconBorderBox.astro";
+import TwoColRow from "../components/TwoColRow.astro";
 import CenteredCol from "../components/CenteredCol.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 ---
 
 <style>
@@ -64,6 +67,14 @@ import CenteredCol from "../components/CenteredCol.astro";
     alt="Left blob"
     widths={[240, 540, 720, LeftBlob.width]}
   />
+
+  <SectionTitle
+    headline="Usługi cyberbezpieczeństwa"
+    description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+    imageSrc={CyberPadlock}
+    imageAlt="pierońsko kulka"
+  />
+  <TwoColRow />
   <CenteredCol />
   <IconBorderBox />
 </BaseLayout>
