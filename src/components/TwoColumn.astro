@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import ContentBorderBox from './ContentBorderBox.astro';
+import PasswordIcon from '../assets/password-icon.svg'
+import RocketIcon from '../assets/rocket-icon.svg'
+import SocialIcon from '../assets/diagram-icon.svg'
+import DiagramdIcon from '../assets/social-media-icon.svg'
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+<style>
+.two-column-wrapper {
+    padding: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) { 
+    .two-column-wrapper {
+        flex-direction: column;
+    }
+}
+
+.two-column-wrapper img {
+    margin-top: 30px;
+}
+.first-col {
+    max-width: 476px;
+}
+
+.second-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    max-width: 700px;
+}
+
+</style>
+
+
+<div class="two-column-wrapper">
+    <div class="first-col">
+      
+    </div>
+
+    <div class="second-col">
+    
+</div>

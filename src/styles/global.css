@@ -61,6 +61,12 @@ h1 {
   font-weight: 900;
 }
 
+.headline-5 { 
+  font-size: 16px;
+  font-family: var(--primary-font) 
+
+}
+
 .subheadline {
   font-size: 14px;
   font-style: normal;
@@ -186,6 +192,12 @@ nav {
 }
 
 /* Section */
+.section {
+  padding-top: 80px;
+}
+.section--white {
+  background: #fff;
+}
 
 .section-title {
   position: relative;

@@ -5,6 +5,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import RightBlob from "../assets/right-blob.svg";
 import LeftBlob from "../assets/left-blob.png";
 import CyberPadlock from "../assets/cyber-padlock.png";
+import PasswordIcon from "../assets/password-icon.svg";
+import RocketIcon from "../assets/rocket-icon.svg";
+import SocialIcon from "../assets/diagram-icon.svg";
+import DiagramdIcon from "../assets/social-media-icon.svg";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
@@ -12,6 +16,8 @@ import IconBorderBox from "../components/IconBorderBox.astro";
 import TwoColRow from "../components/TwoColRow.astro";
 import CenteredCol from "../components/CenteredCol.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import ContentBorderBox from "../components/ContentBorderBox.astro";
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 ---
 
 <style>
@@ -38,6 +44,30 @@ import SectionTitle from "../components/SectionTitle.astro";
     bottom: 50%;
     left: 0;
     z-index: 1;
+  }
+
+  .two-col-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .second-col-flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    justify-content: flex-end;
+  }
+
+  .text-box {
+    width: 300px;
+    height: 293px;
+    padding: 23px;
+    margin-right: 23px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 </style>
 
@@ -67,14 +97,44 @@ import SectionTitle from "../components/SectionTitle.astro";
     alt="Left blob"
     widths={[240, 540, 720, LeftBlob.width]}
   />
+  <div class="section section--white">
+  <div class="two-col-flex">
+    <div class="first-col">
+      <SectionTitle
+        headline="Usługi cyberbezpieczeństwa"
+        description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+        imageSrc={CyberPadlock}
+        imageAlt="pierońsko kulka"
+      />
+    </div>
+  
 
-  <SectionTitle
-    headline="Usługi cyberbezpieczeństwa"
-    description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
-    imageSrc={CyberPadlock}
-    imageAlt="pierońsko kulka"
-  />
-  <TwoColRow />
-  <CenteredCol />
-  <IconBorderBox />
+    <div class="second-col-flex">
+      <ContentBorderBox
+        image={DiagramdIcon.src}
+        imageAlt="Diagram Icon"
+        headline="Audyty IT"
+        description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
+      />
+
+      <ContentBorderBox
+        image={RocketIcon.src}
+        imageAlt="Rocket Icon"
+        headline="Testy Penetracyjne"
+        description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
+      />
+
+      <ContentBorderBox
+        image={DiagramdIcon.src}
+        imageAlt="Password Icon"
+        headline="CSIRT COIG"
+        description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
+      />
+
+      <div class="text-box">
+        <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
+        <ButtonLeftArrow href="#" description="Czytaj więcej" />
+      </div>
+    </div>
+  </div>
 </BaseLayout>
