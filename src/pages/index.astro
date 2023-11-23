@@ -9,6 +9,22 @@ import PasswordIcon from "../assets/password-icon.svg";
 import RocketIcon from "../assets/rocket-icon.svg";
 import SocialIcon from "../assets/diagram-icon.svg";
 import DiagramdIcon from "../assets/social-media-icon.svg";
+import CybersecurityPadlock from "../assets/cybersecurity-padlock.png";
+import IconAnalyze from "../assets/icon-analyze.svg";
+import IconOpenvpn from "../assets/icon-openvpn.svg";
+import IconQuery from "../assets/icon-query.svg";
+import CyberHand from "../assets/cyber-hand.png";
+import IconBox from "../assets/icons/icon-box.svg";
+import IconCheckup from "../assets/icons/icon-checkup.svg";
+import IconDevice from "../assets/icons/icon-device.svg";
+import IconFile from "../assets/icons/icon-file-alert.svg";
+import IconHeadphones from "../assets/icons/icon-headphones.svg";
+import IconHeadset from "../assets/icons/icon-headset.svg";
+import IconHeadsetAlt from "../assets/icons/icon-headsetAlt.svg";
+import IconQuerybrand from "../assets/icons/icon-query-brand.svg";
+import IconSearch from "../assets/icons/icon-query-brand.svg";
+import IconVideo from "../assets/icons/icon-video.svg";
+import IconVirus from "../assets/icons/icon-virus-off.svg";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
@@ -16,8 +32,12 @@ import IconBorderBox from "../components/IconBorderBox.astro";
 import TwoColRow from "../components/TwoColRow.astro";
 import CenteredCol from "../components/CenteredCol.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import SectionTitleWithoutImage from "../components/SectionTitleWithoutImage.astro";
 import ContentBorderBox from "../components/ContentBorderBox.astro";
 import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import OrderdListElement from "../components/OrderdListElement.astro";
+import BoxWithTextIcon from "../components/BoxWithTextIcon.astro";
+import ListElementBorderBottom from "../components/ListElementBorderBottom.astro";
 ---
 
 <style>
@@ -48,7 +68,14 @@ import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 
   .two-col-flex {
     display: flex;
+  }
+
+  .space-between {
     justify-content: space-between;
+  }
+
+  .space-around {
+    justify-content: space-around;
   }
 
   .second-col-flex {
@@ -69,72 +96,342 @@ import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
     justify-content: center;
     align-items: flex-start;
   }
+
+  .text-box h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.44px; /* 123.25% */
+    letter-spacing: 0.85px;
+  }
+
+  .text-box span {
+    font-weight: 300;
+  }
+
+  .ordered-list-wrapper {
+    max-width: 1268px;
+    border-radius: 5px;
+  }
+
+  .centered {
+    margin: 0 auto;
+  }
+
+  .align-items {
+    align-items: center;
+  }
+
+  .image-decoration {
+    border-radius: 20px;
+  }
+
+  .paragraph-highlight {
+    font-family: Mulish;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 150% */
+  }
+
+  .section-full {
+    width: 100%;
+  }
+
+  .full-width-image {
+    min-width: 100%;
+    object-fit: fill;
+  }
 </style>
 
 <BaseLayout>
   <div class="header">
-    <HeroFirst
-      subheadline="COIG S.A"
-      headline="COIG CYBER"
-      headlineAccent="Security"
-      description="Chroń swoją firmę dzięki dedykowanym rozwiązaniom"
-      descriptionAccent="bezpieczeństwa"
-    />
-    <BoxWithLeftIconButton
-      headline="Security Operations Center"
-      description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
-    />
-  </div>
-  <Image
-    class="right-top-blob"
-    src={RightBlob}
-    alt="Right blob"
-    widths={[240, 540, 720, RightBlob.width]}
-  />
-  <Image
-    class="left-bottom-blob"
-    src={LeftBlob}
-    alt="Left blob"
-    widths={[240, 540, 720, LeftBlob.width]}
-  />
-  <div class="section section--white">
-  <div class="two-col-flex">
-    <div class="first-col">
-      <SectionTitle
-        headline="Usługi cyberbezpieczeństwa"
-        description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
-        imageSrc={CyberPadlock}
-        imageAlt="pierońsko kulka"
+    <div class="header-content">
+      <HeroFirst
+        subheadline="COIG S.A"
+        headline="COIG CYBER"
+        headlineAccent="Security"
+        description="Chroń swoją firmę dzięki dedykowanym rozwiązaniom"
+        descriptionAccent="bezpieczeństwa"
+      />
+      <BoxWithLeftIconButton
+        headline="Security Operations Center"
+        description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
       />
     </div>
-  
+    <Image
+      class="right-top-blob"
+      src={RightBlob}
+      alt="Right blob"
+      widths={[240, 540, 720, RightBlob.width]}
+    />
+    <Image
+      class="left-bottom-blob"
+      src={LeftBlob}
+      alt="Left blob"
+      widths={[240, 540, 720, LeftBlob.width]}
+    />
+  </div>
+  <div class="section section--white">
+    <div class="two-col-flex space-between">
+      <div class="first-col">
+        <SectionTitle
+          headline="Usługi cyberbezpieczeństwa"
+          description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+          imageSrc={CyberPadlock}
+          imageAlt="pierońsko kulka"
+        />
+      </div>
 
-    <div class="second-col-flex">
-      <ContentBorderBox
-        image={DiagramdIcon.src}
-        imageAlt="Diagram Icon"
-        headline="Audyty IT"
-        description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-      />
+      <div class="second-col-flex">
+        <ContentBorderBox
+          image={DiagramdIcon.src}
+          imageAlt="Diagram Icon"
+          headline="Audyty IT"
+          description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
+        />
 
-      <ContentBorderBox
-        image={RocketIcon.src}
-        imageAlt="Rocket Icon"
-        headline="Testy Penetracyjne"
-        description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-      />
+        <ContentBorderBox
+          image={RocketIcon.src}
+          imageAlt="Rocket Icon"
+          headline="Testy Penetracyjne"
+          description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
+        />
 
-      <ContentBorderBox
-        image={DiagramdIcon.src}
-        imageAlt="Password Icon"
-        headline="CSIRT COIG"
-        description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
-      />
+        <ContentBorderBox
+          image={DiagramdIcon.src}
+          imageAlt="Password Icon"
+          headline="CSIRT COIG"
+          description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
+        />
 
-      <div class="text-box">
-        <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-        <ButtonLeftArrow href="#" description="Czytaj więcej" />
+        <div class="text-box">
+          <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
+          <ButtonLeftArrow href="#" description="Czytaj więcej" />
+        </div>
       </div>
     </div>
   </div>
+  <div class="section section--white">
+    <SectionTitleWithoutImage headline="Dlaczego My?" />
+    <div class="ordered-list-wrapper centered">
+      <div class="two-col-flex space-between">
+        <div class="first-col flex-column">
+          <OrderdListElement
+            number="01"
+            description="Zwiększamy bezpieczeństwa organizacji"
+          />
+          <OrderdListElement
+            number="02"
+            description="Wykrywamy potencjalne zagrożenia Twojej infrastruktury"
+          />
+          <OrderdListElement
+            number="03"
+            description="Automatyzujemy złożone procesy zarządzania cyberbezpieczeństwem"
+          />
+          <OrderdListElement
+            number="04"
+            description="Zwiększamy efektywność procesu zarządzania bezpieczeństwem"
+          />
+        </div>
+        <div class="second-col-flex flex-column">
+          <OrderdListElement
+            number="05"
+            description="Działamy zgodnie z posiadanym certyfikatem ISO 27001"
+          />
+          <OrderdListElement
+            number="06"
+            description="Optymalizujemy koszty utrzymania bezpieczeństwa IT"
+          />
+          <OrderdListElement
+            number="07"
+            description="Dopasowujemy nasze usługi do Twoich potrzeb"
+          />
+          <OrderdListElement
+            number="08"
+            description="Posiadamy wiedzę, wieloletnie doświadczenie w zakresie bezpieczeństwa teleinformatycznego"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section--white">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <Image
+          class="image-decoration"
+          src={CybersecurityPadlock}
+          alt="CybersecurityPadlock"
+          widths={[240, 540, 720, CybersecurityPadlock.width]}
+        />
+      </div>
+      <div class="second-col-flex flex-column">
+        <SectionTitleWithoutImage
+          headline="Sieci i jej zagrożenia?"
+          description="W dzisiejszym świecie sieć teleinformatyczna jest istotnym elementem komunikacji i działalności kluczowych procesów biznesowych ale również niesie ze sobą liczne ryzyka. Dlatego zapewnienie bezpieczeństwa teleinformatycznego oraz świadomość zagrożeń są niezwykle istotne dla zapewnienia stabilności i bezpieczeństwa infrastruktury teleinformatycznej, a przede wszystkim głównych procesów biznesowych."
+        />
+        <ButtonLeftArrow href="#" description="Jak się zabezpieczyć" />
+      </div>
+    </div>
+  </div>
+  <div class="section section--white">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <SectionTitleWithoutImage
+          headline="Bezpieczeństwo informatyczne"
+          description="Zbieranie i przetwarzanie danych w formie cyfrowej naraża je na nowe rodzaje zagrożeń ze strony cyberprzestępców. Nie istnieją rozwiązania, które mogłyby zagwarantować absolutne bezpieczeństwo informacji, jednak my wiemy jak zapewnić im najwyższy poziom ochrony. "
+        />
+        <p class="paragraph-highlight">
+          Bezpieczeństwo informatyczne to zapewnienie:
+        </p>
+      </div>
+      <div class="second-col-flex flex-column">
+        <BoxWithTextIcon
+          headline="Dostępność"
+          description="(Availability)"
+          imageSrc={IconQuery}
+          imageAlt="Query Icon"
+        />
+
+        <BoxWithTextIcon
+          headline="Integralności "
+          description="(Integrity)"
+          imageSrc={IconAnalyze}
+          imageAlt="Analyze Icon"
+        />
+        <BoxWithTextIcon
+          headline="Poufności "
+          description="(Confidentiality)"
+          imageSrc={IconOpenvpn}
+          imageAlt="Openvpn Icon"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="section-full">
+    <Image
+      class="full-width-image"
+      src={CyberHand}
+      alt="Cyber Hand"
+      widths={[240, 540, 720, CyberHand.width]}
+    />
+  </div>
+  <div class="section section--white section--borderd-bottom">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <SectionTitleWithoutImage
+          headline="Security Operations Center "
+          description="Security Operations Center (SOC) to wyspecjalizowana jednostka w organizacji odpowiedzialna za monitorowanie, wykrywanie, analizę oraz reagowanie na zagrożenia i incydenty związane z bezpieczeństwem informatycznym. "
+        />
+      </div>
+      <div class="second-col-flex flex-column">
+        <ListElementBorderBottom
+          headline="L1 - Pierwsza linia wsparcia"
+          imageSrc={IconHeadphones}
+          imageAlt="Query Icon"
+        />
+        <ListElementBorderBottom
+          headline="L2 - Druga linia wsparcia"
+          imageSrc={IconHeadset}
+          imageAlt="Headphones Icon"
+        />
+        <ListElementBorderBottom
+          headline="L3 - Trzecia linia wsparcia"
+          imageSrc={IconHeadsetAlt}
+          imageAlt="Headphones Icon"
+        />
+        <ListElementBorderBottom
+          headline="Monitoring 24/7/365"
+          imageSrc={IconVideo}
+          imageAlt="Camera Icon"
+        />
+        <ListElementBorderBottom
+          headline="Zarządzanie incydentami"
+          imageSrc={IconQuerybrand}
+          imageAlt="zoom Icon"
+        />
+        <ListElementBorderBottom
+          headline="Zarządzanie podatnościami"
+          imageSrc={IconCheckup}
+          imageAlt="Doc Icon"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="section section--white section--borderd-bottom">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <ListElementBorderBottom
+          headline="Audyty ISO"
+          imageSrc={IconSearch}
+          imageAlt="Query Icon"
+        />
+        <ListElementBorderBottom
+          headline="Diagnozy"
+          imageSrc={IconFile}
+          imageAlt="Headphones Icon"
+        />
+        <ListElementBorderBottom
+          headline="KRI"
+          imageSrc={IconBox}
+          imageAlt="Headphones Icon"
+        />
+        <ListElementBorderBottom
+          headline="Analiza powłamaniowa"
+          imageSrc={IconVirus}
+          imageAlt="Camera Icon"
+        />
+        <ListElementBorderBottom
+          headline="Audyt SOC "
+          imageSrc={IconDevice}
+          imageAlt="zoom Icon"
+        />
+        <div class="margin-top-50">
+          <ButtonLeftArrow href="#" description="Czytaj więcej" />
+        </div>
+      </div>
+      <div class="second-col-flex flex-column">
+        <SectionTitleWithoutImage
+          headline="Audyty IT"
+          description="Audyt bezpieczeństwa składa się z analizy, identyfikacji procesów związanych z przetwarzaniem danych, weryfikacji zabezpieczeń logicznych i fizycznych, weryfikacji dokumentacji związanej z ochroną danych oraz ocenę zgodności z aktualnym stanem prawnym i wewnętrznymi regulacjami oraz najlepszymi praktykami w zakresie zapewnienia odpowiedniego poziomu bezpieczeństwa organizacji. "
+        />
+      </div>
+    </div>
+  </div>
+  <div class="section section--white section--borderd-bottom">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <Image
+          class="image-decoration"
+          src={CybersecurityPadlock}
+          alt="CybersecurityPadlock"
+          widths={[240, 540, 720, CybersecurityPadlock.width]}
+        />
+      </div>
+      <div class="second-col-flex flex-column">
+        <SectionTitleWithoutImage
+          headline="Testy Penetracyjne"
+          description="Testy penetracyjne to kontrolowany atak na system teleinformatyczny, mający na celu praktyczną ocenę aktualnego poziomu bezpieczeństwa, zwłaszcza wykrywania istniejących podatności i odporności na próby przełamania zabezpieczeń. "
+        />
+      </div>
+    </div>
+  </div>
+  <div class="section section--white section--borderd-bottom">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column">
+        <Image
+          class="image-decoration"
+          src={CybersecurityPadlock}
+          alt="CybersecurityPadlock"
+          widths={[240, 540, 720, CybersecurityPadlock.width]}
+        />
+      </div>
+      <div class="second-col-flex flex-column">
+        <SectionTitleWithoutImage
+          headline="Testy Penetracyjne"
+          description="Testy penetracyjne to kontrolowany atak na system teleinformatyczny, mający na celu praktyczną ocenę aktualnego poziomu bezpieczeństwa, zwłaszcza wykrywania istniejących podatności i odporności na próby przełamania zabezpieczeń. "
+        />
+      </div>
+    </div>
+  </div>
+  
 </BaseLayout>

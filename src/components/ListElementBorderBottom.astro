@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+
+import { Image } from "astro:assets";
+
+const { headline, imageSrc, imageAlt } = Astro.props;
+---
+
+<style>
+   .list-element-border-bottom {
+    min-width: 410px;
+    border-bottom: 1px solid #bccbd64d;
+    stroke-width: 0.5px;
+    
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+   }
+   .list-element-icon {
+    margin-left: 3px;
+    margin-right: 20px;
+   }
+
+</style>
+
+
+<div class="list-element-border-bottom">
+    <Image class="list-element-icon" src={imageSrc} alt={imageAlt} />
+    <p class="list-element-headline">
+        {headline}
+    </p>
+</div>

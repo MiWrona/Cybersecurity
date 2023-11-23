@@ -18,6 +18,8 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
         max-width: 462px;
         margin-bottom: 30px;
     }
+
+   
 </style>
 
 <div class="section-title-wrapper">
@@ -25,9 +27,4 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
     <p class="paragraph section-description">
         {description}
     </p>
-    <div class="section-image-wrapper">
-        <div class="hero-secondary-image">
-            <Image class="hero-secondary-img" src={imageSrc} alt={imageAlt} />
-        </div>
-    </div>
 </div>
