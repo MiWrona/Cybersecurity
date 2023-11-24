@@ -14,6 +14,9 @@ import IconAnalyze from "../assets/icon-analyze.svg";
 import IconOpenvpn from "../assets/icon-openvpn.svg";
 import IconQuery from "../assets/icon-query.svg";
 import CyberHand from "../assets/cyber-hand.png";
+import CyberCollage from "../assets/cyber-collage.png"
+
+
 import IconBox from "../assets/icons/icon-box.svg";
 import IconCheckup from "../assets/icons/icon-checkup.svg";
 import IconDevice from "../assets/icons/icon-device.svg";
@@ -25,6 +28,8 @@ import IconQuerybrand from "../assets/icons/icon-query-brand.svg";
 import IconSearch from "../assets/icons/icon-query-brand.svg";
 import IconVideo from "../assets/icons/icon-video.svg";
 import IconVirus from "../assets/icons/icon-virus-off.svg";
+
+
 
 import HeroFirst from "../components/HeroFirst.astro";
 import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
@@ -38,6 +43,7 @@ import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 import OrderdListElement from "../components/OrderdListElement.astro";
 import BoxWithTextIcon from "../components/BoxWithTextIcon.astro";
 import ListElementBorderBottom from "../components/ListElementBorderBottom.astro";
+import ButtonWithBorder from "../components/ButtonWithBorder.astro"
 ---
 
 <style>
@@ -141,6 +147,35 @@ import ListElementBorderBottom from "../components/ListElementBorderBottom.astro
     min-width: 100%;
     object-fit: fill;
   }
+
+  .small-column {
+    max-width: 273px;
+  }
+
+  .second-col-flex.small-column {
+    justify-content: flex-start;
+  }
+
+  .description-wrapper {
+    position: relative;
+    max-width: 595px;
+    margin-left: 15px;
+  }
+
+  .desciption-paragraph {
+    margin-top: 50px;
+  }
+
+  .desciption-paragraph::before{
+  position: absolute;
+  background-color: var(--third-color);
+  content: "";
+  height: 2px;
+  width: 64px;
+  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  top: -20px;
+  left: 0;
+}
 </style>
 
 <BaseLayout>
@@ -402,7 +437,7 @@ import ListElementBorderBottom from "../components/ListElementBorderBottom.astro
       <div class="first-col flex-column">
         <Image
           class="image-decoration"
-          src={CybersecurityPadlock}
+          src={CyberCollage}
           alt="CybersecurityPadlock"
           widths={[240, 540, 720, CybersecurityPadlock.width]}
         />
@@ -418,20 +453,33 @@ import ListElementBorderBottom from "../components/ListElementBorderBottom.astro
   <div class="section section--white section--borderd-bottom">
     <div class="two-col-flex space-around align-items">
       <div class="first-col flex-column">
-        <Image
-          class="image-decoration"
-          src={CybersecurityPadlock}
-          alt="CybersecurityPadlock"
-          widths={[240, 540, 720, CybersecurityPadlock.width]}
-        />
+        <div class="two-col-flex space-around align-items">
+          <div class="first-col small-column"> 
+            <p class="paragraph">Informacja o działaniu CSIRT COIG RFC-2350</p>
+            <div class="small-column-button">
+              <ButtonLeftArrow href="#" description="Pobierz" />
+            </div> 
+          </div>
+          <div class="second-col-flex small-column"> 
+            <p class="paragraph">Information on the operation of COIG CSIRT RFC-2350</p>
+            <div class="small-column-button">
+              <ButtonLeftArrow href="#" description="Download" />
+            </div>
+          </div>
+        </div>
+        <div class="description-wrapper">
+
+          <p class="desciption-paragraph paragraph">Zgłoszenia incydentów prosimy przesyłać za pośrednictwem poczty elektronicznej, szyfrowanej dostępnym poniżej kluczem publicznym na adres: helpdesk@gk.wasko.pl</p>
+          <ButtonWithBorder  href="#" description="POBIERZ KLUCZ CSIRT" />
+        </div>
       </div>
       <div class="second-col-flex flex-column">
         <SectionTitleWithoutImage
-          headline="Testy Penetracyjne"
-          description="Testy penetracyjne to kontrolowany atak na system teleinformatyczny, mający na celu praktyczną ocenę aktualnego poziomu bezpieczeństwa, zwłaszcza wykrywania istniejących podatności i odporności na próby przełamania zabezpieczeń. "
+          headline="CSIRT COIG"
+          description="CSIRT COIG (Computer Security Incident Response Team) stanowi zespół odpowiedzialny za reagowanie na incydenty związane z bezpieczeństwem komputerowym, które mogą wpłynąć negatywnie na bezpieczeństwo dostarczanych usług. "
         />
       </div>
     </div>
   </div>
-  
+
 </BaseLayout>

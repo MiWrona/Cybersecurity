@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+
+
+const { href, description } = Astro.props;
+---
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .button .logo-image {
+        margin-right: 10px;
+    }
+
+    .button-text {
+        color: var(--zielony, #D41434);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        background-color: rgb(241, 197, 197);
+    }
+
+    .button--bordered {
+        display: inline-block;
+        border: #D41434 solid 1px;
+        border-radius: 50px;
+        padding: 12px 24px;
+    }
+    
+</style>
+
+<a href={href} class="button button--bordered margin-top-5 third-color">
+    <span class="button-text">{description} </span>
+</a>
