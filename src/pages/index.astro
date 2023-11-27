@@ -14,8 +14,9 @@ import IconAnalyze from "../assets/icon-analyze.svg";
 import IconOpenvpn from "../assets/icon-openvpn.svg";
 import IconQuery from "../assets/icon-query.svg";
 import CyberHand from "../assets/cyber-hand.png";
-import CyberCollage from "../assets/cyber-collage.png"
-
+import CyberCollage from "../assets/cyber-collage.png";
+import CaseStudyImage1 from "../assets/case-study-image-1.png";
+import CaseStudyImage2 from "../assets/case-study-image-2.png";
 
 import IconBox from "../assets/icons/icon-box.svg";
 import IconCheckup from "../assets/icons/icon-checkup.svg";
@@ -29,8 +30,6 @@ import IconSearch from "../assets/icons/icon-query-brand.svg";
 import IconVideo from "../assets/icons/icon-video.svg";
 import IconVirus from "../assets/icons/icon-virus-off.svg";
 
-
-
 import HeroFirst from "../components/HeroFirst.astro";
 import BoxWithLeftIconButton from "../components/BoxWithLeftIconButton.astro";
 import IconBorderBox from "../components/IconBorderBox.astro";
@@ -43,7 +42,9 @@ import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 import OrderdListElement from "../components/OrderdListElement.astro";
 import BoxWithTextIcon from "../components/BoxWithTextIcon.astro";
 import ListElementBorderBottom from "../components/ListElementBorderBottom.astro";
-import ButtonWithBorder from "../components/ButtonWithBorder.astro"
+import ButtonWithBorder from "../components/ButtonWithBorder.astro";
+import CaseStudy from "../components/CaseStudy.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <style>
@@ -164,18 +165,45 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro"
 
   .desciption-paragraph {
     margin-top: 50px;
+    color: #646b82;
+    font-size: 18px;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.64px;
   }
 
-  .desciption-paragraph::before{
-  position: absolute;
-  background-color: var(--third-color);
-  content: "";
-  height: 2px;
-  width: 64px;
-  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
-  top: -20px;
-  left: 0;
+  .desciption-paragraph::before {
+    position: absolute;
+    background-color: var(--third-color);
+    content: "";
+    height: 2px;
+    width: 64px;
+    /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+    top: -20px;
+    left: 0;
+  }
+
+  .paragraph-button-description {
+    color: var(--d-9-d-9-d-9, #646b82);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.64px;
+  }
+
+  .center .section-title-wrapper .section-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-title-center {
+    display: flex;
+    justify-content: center;
+  }
+
+.testimonials-images-section {
+  margin-top: 70px;
 }
+
 </style>
 
 <BaseLayout>
@@ -451,26 +479,33 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro"
     </div>
   </div>
   <div class="section section--white section--borderd-bottom">
-    <div class="two-col-flex space-around align-items">
+    <div class="two-col-flex space-around flex-start">
       <div class="first-col flex-column">
         <div class="two-col-flex space-around align-items">
-          <div class="first-col small-column"> 
-            <p class="paragraph">Informacja o działaniu CSIRT COIG RFC-2350</p>
+          <div class="first-col small-column">
+            <p class="paragraph paragraph-button-description">
+              Informacja o działaniu CSIRT COIG RFC-2350
+            </p>
             <div class="small-column-button">
               <ButtonLeftArrow href="#" description="Pobierz" />
-            </div> 
+            </div>
           </div>
-          <div class="second-col-flex small-column"> 
-            <p class="paragraph">Information on the operation of COIG CSIRT RFC-2350</p>
+          <div class="second-col-flex small-column">
+            <p class="paragraph paragraph-button-description">
+              Information on the operation of COIG CSIRT RFC-2350
+            </p>
             <div class="small-column-button">
               <ButtonLeftArrow href="#" description="Download" />
             </div>
           </div>
         </div>
         <div class="description-wrapper">
-
-          <p class="desciption-paragraph paragraph">Zgłoszenia incydentów prosimy przesyłać za pośrednictwem poczty elektronicznej, szyfrowanej dostępnym poniżej kluczem publicznym na adres: helpdesk@gk.wasko.pl</p>
-          <ButtonWithBorder  href="#" description="POBIERZ KLUCZ CSIRT" />
+          <p class="desciption-paragraph paragraph">
+            Zgłoszenia incydentów prosimy przesyłać za pośrednictwem poczty
+            elektronicznej, szyfrowanej dostępnym poniżej kluczem publicznym na
+            adres: helpdesk@gk.wasko.pl
+          </p>
+          <ButtonWithBorder href="#" description="POBIERZ KLUCZ CSIRT" />
         </div>
       </div>
       <div class="second-col-flex flex-column">
@@ -481,5 +516,55 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro"
       </div>
     </div>
   </div>
+  <div class="section section--white">
+    <SectionTitleWithoutImage headline="Case Study" />
+    <div class="two-col-flex space-around flex-start">
+      <CaseStudy
+        tag="SOC"
+        headline="Wdrożenie nowego programu dla COIG S.A. podnoszącego bezpieczeństwo "
+        description="Lorem ipsum dolor sit amet consectetur. Diam lorem at donec faucibus nulla nulla magna dictum. Parturient laoreet vehicula morbi amet eu ultricies. Augue diam aliquam consectetur massa aliquet nulla sit at duis. Non sit eget lectus faucibus nullam."
+        imageSrc={CaseStudyImage1}
+        imageAlt="CaseStudyImage1"
+      />
+      <CaseStudy
+        tag="Audyt IT"
+        headline="Kompleksowy program cyberbezpieczeństwa w branży telekomunikacyjnej"
+        description="Lorem ipsum dolor sit amet consectetur. Diam lorem at donec faucibus nulla nulla magna dictum. Parturient laoreet vehicula morbi amet eu ultricies. Augue diam aliquam consectetur massa aliquet nulla sit at duis. Non sit eget lectus faucibus nullam."
+        imageSrc={CaseStudyImage2}
+        imageAlt="CaseStudyImage2"
+      />
+    </div>
+  </div>
+   
+      <div class="section section--blueish">
+        <div class="testimonials-section">
 
+        <div class="section-title-center">
+          <SectionTitleWithoutImage headline="Co o nas mówią" />
+        </div>
+        <div class="flex space-around">
+          <Testimonials
+            description="Nasz zespół miał przyjemność skorzystać z usług COIG z zakresu cyberbezpieczeństwa, w tym SOC, audytów IT oraz pentestów. Jesteśmy zachwyceni profesjonalizmem i zaangażowaniem, jakie wykazała firma COIG. Ich eksperci dostarczyli nam szczegółowe raporty z audytów i pentestów, dzięki czemu mogliśmy zidentyfikować i naprawić istniejące luki w naszej infrastrukturze."
+            author="WASKO"
+          />
+          <Testimonials
+            description="Współpraca z COIG w zakresie usług związanych z cyberbezpieczeństwem była dla nas niezwykle wartościowa. Ich zespół audytorów przeprowadził gruntowny przegląd naszej infrastruktury IT, identyfikując ryzyka i proponując konkretną strategię poprawek."
+            author="Logic Synergy"
+          />
+          <Testimonials
+            description="Dzięki Centrum Operacji Cyberbezpieczeństwa COIG jesteśmy w stanie monitorować naszą infrastrukturę na bieżąco i reagować na ewentualne incydenty. Polecamy COIG każdej firmie, która priorytetem stawia bezpieczeństwo swoich danych."
+            author="WASKO"
+          />
+        </div>
+      </div>
+      <div class="testimonials-images-section">
+        <div class="section-title-center">
+          <SectionTitleWithoutImage headline="Zaufali nam" />
+        </div>
+
+      </div>
+</div>
+
+   
+  
 </BaseLayout>

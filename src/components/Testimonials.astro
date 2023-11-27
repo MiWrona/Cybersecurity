@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import { Image } from "astro:assets";
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import Apostrof from "../assets/apostrof.svg"
+import { transitionEnabledOnThisPage } from 'astro:transitions/client';
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+
+<style>
+.testimonials-wrapper {
+    margin-top: 40px;
+    max-width: 412px;
+}
+
+.testimonials {
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px 20px;
+    min-height: 376px;
+    position: relative;
+}
+
+.testimonials-author {
+position: absolute;
+bottom: 20px;
+right: 20px;
+color: #AAB0B7;
+
+font-family: Karla;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 120% */
+letter-spacing: 0.64px;
+}
+
+
+.testimonials-description {
+    color: #646B82;
+
+font-family: Karla;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.64px;
+}
+
+</style>
+
+
+<div class="testimonials-wrapper">
+    <div class="testimonials">
+        <div class="testimonials-image-wrapper">
+            <Image
+            class="testimonials-image"
+            src={Apostrof}
+            alt="apostrof"
+            widths={[240, 540, 720, Apostrof.width]}
+          />
+        </div>
+        <div class="testimonials-content">
+            <p class="testimonials-description">{props.description}</p>
+            <p class="testimonials-author">{props.author}</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import { Image } from "astro:assets";
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import { transitionEnabledOnThisPage } from 'astro:transitions/client';
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+
+<style>
+.case-study-wrapper {
+    margin-top: 40px;
+    max-width: 520px;
+}
+.case-study-image {
+    border-radius: 15px;
+}
+.case-study-tag {
+    font-family: Karla;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+}
+.case-study-headline {
+    font-family: Mulish;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: normal;
+}
+
+
+.case-study-description {
+    color: #000;
+    font-family: Karla;
+    font-size: 14px;
+    line-height: 26px; /* 185.714% */
+}
+
+</style>
+
+
+<div class="case-study-wrapper">
+    <div class="case-study">
+        <div class="case-study-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={props.imageSrc}
+            alt={props.imageAlt}
+            widths={[240, 540, 720, props.imageSrc.width]}
+          />
+        </div>
+        <div class="case-study-content">
+            <p class="case-study-tag"> {props.tag} </p>
+            <h3 class="case-study-headline">{props.headline}</h3>
+            <p class="case-study-description">{props.description}</p>
+
+            <ButtonLeftArrow href="#" description="Czytaj więcej" />
+
+        </div>
+    </div>
+</div>
+
+
+
+
