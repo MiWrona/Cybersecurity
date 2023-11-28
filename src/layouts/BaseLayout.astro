@@ -1,18 +1,19 @@
 ---
-import '@fontsource/Mulish';
-import '@fontsource/Karla';
-import '@fontsource/mulish/300.css';
-import '@fontsource/mulish/400.css';
-import '@fontsource/mulish/600.css';
-import '@fontsource/mulish/900.css';
+import "@fontsource/mulish";
+import "@fontsource/karla";
+import "@fontsource/mulish/300.css";
+import "@fontsource/mulish/400.css";
+import "@fontsource/mulish/600.css";
+import "@fontsource/mulish/900.css";
 
-import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-import { fade } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { fade } from "astro:transitions";
 const { pageTitle } = Astro.props;
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,10 +29,10 @@ const { pageTitle } = Astro.props;
         <Header />
       </div>
       <div class="slot-wrapper">
-      <!-- <h1 class="page-name" transition:animate={fade({ duration: '0.5s' })} >{pageTitle}</h1>
+        <!-- <h1 class="page-name" transition:animate={fade({ duration: '0.5s' })} >{pageTitle}</h1>
       <h2 class="page-name" transition:animate={fade({ duration: '0.5s' })} >{pageTitle}</h2> -->
-      <slot />
-    </div>
+        <slot />
+      </div>
       <Footer />
     </div>
     <script>
