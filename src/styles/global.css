@@ -357,6 +357,6 @@ nav {
 }
 
 .full-width-image {
-  max-width: 100%;
-  object-fit: fill;
+  width: 100%;
+  object-fit: contain;
 }
