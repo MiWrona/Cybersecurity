@@ -1,14 +1,15 @@
 ---
-import { Image } from 'astro:assets';
-import CyberLogo from '../assets/cyber-logo-red.svg';
+import { Image } from "astro:assets";
+import CyberLogo from "../assets/cyber-logo-red.svg";
 ---
 
 <div class="logo-wrapper">
-    <Image 
-    class="logo-image"
-    src={CyberLogo} 
-    alt="Cyberlogo"
-    widths={[240, 540, 720, CyberLogo.width]}
-    />
-
+    <a class="logo-link" href="/">
+        <Image
+            class="logo-image"
+            src={CyberLogo}
+            alt="Cyberlogo"
+            widths={[240, 540, 720, CyberLogo.width]}
+        />
+    </a>
 </div>

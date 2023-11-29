@@ -5,10 +5,10 @@ import Arrow from "../assets/red-circle-arrow.svg";
 
 const { href, description } = Astro.props;
 ---
+
 <style>
     a {
         text-decoration: none;
-
     }
 
     .button .logo-image {
@@ -32,5 +32,6 @@ const { href, description } = Astro.props;
         src={Arrow}
         alt="Arrow"
         widths={[240, 540, 720, Arrow.width]}
-    /> <span class="button-text">{description} </span>
+    />
+    <span class="button-text">{description}</span>
 </a>
