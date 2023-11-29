@@ -1,9 +1,8 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
-
 ---
 
-<style> 
+<style>
     .nav-link {
         color: #000;
         font-family: Karla;
@@ -15,11 +14,11 @@ import ThemeIcon from "./ThemeIcon.astro";
     }
 
     .nav-link--button {
-        color: #D41434;
+        color: #d41434;
         font-size: 14px;
         text-transform: uppercase;
         border-radius: 50px;
-        border: 1px solid #D41434;
+        border: 1px solid #d41434;
         padding: 10px 24px;
         text-wrap: nowrap;
     }
@@ -29,21 +28,20 @@ import ThemeIcon from "./ThemeIcon.astro";
     }
 
     @media screen and (max-width: 1195px) {
-    .nav-link--anchor {
-        display: none;
-    }
+        .nav-link--anchor {
+            display: none;
+        }
     }
 
     .nav-links.expanded a {
         color: aliceblue;
-        background-color: #D41434;
+        background-color: #d41434;
     }
-    
 </style>
 
 <div class="nav-links">
     <a class="nav-link" href="/">SOC</a>
-    <a class="nav-link" href="/about/" data-astro-reload>Audyt IT</a> 
+    <a class="nav-link" href="/about/" data-astro-reload>Audyt IT</a>
     <a class="nav-link" href="/blog/">Pentesty</a>
     <a class="nav-link" href="/blog/">CSIRT COIG</a>
     <a class="nav-link" href="/blog/">Kontakt</a>
@@ -51,7 +49,9 @@ import ThemeIcon from "./ThemeIcon.astro";
 </div>
 
 <div class="buttons-nav-link">
-    <a class="nav-link nav-link--button nav-link--anchor" href="/blog/">Coig S.A</a>
+    <a class="nav-link nav-link--button nav-link--anchor" href="/blog/"
+        >Coig S.A</a
+    >
 
-    <ThemeIcon />
+    <!-- <ThemeIcon /> -->
 </div>
