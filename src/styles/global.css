@@ -171,6 +171,7 @@ nav {
 .logo-wrapper {
   display: flex;
   align-items: center;
+  z-index: 9999;
 }
 
 @media screen and (min-width: 1196px) {
@@ -399,9 +400,10 @@ nav {
 
 .left-bottom-blob {
   position: absolute;
-  bottom: 39%;
+  bottom: 35%;
   left: 0;
-  z-index: 10;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .text-box {
@@ -519,7 +521,7 @@ nav {
 }
 
 .header-main .hero-content-wrapper {
-  padding: 151px 10px;
+  padding: 151px 10px 70px 10px;
 }
 
 .header-product {
