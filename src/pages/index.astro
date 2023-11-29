@@ -46,6 +46,8 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import CaseStudy from "../components/CaseStudy.astro";
 import Testimonials from "../components/Testimonials.astro";
 import TesimonialsImages from "../components/TesimonialsImages.astro";
+import NewsletterSection from "../components/NewsletterSection.astro";
+import NewsSection from "../components/NewsSection.astro";
 ---
 
 <style>
@@ -72,25 +74,6 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
     bottom: 50%;
     left: 0;
     z-index: 1;
-  }
-
-  .two-col-flex {
-    display: flex;
-  }
-
-  .space-between {
-    justify-content: space-between;
-  }
-
-  .space-around {
-    justify-content: space-around;
-  }
-
-  .second-col-flex {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 50%;
-    justify-content: flex-end;
   }
 
   .text-box {
@@ -121,14 +104,6 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
     border-radius: 5px;
   }
 
-  .centered {
-    margin: 0 auto;
-  }
-
-  .align-items {
-    align-items: center;
-  }
-
   .image-decoration {
     border-radius: 20px;
   }
@@ -139,15 +114,6 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
     font-style: normal;
     font-weight: 700;
     line-height: 27px; /* 150% */
-  }
-
-  .section-full {
-    width: 100%;
-  }
-
-  .full-width-image {
-    min-width: 100%;
-    object-fit: fill;
   }
 
   .small-column {
@@ -204,10 +170,20 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
   .testimonials-images-section {
     margin-top: 70px;
   }
+  .testimonials-wrapper {
+    display: flex;
+    margin-top: 40px;
+  }
 
   .testimonials-images-wrapper {
     display: flex;
     width: 100%;
+  }
+
+  @media (max-width: 1050px) {
+    .testimonials-wrapper {
+      flex-direction: column;
+    }
   }
 </style>
 
@@ -547,18 +523,20 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
         <SectionTitleWithoutImage headline="Co o nas mówią" />
       </div>
       <div class="flex space-around">
-        <Testimonials
-          description="Nasz zespół miał przyjemność skorzystać z usług COIG z zakresu cyberbezpieczeństwa, w tym SOC, audytów IT oraz pentestów. Jesteśmy zachwyceni profesjonalizmem i zaangażowaniem, jakie wykazała firma COIG. Ich eksperci dostarczyli nam szczegółowe raporty z audytów i pentestów, dzięki czemu mogliśmy zidentyfikować i naprawić istniejące luki w naszej infrastrukturze."
-          author="WASKO"
-        />
-        <Testimonials
-          description="Współpraca z COIG w zakresie usług związanych z cyberbezpieczeństwem była dla nas niezwykle wartościowa. Ich zespół audytorów przeprowadził gruntowny przegląd naszej infrastruktury IT, identyfikując ryzyka i proponując konkretną strategię poprawek."
-          author="Logic Synergy"
-        />
-        <Testimonials
-          description="Dzięki Centrum Operacji Cyberbezpieczeństwa COIG jesteśmy w stanie monitorować naszą infrastrukturę na bieżąco i reagować na ewentualne incydenty. Polecamy COIG każdej firmie, która priorytetem stawia bezpieczeństwo swoich danych."
-          author="WASKO"
-        />
+        <div class="testimonials-wrapper">
+          <Testimonials
+            description="Nasz zespół miał przyjemność skorzystać z usług COIG z zakresu cyberbezpieczeństwa, w tym SOC, audytów IT oraz pentestów. Jesteśmy zachwyceni profesjonalizmem i zaangażowaniem, jakie wykazała firma COIG. Ich eksperci dostarczyli nam szczegółowe raporty z audytów i pentestów, dzięki czemu mogliśmy zidentyfikować i naprawić istniejące luki w naszej infrastrukturze."
+            author="WASKO"
+          />
+          <Testimonials
+            description="Współpraca z COIG w zakresie usług związanych z cyberbezpieczeństwem była dla nas niezwykle wartościowa. Ich zespół audytorów przeprowadził gruntowny przegląd naszej infrastruktury IT, identyfikując ryzyka i proponując konkretną strategię poprawek."
+            author="Logic Synergy"
+          />
+          <Testimonials
+            description="Dzięki Centrum Operacji Cyberbezpieczeństwa COIG jesteśmy w stanie monitorować naszą infrastrukturę na bieżąco i reagować na ewentualne incydenty. Polecamy COIG każdej firmie, która priorytetem stawia bezpieczeństwo swoich danych."
+            author="WASKO"
+          />
+        </div>
       </div>
     </div>
     <div class="testimonials-images-section">
@@ -569,56 +547,6 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
       <TesimonialsImages />
     </div>
   </div>
-  <div class="section section--part-white-blue">
-    <div class="two-col-flex space-around flex-start">
-      <div class="first-col flex-column newsletter-text">
-        <h3>Zapisz się i otrzymuj Biuletyn Bezpieczeństwa</h3>
-        <p>Raz w tygodniu otrzymasz od nas Biuletyn Bezpieczeństwa, gdzie przestawiamy najnowsze trendy i zagadnienia związane z Cyberbezpieczeństwem.</p>
-      </div>
-      <div class="second-col-flex flex-column">
-        <form class="newsletter-form" action="/action_page.php">
-          <input class="input" type="text" id="fname" name="fname">
-          <input class="submit" type="submit" value="Zapisz się" >
-          </form>
-      </div>
-
-  </div>
-
-
-
+  <NewsletterSection />
+  <!-- <NewsSection /> -->
 </BaseLayout>
-
-<style>
-
-  .newsletter-text {
-    max-width:500px;
-  }
-
-  .newsletter-form {
-    display: flex;
-  }
-
-
-
-  .submit {
-    display: flex;
-width: 132px;
-height: 48px;
-padding: 14px 31px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
-  }
-  .input {
-    width: 480px;
-height: 48px;
-flex-shrink: 0;
-    border-radius: 8px;
-border: 1px solid rgba(159, 159, 159, 0.40);
-
-
-  }
-
-  </style>
-

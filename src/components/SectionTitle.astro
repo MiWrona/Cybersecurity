@@ -18,6 +18,11 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
         max-width: 462px;
         margin-bottom: 30px;
     }
+    @media (max-width: 1050px) {
+        .hero-secondary-image {
+            display: none;
+        }
+    }
 </style>
 
 <div class="section-title-wrapper">

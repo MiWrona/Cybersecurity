@@ -8,7 +8,7 @@
 }
 
 html {
-  background-color: #FFF;
+  background-color: #fff;
   font-family: sans-serif;
 }
 
@@ -71,10 +71,9 @@ h1 {
   font-weight: 900;
 }
 
-.headline-5 { 
+.headline-5 {
   font-size: 16px;
-  font-family: var(--primary-font) 
-
+  font-family: var(--primary-font);
 }
 
 h3 {
@@ -209,27 +208,35 @@ nav {
 .section {
   padding-top: 80px;
   padding-bottom: 80px;
+  padding-left: 91px;
+  padding-right: 91px;
   margin: 0 auto;
   max-width: 1443px;
   position: relative;
+}
+
+@media (max-width: 1050px) {
+  .section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .section--white {
   background: #fff;
 }
 .section--blueish {
-  background-color: #F8F9FD;
-} 
-
+  background-color: #f8f9fd;
+}
 
 .section--borderd-bottom:after {
-    content : "";
-    position: absolute;
-    left    : 8%;
-    bottom  : 0;
-    height  : 0.5px;
-    width   : 85%;  /* or 100px */
-    border-bottom:1px solid #BCCBD6;
-    opacity: 0.5;
+  content: "";
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  height: 0.5px;
+  width: 85%; /* or 100px */
+  border-bottom: 1px solid #bccbd6;
+  opacity: 0.5;
 }
 
 .section-title {
@@ -250,10 +257,8 @@ nav {
   /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
   bottom: -15px;
   left: 0;
-  animation: move 10s infinite;
-
+  /* animation: move 10s infinite; */
 }
-
 
 @keyframes move {
   0% {
@@ -263,18 +268,15 @@ nav {
     left: 100%;
   }
   100% {
-    left: 0;    
+    left: 0;
   }
 }
 
-
-
 .ordered-list-wrapper {
   border-radius: 5px;
-  background: #F8F9FD; 
-  padding: 20px 80px; 
+  background: #f8f9fd;
+  padding: 20px 80px;
 }
-
 
 /* Helpers */
 
@@ -317,5 +319,44 @@ nav {
   margin-bottom: 10px;
 }
 
+/*layout */
+.two-col-flex {
+  display: flex;
+}
 
+@media (max-width: 1050px) {
+  .two-col-flex {
+    flex-direction: column;
+  }
+}
 
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.second-col-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.section-full {
+  width: 100%;
+}
+
+.full-width-image {
+  max-width: 100%;
+  object-fit: fill;
+}
