@@ -111,6 +111,11 @@ import ClickSlideSection from "../components/ClickSlideSection.astro";
     justify-content: center;
     align-items: center;
   }
+
+  .section-numbers .section-description {
+    max-width: 962px;
+    text-align: center;
+  }
 </style>
 
 <BaseLayout>
@@ -253,4 +258,109 @@ import ClickSlideSection from "../components/ClickSlideSection.astro";
       </div>
     </div>
   </div>
+  <div class="section section-numbers">
+    <div class="section-title-center">
+      <SectionTitleWithoutImage headline="Jak działamy?" />
+    </div>
+    <div class="section-description centered"> Audyt z zakresu cyberbezpieczeństwa przynosi korzyści poprzez identyfikację słabości i podatności systemów, co umożliwia skuteczne wzmocnienie zabezpieczeń oraz minimalizację ryzyka ataków i naruszeń bezpieczeństwa.
+ 
+        </div>  
+
+        <div class="circle-container">
+            <div class="circle-wrapper">
+                <div class="circle"><span>1</span></div>
+                <p class="text">Zgodność z prawem</p>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle"><span>2</span></div>
+                <p class="text">Zgodność ze standardami i dobrymi praktykami</p>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle"><span>3</span></div>
+                <p class="text">Bezpieczeństwo techniczne</p>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle"><span>4</span></div>
+                <p class="text">Bezpieczeństwo organizacyjne, przestrzeganie procedur</p>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle"><span>5</span></div>
+                <p class="text">Czynnik ludzki – weryfikacja</p>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle"><span>6</span></div>
+                <p class="text circle-text">Raport końcowy</p>
+            </div>
+        </div>
+    </div>
+
+
+        <style>
+.circle-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; flex-wrap: wrap;
+    max-width: 190px;
+    min-width: 120px;
+    min-height: 150px;
+}
+
+.circle {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle span {
+font-family: Karla;
+font-size: 46px;
+color: transparent; /* Sprawia, że wypełnienie tekstu jest przezroczyste */
+    -webkit-text-stroke: 1px #D41434;; /* Kontur tekstu dla przeglądarek opartych na WebKit, jak Chrome czy Safari */
+    text-stroke: 1px #D41434;; /* Kontur tekstu, standard */
+}
+
+
+
+.text {
+    position: absolute;
+    top: 60px; /* Dystans od środka koła */
+    min-width: 120px; /* Szerokość kontenera tekstu */
+    text-align: center;
+    color: #646B82;
+    text-align: center;
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 0.64px;
+    max-width: 190px;
+    margin-top: 30px;
+    opacity: 0.7;
+}
+
+
+@media (max-width: 1050px) {
+    .circle-wrapper {
+    min-height: 200px;
+  }
+}
+
+
+
+        </style>
+
 </BaseLayout>
