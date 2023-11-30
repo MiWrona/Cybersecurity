@@ -7,11 +7,11 @@ import LeftBlob from "../assets/left-blob.png";
 import CybersecurityPadlock from "../assets/cybersecurity-padlock.png";
 import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
 import CyberPadlock from "../assets/cyber-padlock.png";
-import HandKeyboard from "../assets/hand-keyboard.png"
+import HandKeyboard from "../assets/hand-keyboard.png";
 import RocketIcon from "../assets/rocket-icon.svg";
 import DiagramdIcon from "../assets/social-media-icon.svg";
-import PeopleCollage from "../assets/people-collage.png"
-import ItCouple from "../assets/it-couple.png"
+import PeopleCollage from "../assets/people-collage.png";
+import ItCouple from "../assets/it-couple.png";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import SectionTitle from "../components/SectionTitle.astro";
@@ -26,337 +26,231 @@ import ClickSlideSection from "../components/ClickSlideSection.astro";
 ---
 
 <style>
-    .checked-list-element {
-        color: #646b82;
-        position: relative;
-        font-family: Karla;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 21.12px; /* 132% */
-        letter-spacing: 0.64px;
-        margin-bottom: 15px;
-        list-style: none;
-    }
-    .checked-list-element:before {
-        position: absolute;
-        content: "✔︎";
-        margin-left: -20px;
-    }
-    .paragrpah-highlight {
-        color: #000;
-        font-family: Karla;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 39.44px;
-        letter-spacing: 0.85px;
-        max-width: 743px;
-    }
-    .paragrpah-highlight > span {
-        font-weight: 700;
-    }
-    .section-description {
-        color: #646b82;
-        font-family: Karla;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 27px; /* 150% */
-        letter-spacing: 0.64px;
-        max-width: 462px;
-        margin-bottom: 30px;
-    }
+  .checked-list-element {
+    color: #646b82;
+    position: relative;
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 21.12px; /* 132% */
+    letter-spacing: 0.64px;
+    margin-bottom: 15px;
+    list-style: none;
+  }
+  .checked-list-element:before {
+    position: absolute;
+    content: "✔︎";
+    margin-left: -20px;
+  }
+  .paragrpah-highlight {
+    color: #000;
+    font-family: Karla;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 39.44px;
+    letter-spacing: 0.85px;
+    max-width: 743px;
+  }
+  .paragrpah-highlight > span {
+    font-weight: 700;
+  }
+  .section-description {
+    color: #646b82;
+    font-family: Karla;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.64px;
+    max-width: 462px;
+    margin-bottom: 30px;
+  }
 
-    .text-elements {
-        position: relative;
-        display: flex;
-        padding: 1px 0px 1px 48px;
-        margin-bottom: 12px;
-        margin-top: 12px;
-    }
-    .text-elements:after {
-        position: absolute;
-        left: 0;
-        top: 25%;
-        height: 50%;
-        content: "";
-        border-left: 3px solid var(--blue-gray-300, #CBD5E1);
-    } 
-    .text-elements.active:after {
-        border-left:  3px solid #D41434;
-    } 
+  .text-elements {
+    position: relative;
+    display: flex;
+    padding: 1px 0px 1px 48px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .text-elements:after {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    content: "";
+    border-left: 3px solid var(--blue-gray-300, #cbd5e1);
+  }
+  .text-elements.active:after {
+    border-left: 3px solid #d41434;
+  }
 
+  .text-elements p {
+    color: var(--blue-gray-900, #0f172a);
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
 
-    .text-elements p {
-        color: var(--blue-gray-900, #0F172A);
-        font-family: Mulish;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-    }
-
-    .paragprah-superhighlighted {
-        color: #D41434;
-        font-family: Mulish;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 73px; /* 228.125% */
-        width: 346px;
-        height: 95px;
-        flex-shrink: 0;
-        border-radius: 10px;
-        border: 1px solid rgba(170, 176, 183, 0.35);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .paragprah-superhighlighted {
+    color: #d41434;
+    font-family: Mulish;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 73px; /* 228.125% */
+    width: 346px;
+    height: 95px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(170, 176, 183, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 
 <BaseLayout>
-    <div class="header">
-        <div class="header-content header-product">
-            <HeroFirst
-                headline="Audyt "
-                headlineAccent="IT"
-            />
-        </div>
-        <Image
-            class="right-top-blob"
-            src={RightBlob}
-            alt="Right blob"
-            widths={[240, 540, 720, RightBlob.width]}
-        />
-        <Image
-            class="left-bottom-blob"
-            src={LeftBlob}
-            alt="Left blob"
-            widths={[240, 540, 720, LeftBlob.width]}
-        />
-        <div class="padding-bottom-30">
-            <div class="two-col-flex space-around align-items">
-                <div class="first-col flex-column">
-                    <SectionTitleWithoutImage
-                        headline="Czym są Audyty IT??"
-                        description="Audyt bezpieczeństwa obejmuje analizę, identyfikację procedur związanych z przetwarzaniem informacji, sprawdzanie zabezpieczeń fizycznych i logicznych, ocenę dokumentacji dotyczącej ochrony danych oraz ocenę zgodności z obowiązującymi przepisami prawnymi i wewnętrznymi standardami. "
-                    />
-                </div>
-                <div class="second-col-flex flex-column">
-                    <Image
-                        class="image-decoration"
-                        src={PeopleCollage}
-                        alt="People collage"
-                        widths={[240, 540, 720, PeopleCollage.width]}
-                    />
-                </div>
-            </div>
-        </div>
+  <div class="header">
+    <div class="header-content header-product">
+      <HeroFirst headline="Audyt " headlineAccent="IT" />
     </div>
-    <div class="section">
-        <div class="section-title-center">
-            <SectionTitleWithoutImage headline="Cele usługi" />
-        </div>
-        <HorizontalSlider
-            imageSrc={HandKeyboard}
-            imageAlt="Slider image"
-            headline="Ocena systemów"
-            description="Audyt bezpieczeństwa teleinformatycznego ma na celu przeprowadzenie wnikliwej i niezależnej oceny systemów teleinformatycznych, infrastruktury IT oraz procesów związanych z bezpieczeństwem w organizacji. Jego głównym celem jest identyfikacja potencjalnych zagrożeń, ryzyk oraz podatności w zabezpieczeniach, które mogą narażać organizację na utratę danych, ataki hakerskie, wycieki informacji, czy inne incydenty związane z cyberbezpieczeństwem. Audyt zostaje zakończony raportem z przeprowadzenia audytu, w którym badane wymagania zostają ocenione oraz organizacja otrzymuje rekomendacje, których wdrożenie podnosi poziom cyberbezpieczeństwa."
-        />
-    </div>
-
-
-
-    <div class="section">
-        <SectionTitleWithoutImage
-        headline="Co dają nasze audyty"
-        
+    <Image
+      class="right-top-blob"
+      src={RightBlob}
+      alt="Right blob"
+      widths={[240, 540, 720, RightBlob.width]}
     />
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col flex-column col-half">
-                <div class="text-elements active"> <p>Ocena stopnia dojrzałości organizacji w zakresie cyberbezpieczeństwa </p></div>
-                <div class="text-elements"> <p>Ocena ryzyka </p></div>
-                <div class="text-elements"> <p>Identyfikacja podatności </p></div>
-                <div class="text-elements"> <p>Weryfikacja zgodności </p></div>
-                <div class="text-elements"> <p> Zalecenia audytowe </p></div>
-             <p></p>
-            </div>
-            <div class="second-col-flex col-half">
-                <Image
-                class="image-decoration"
-                src={ItCouple}
-                alt="ItCouple"
-                widths={[240, 540, 720, ItCouple.width]}
-            />
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col flex-column col-half">
-        <SectionTitleWithoutImage
-        headline="Nasze kompetencje"
-        description="Zespół audytorów w COIG składa się z ekspertów oraz specjalistów ds. bezpieczeństwa informacji, którzy posiadają bogate doświadczenie zarówno techniczne jak i praktyczne zdobyte podczas pracy z klientami. "
+    <Image
+      class="left-bottom-blob"
+      src={LeftBlob}
+      alt="Left blob"
+      widths={[240, 540, 720, LeftBlob.width]}
     />
-    <p class="section-description">   Specjalizujemy się w audytach:</p>
-</div>
-<div class="second-col-flex col-half">
-  <p class="paragprah-superhighlighted"> ISO/IES 27001 </p>
-</div>
-
-    </div>
-    <div class="section">
-        <SectionTitleWithoutImage
-            headline="Korzyści"
-            description="Przeprowadzenie audytu bezpieczeństwa teleinformatycznego niesie za sobą wiele korzyści dla organizacji:  "
-        />
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col first-col-flex">
-                <ListWithTick
-                    headline="Identyfikacja ryzyka"
-                    description="Audyt pozwala zidentyfikować potencjalne zagrożenia i ryzyka związane z bezpieczeństwem teleinformatycznym, umożliwiając organizacji skoncentrowanie się na obszarach wymagających natychmiastowej uwagi."
-                />
-                <ListWithTick
-                    headline="Wczesne wykrywanie podatności"
-                    description="Wykrycie istniejących podatności w zabezpieczeniach przed atakującymi lub incydentami umożliwia organizacji podjęcie odpowiednich działań naprawczych przed wystąpieniem problemu."
-                />
-                    <ListWithTick
-                    headline="Zgodność z przepisami"
-                    description="Zapewnienie, iż organizacja przestrzega obowiązujących przepisów prawa oraz standardów branżowych związanych z ochroną danych i bezpieczeństwem informacji."
-                />
-                <ListWithTick
-                    headline="Minimalizacja ryzyka"
-                    description="Poprzez identyfikację i naprawę luk w zabezpieczeniach, organizacja minimalizuje ryzyko materializacji skutków ataków, wycieków danych oraz innych incydentów, które mogą prowadzić do strat finansowych i utraty reputacji."
-                />
-            </div>
-            <div class="second-col-flex">
-                <ListWithTick
-                    headline="Poprawa zaufania"
-                    description="Dobre praktyki bezpieczeństwa teleinformatycznego przyczyniają się do wzrostu zaufania klientów, partnerów biznesowych i interesariuszy, co ma pozytywny wpływ na reputację organizacji. "
-                />
-                <ListWithTick
-                    headline="Optymalizacja zabezpieczeń"
-                    description="Wyniki audytu dostarczają organizacji wiedzy na temat najsłabszych punktów w obszarze IT, co pozwala skupić się na strategicznych inwestycjach i działaniach mających na celu zwiększenie skuteczności zabezpieczeń."
-                />
-                <ListWithTick
-                    headline="Świadomość personelu"
-                    description="Audyt może służyć jako narzędzie edukacyjne, zwiększając świadomość pracowników na temat zagrożeń związanych z cyberbezpieczeństwem i pomagając im zrozumieć, jakie praktyki i zachowania mogą przyczynić się do bezpieczeństwa organizacji."
-                />
-            </div>
+    <div class="padding-bottom-30">
+      <div class="two-col-flex space-around align-items">
+        <div class="first-col flex-column">
+          <SectionTitleWithoutImage
+            headline="Czym są Audyty IT??"
+            description="Audyt bezpieczeństwa obejmuje analizę, identyfikację procedur związanych z przetwarzaniem informacji, sprawdzanie zabezpieczeń fizycznych i logicznych, ocenę dokumentacji dotyczącej ochrony danych oraz ocenę zgodności z obowiązującymi przepisami prawnymi i wewnętrznymi standardami. "
+          />
         </div>
-    </div>
-    <div class="section section--not-so-white">
-        <div class="flex space-around column-rwd">
-            <div class="higlighted-text">
-                <p class="paragrpah-highlight">
-                    <span>Audyt cyberbezpieczeństwa</span>to kluczowy element strategii zarządzania ryzykiem, dostosowujący się do potrzeb organizacji i identyfikujący słabe punkty.
-                </p>
-            </div>
-            <ButtonLeftArrow description="Zapytaj o wycenę" />
-        </div>
-    </div>
-    <div class="section">
-        <SectionTitleWithoutImage headline="Organizacja" />
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col flex-column col-half">
-                <p class="paragraph section-description  smaller-description">
-                    Pierwsza, druga i trzecia linia wsparcia dla działań COIG
-                    SOC odnoszą się do różnych poziomów wsparcia zapewnianego
-                    przez zespół SOC w celu zarządzania incydentami
-                    bezpieczeństwa i zapewnienia bezpieczeństwa systemów IT
-                    Twojej organizacji.
-                </p>
-            </div>
-            <div class="second-col-flex col-half">
-                <p class="paragraph section-description smaller-description">
-                    Wszystkie linie wsparcia działań SOC wspomagane są zespołami
-                    inżynierów dziedzinowych z zakresu sieci komputerowych,
-                    serwerów, macierzy, urządzeń końcowych (komputery, laptopy,
-                    telefony) i oprogramowania w grupie Wasko oraz kontaktami z
-                    producentami sprzętu i oprogramowania w szczególnych
-                    przypadkach.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <ClickSlideSection />
-    </div>
-        <div class="section smaller-description section-smaller-top-padding">
-            <div class="section-headline">
-                <SectionTitleWithoutImage
-                    headline="Korzyści"
-                    description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
-                />
-            </div>
-            <div class="two-col-flex space-around align-items">
-           
-                <div class="first-col flex-column select-column">
-                    <div class="select-buttons">
-                        <div class="select-button active">SIEM</div>
-                        <div class="select-button">SOAR</div>
-                    </div>
-                        <div class="section-image">
-                            <Image
-                            class="image-decoration"
-                            src={CybersecurityPadlock}
-                            alt="CybersecurityPadlock"
-                            widths={[240, 540, 720, CybersecurityPadlock.width]}
-                            />
-                        </div>
-                </div>
-                <div class="second-col-flex select-column-2">
-                   <div class="presentation-container">
-                    <div class="subheadline">Security Information and Event Management</div>
-                    <div class="headline">
-                        <h3>SIEM</h3>
-                    </div>
-                    <div class="description">
-                        <p>jest kluczowym elementem w funkcjonowaniu SOC, ponieważ pomaga w monitorowaniu, analizowaniu i raportowaniu zdarzeń związanych z informatyką. SIEM analizuje dane z różnych źródeł, takich jak systemy bezpieczeństwa, urządzenia sieciowe, serwery, aplikacje oraz aktywności użytkowników. SIEM pozwala na identyfikację podejrzanych wzorców i anomalii, które mogą wskazywać na próby naruszenia bezpieczeństwa. Ponadto, narzędzie to ułatwia raportowanie i archiwizację zdarzeń, co może być niezbędne do celów audytowych. SIEM jest integrowany z innymi narzędziami bezpieczeństwa.</p>
-                    </div>
-                   </div>
-                </div>
-            </div>
-    </div>
-    <div class="section section--white">
-        <div class="two-col-flex space-between">
-          <div class="first-col">
-            <SectionTitle
-              headline="Usługi cyberbezpieczeństwa"
-              description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
-              imageSrc={CyberPadlock}
-              imageAlt="pierońsko kulka"
-            />
-          </div>
-    
-          <div class="second-col-flex">
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Diagram Icon"
-              headline="Audyty IT"
-              description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-            />
-    
-            <ContentBorderBox
-              image={RocketIcon.src}
-              imageAlt="Rocket Icon"
-              headline="Testy Penetracyjne"
-              description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-            />
-    
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Password Icon"
-              headline="CSIRT COIG"
-              description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
-            />
-    
-            <div class="text-box">
-              <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-              <ButtonLeftArrow href="#" description="Czytaj więcej" />
-            </div>
-          </div>
+        <div class="second-col-flex flex-column">
+          <Image
+            class="image-decoration"
+            src={PeopleCollage}
+            alt="People collage"
+            widths={[240, 540, 720, PeopleCollage.width]}
+          />
         </div>
       </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title-center">
+      <SectionTitleWithoutImage headline="Cele usługi" />
+    </div>
+    <HorizontalSlider
+      imageSrc={HandKeyboard}
+      imageAlt="Slider image"
+      headline="Ocena systemów"
+      description="Audyt bezpieczeństwa teleinformatycznego ma na celu przeprowadzenie wnikliwej i niezależnej oceny systemów teleinformatycznych, infrastruktury IT oraz procesów związanych z bezpieczeństwem w organizacji. Jego głównym celem jest identyfikacja potencjalnych zagrożeń, ryzyk oraz podatności w zabezpieczeniach, które mogą narażać organizację na utratę danych, ataki hakerskie, wycieki informacji, czy inne incydenty związane z cyberbezpieczeństwem. Audyt zostaje zakończony raportem z przeprowadzenia audytu, w którym badane wymagania zostają ocenione oraz organizacja otrzymuje rekomendacje, których wdrożenie podnosi poziom cyberbezpieczeństwa."
+    />
+  </div>
+
+  <div class="section">
+    <SectionTitleWithoutImage headline="Co dają nasze audyty" />
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column col-half">
+        <div class="text-elements active">
+          <p>
+            Ocena stopnia dojrzałości organizacji w zakresie cyberbezpieczeństwa
+          </p>
+        </div>
+        <div class="text-elements"><p>Ocena ryzyka</p></div>
+        <div class="text-elements"><p>Identyfikacja podatności</p></div>
+        <div class="text-elements"><p>Weryfikacja zgodności</p></div>
+        <div class="text-elements"><p>Zalecenia audytowe</p></div>
+        <p></p>
+      </div>
+      <div class="second-col-flex col-half">
+        <Image
+          class="image-decoration"
+          src={ItCouple}
+          alt="ItCouple"
+          widths={[240, 540, 720, ItCouple.width]}
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column col-half">
+        <SectionTitleWithoutImage
+          headline="Nasze kompetencje"
+          description="Zespół audytorów w COIG składa się z ekspertów oraz specjalistów ds. bezpieczeństwa informacji, którzy posiadają bogate doświadczenie zarówno techniczne jak i praktyczne zdobyte podczas pracy z klientami. "
+        />
+        <p class="section-description">Specjalizujemy się w audytach:</p>
+      </div>
+      <div class="second-col-flex col-half">
+        <p class="paragprah-superhighlighted">ISO/IES 27001</p>
+      </div>
+    </div>
+    <div class="section">
+      <SectionTitleWithoutImage
+        headline="Korzyści"
+        description="Przeprowadzenie audytu bezpieczeństwa teleinformatycznego niesie za sobą wiele korzyści dla organizacji:  "
+      />
+      <div class="two-col-flex space-around align-items">
+        <div class="first-col first-col-flex">
+          <ListWithTick
+            headline="Identyfikacja ryzyka"
+            description="Audyt pozwala zidentyfikować potencjalne zagrożenia i ryzyka związane z bezpieczeństwem teleinformatycznym, umożliwiając organizacji skoncentrowanie się na obszarach wymagających natychmiastowej uwagi."
+          />
+          <ListWithTick
+            headline="Wczesne wykrywanie podatności"
+            description="Wykrycie istniejących podatności w zabezpieczeniach przed atakującymi lub incydentami umożliwia organizacji podjęcie odpowiednich działań naprawczych przed wystąpieniem problemu."
+          />
+          <ListWithTick
+            headline="Zgodność z przepisami"
+            description="Zapewnienie, iż organizacja przestrzega obowiązujących przepisów prawa oraz standardów branżowych związanych z ochroną danych i bezpieczeństwem informacji."
+          />
+          <ListWithTick
+            headline="Minimalizacja ryzyka"
+            description="Poprzez identyfikację i naprawę luk w zabezpieczeniach, organizacja minimalizuje ryzyko materializacji skutków ataków, wycieków danych oraz innych incydentów, które mogą prowadzić do strat finansowych i utraty reputacji."
+          />
+        </div>
+        <div class="second-col-flex">
+          <ListWithTick
+            headline="Poprawa zaufania"
+            description="Dobre praktyki bezpieczeństwa teleinformatycznego przyczyniają się do wzrostu zaufania klientów, partnerów biznesowych i interesariuszy, co ma pozytywny wpływ na reputację organizacji. "
+          />
+          <ListWithTick
+            headline="Optymalizacja zabezpieczeń"
+            description="Wyniki audytu dostarczają organizacji wiedzy na temat najsłabszych punktów w obszarze IT, co pozwala skupić się na strategicznych inwestycjach i działaniach mających na celu zwiększenie skuteczności zabezpieczeń."
+          />
+          <ListWithTick
+            headline="Świadomość personelu"
+            description="Audyt może służyć jako narzędzie edukacyjne, zwiększając świadomość pracowników na temat zagrożeń związanych z cyberbezpieczeństwem i pomagając im zrozumieć, jakie praktyki i zachowania mogą przyczynić się do bezpieczeństwa organizacji."
+          />
+        </div>
+      </div>
+    </div>
+    <div class="section section--not-so-white">
+      <div class="flex space-around column-rwd">
+        <div class="higlighted-text">
+          <p class="paragrpah-highlight">
+            <span>Audyt cyberbezpieczeństwa</span>to kluczowy element strategii
+            zarządzania ryzykiem, dostosowujący się do potrzeb organizacji i
+            identyfikujący słabe punkty.
+          </p>
+        </div>
+        <ButtonLeftArrow description="Zapytaj o wycenę" />
+      </div>
+    </div>
+  </div>
 </BaseLayout>
