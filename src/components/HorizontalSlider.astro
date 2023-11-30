@@ -7,6 +7,8 @@ import { transitionEnabledOnThisPage } from "astro:transitions/client";
 
 // const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
 const props = Astro.props;
+
+
 ---
 
 <style>
@@ -35,28 +37,47 @@ const props = Astro.props;
     .slider-description {
         color: #646b82;
         font-family: Mulish;
-        font-size: 16px;
+        font-size: 13px;
         font-style: normal;
         font-weight: 400;
         line-height: 160%; /* 25.6px */
     }
+
+    
+@media (max-width: 1050px) {
+    .slider-wrapper .slide {
+        flex-direction: column;
+        align-items: center;
+  }
+  .slider-content {
+    width: 100%;
+    left: 0;
+  }
+}
+
+
+    
+
 </style>
 
 <div class="slider-wrapper">
     <div class="slide">
         <div class="slide-image-wrapper">
             <Image
-                class="slide-image"
-                src={HandsComputersMore}
-                alt="Image of computers"
-                widths={[240, 540, 720, HandsComputersMore.width]}
-            />
+            class="case-study-image"
+            src={props.imageSrc}
+            alt={props.imageAlt}
+            widths={[240, 540, 720, props.imageSrc.width]}
+          />
         </div>
         <div class="slider-content">
             <h3 class="slider-headline">{props.headline}</h3>
             <p class="slider-description">{props.description}</p>
 
-            <ButtonLeftArrow href="#" description="O nas" />
+            {props.showButton === 'true' &&  <ButtonLeftArrow href="#" description="O nas" />}
+
+           
+ 
         </div>
     </div>
 </div>

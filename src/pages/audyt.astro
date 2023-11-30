@@ -7,9 +7,11 @@ import LeftBlob from "../assets/left-blob.png";
 import CybersecurityPadlock from "../assets/cybersecurity-padlock.png";
 import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
 import CyberPadlock from "../assets/cyber-padlock.png";
+import HandKeyboard from "../assets/hand-keyboard.png"
 import RocketIcon from "../assets/rocket-icon.svg";
 import DiagramdIcon from "../assets/social-media-icon.svg";
 import PeopleCollage from "../assets/people-collage.png"
+import ItCouple from "../assets/it-couple.png"
 
 import HeroFirst from "../components/HeroFirst.astro";
 import SectionTitle from "../components/SectionTitle.astro";
@@ -21,8 +23,6 @@ import ListWithTick from "../components/ListWithTick.astro";
 import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
-
-const showButton = true;
 ---
 
 <style>
@@ -67,14 +67,59 @@ const showButton = true;
         max-width: 462px;
         margin-bottom: 30px;
     }
+
+    .text-elements {
+        position: relative;
+        display: flex;
+        padding: 1px 0px 1px 48px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+    .text-elements:after {
+        position: absolute;
+        left: 0;
+        top: 25%;
+        height: 50%;
+        content: "";
+        border-left: 3px solid var(--blue-gray-300, #CBD5E1);
+    } 
+    .text-elements.active:after {
+        border-left:  3px solid #D41434;
+    } 
+
+
+    .text-elements p {
+        color: var(--blue-gray-900, #0F172A);
+        font-family: Mulish;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .paragprah-superhighlighted {
+        color: #D41434;
+        font-family: Mulish;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 73px; /* 228.125% */
+        width: 346px;
+        height: 95px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        border: 1px solid rgba(170, 176, 183, 0.35);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 
 <BaseLayout>
     <div class="header">
         <div class="header-content header-product">
             <HeroFirst
-                headline="Security Operations "
-                headlineAccent="Center"
+                headline="Audyt "
+                headlineAccent="IT"
             />
         </div>
         <Image
@@ -93,8 +138,8 @@ const showButton = true;
             <div class="two-col-flex space-around align-items">
                 <div class="first-col flex-column">
                     <SectionTitleWithoutImage
-                        headline="Czym jest SOC?"
-                        description="Security Operations Center (SOC) to wykwalifikowany zespół specjalistów, którego misją jest monitorowanie i poprawa bezpieczeństwa organizacji, przy wykorzystaniu mechanizmów wykrywania, analizowania i reagowania na incydenty związane z bezpieczeństwem. SOC COIG jest certyfikowany na zgodność z normą ISO 27001. "
+                        headline="Czym są Audyty IT??"
+                        description="Audyt bezpieczeństwa obejmuje analizę, identyfikację procedur związanych z przetwarzaniem informacji, sprawdzanie zabezpieczeń fizycznych i logicznych, ocenę dokumentacji dotyczącej ochrony danych oraz ocenę zgodności z obowiązującymi przepisami prawnymi i wewnętrznymi standardami. "
                     />
                 </div>
                 <div class="second-col-flex flex-column">
@@ -109,87 +154,94 @@ const showButton = true;
         </div>
     </div>
     <div class="section">
-        <div class="flex space-around column-rwd">
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Zwiększenie bezpieczeństwa"
-                description="zwiększa poziom bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa."
-            />
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Zabezpieczanie organizacji"
-                description="pozwala na wykrycie i zabezpieczenie najbardziej kluczowych obszarów w strukturze organizacji."
-            />
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Wykrywanie problemów"
-                description="umożliwia wykrycie wielu problemów związanych z bezpieczeństwem, które wcześniej pozostawały niezauważone."
-            />
+        <div class="section-title-center">
+            <SectionTitleWithoutImage headline="Cele usługi" />
         </div>
+        <HorizontalSlider
+            imageSrc={HandKeyboard}
+            imageAlt="Slider image"
+            headline="Ocena systemów"
+            description="Audyt bezpieczeństwa teleinformatycznego ma na celu przeprowadzenie wnikliwej i niezależnej oceny systemów teleinformatycznych, infrastruktury IT oraz procesów związanych z bezpieczeństwem w organizacji. Jego głównym celem jest identyfikacja potencjalnych zagrożeń, ryzyk oraz podatności w zabezpieczeniach, które mogą narażać organizację na utratę danych, ataki hakerskie, wycieki informacji, czy inne incydenty związane z cyberbezpieczeństwem. Audyt zostaje zakończony raportem z przeprowadzenia audytu, w którym badane wymagania zostają ocenione oraz organizacja otrzymuje rekomendacje, których wdrożenie podnosi poziom cyberbezpieczeństwa."
+        />
     </div>
+
+
+
     <div class="section">
+        <SectionTitleWithoutImage
+        headline="Co dają nasze audyty"
+        
+    />
         <div class="two-col-flex space-around align-items">
             <div class="first-col flex-column col-half">
-                <SectionTitleWithoutImage
-                    headline="O usłudze"
-                    description="Zespół SOC jest odpowiedzialny za całościowe zarządzanie bezpieczeństwem informatycznym w organizacji, obejmujące monitorowanie, wykrywanie, reagowanie i zapobieganie zagrożeniom oraz incydentom związanym z cyberbezpieczeństwem.  "
-                />
+                <div class="text-elements active"> <p>Ocena stopnia dojrzałości organizacji w zakresie cyberbezpieczeństwa </p></div>
+                <div class="text-elements"> <p>Ocena ryzyka </p></div>
+                <div class="text-elements"> <p>Identyfikacja podatności </p></div>
+                <div class="text-elements"> <p>Weryfikacja zgodności </p></div>
+                <div class="text-elements"> <p> Zalecenia audytowe </p></div>
+             <p></p>
             </div>
             <div class="second-col-flex col-half">
-                <ul>
-                    <li class="checked-list-element">
-                        Stała kontrolę nad aktualnym poziomem bezpieczeństwa
-                        poprzez identyfikację incydentów za pomocą
-                        oprogramowania SIEM
-                    </li>
-                    <li class="checked-list-element">
-                        Podejmowanie działań w reakcji na pojawiające się
-                        zdarzenia przy wykorzystaniu modułu SOAR.
-                    </li>
-                </ul>
+                <Image
+                class="image-decoration"
+                src={ItCouple}
+                alt="ItCouple"
+                widths={[240, 540, 720, ItCouple.width]}
+            />
             </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title-center">
-            <SectionTitleWithoutImage headline="Nasz SOC to:" />
-        </div>
-        <HorizontalSlider
-            showButton = "true";
-            imageSrc={CybersecurityPadlock}
-            imageAlt="Slider image"
-            headline="Ludzie"
-            description="Nasz zespół to wykwalifikowany i kompetentny personel powołany do skutecznego działania, składający się z analityków bezpieczeństwa, specjalistów obsługi incydentów oraz inżynierów wielu specjalności informatycznych którzy mogą monitorować i zarządzać systemami bezpieczeństwa."
-        />
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col flex-column col-half">
+        <SectionTitleWithoutImage
+        headline="Nasze kompetencje"
+        description="Zespół audytorów w COIG składa się z ekspertów oraz specjalistów ds. bezpieczeństwa informacji, którzy posiadają bogate doświadczenie zarówno techniczne jak i praktyczne zdobyte podczas pracy z klientami. "
+    />
+    <p class="section-description">   Specjalizujemy się w audytach:</p>
+</div>
+<div class="second-col-flex col-half">
+  <p class="paragprah-superhighlighted"> ISO/IES 27001 </p>
+</div>
+
     </div>
-    <div class="section col-half">
+    <div class="section">
         <SectionTitleWithoutImage
             headline="Korzyści"
-            description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
+            description="Przeprowadzenie audytu bezpieczeństwa teleinformatycznego niesie za sobą wiele korzyści dla organizacji:  "
         />
         <div class="two-col-flex space-around align-items">
             <div class="first-col first-col-flex">
                 <ListWithTick
-                    headline="Usługa w trybie 24/7/365"
-                    description="Twoja organizacja jest zawsze chroniona przed zagrożeniami cybernetycznymi. Oznacza to, że możesz spać spokojnie wiedząc, że środowisko IT jest stale monitorowane i chronione."
+                    headline="Identyfikacja ryzyka"
+                    description="Audyt pozwala zidentyfikować potencjalne zagrożenia i ryzyka związane z bezpieczeństwem teleinformatycznym, umożliwiając organizacji skoncentrowanie się na obszarach wymagających natychmiastowej uwagi."
                 />
                 <ListWithTick
-                    headline="Wiedza i zasoby"
-                    description="Możesz bez przeszkód korzystać z wiedzy i zasobów dedykowanego zespołu bezpieczeństwa cybernetycznego, bez konieczności inwestowania w zatrudnienie i szkolenie własnego zespołu."
+                    headline="Wczesne wykrywanie podatności"
+                    description="Wykrycie istniejących podatności w zabezpieczeniach przed atakującymi lub incydentami umożliwia organizacji podjęcie odpowiednich działań naprawczych przed wystąpieniem problemu."
+                />
+                    <ListWithTick
+                    headline="Zgodność z przepisami"
+                    description="Zapewnienie, iż organizacja przestrzega obowiązujących przepisów prawa oraz standardów branżowych związanych z ochroną danych i bezpieczeństwem informacji."
+                />
+                <ListWithTick
+                    headline="Minimalizacja ryzyka"
+                    description="Poprzez identyfikację i naprawę luk w zabezpieczeniach, organizacja minimalizuje ryzyko materializacji skutków ataków, wycieków danych oraz innych incydentów, które mogą prowadzić do strat finansowych i utraty reputacji."
                 />
             </div>
             <div class="second-col-flex">
                 <ListWithTick
-                    headline="Proaktywne wykrywanie zagrożeń"
-                    description="Wykrywamy zagrożenia Twojej organizacji w celu proaktywnej, szybkiej identyfikacji i reakcji na potencjalne cyberprzestępstwa, co oznacza, że odpowiedź na problemy bezpieczeństwa może nastąpić zanim spowodują wymierne szkody dla Twojej organizacji. "
+                    headline="Poprawa zaufania"
+                    description="Dobre praktyki bezpieczeństwa teleinformatycznego przyczyniają się do wzrostu zaufania klientów, partnerów biznesowych i interesariuszy, co ma pozytywny wpływ na reputację organizacji. "
                 />
                 <ListWithTick
-                    headline="Wymagania dotyczące zgodności i wymagań regulacyjnych:"
-                    description="Pomagamy spełnić wymagania dotyczące zgodności z wymogami prawnymi i innymi regulacjami dotyczącymi bezpieczeństwa danych. Dzięki temu unikniesz kosztownych grzywien i kar oraz utrzymaniu zaufania klientów i interesariuszy."
+                    headline="Optymalizacja zabezpieczeń"
+                    description="Wyniki audytu dostarczają organizacji wiedzy na temat najsłabszych punktów w obszarze IT, co pozwala skupić się na strategicznych inwestycjach i działaniach mających na celu zwiększenie skuteczności zabezpieczeń."
+                />
+                <ListWithTick
+                    headline="Świadomość personelu"
+                    description="Audyt może służyć jako narzędzie edukacyjne, zwiększając świadomość pracowników na temat zagrożeń związanych z cyberbezpieczeństwem i pomagając im zrozumieć, jakie praktyki i zachowania mogą przyczynić się do bezpieczeństwa organizacji."
                 />
             </div>
         </div>
@@ -198,8 +250,7 @@ const showButton = true;
         <div class="flex space-around column-rwd">
             <div class="higlighted-text">
                 <p class="paragrpah-highlight">
-                    <span>SOC</span> stanowi integralny element strategii zarządzania
-                    incydentami, dostosowujący się do potrzeb konkretnej organizacji.
+                    <span>Audyt cyberbezpieczeństwa</span>to kluczowy element strategii zarządzania ryzykiem, dostosowujący się do potrzeb organizacji i identyfikujący słabe punkty.
                 </p>
             </div>
             <ButtonLeftArrow description="Zapytaj o wycenę" />

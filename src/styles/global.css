@@ -224,6 +224,11 @@ nav {
     padding-bottom: 30px;
   }
 }
+
+.section-smaller-top-padding {
+  padding-top: 20px;
+}
+
 .section--white {
   background: #fff;
 }
@@ -538,4 +543,96 @@ nav {
 
 .col-half .section-description {
   max-width: 530px !important;
+}
+
+
+.smaller-description .section-description {
+  font-size: 16px !important;
+  font-weight: 300;
+  line-height: 21.12px; /* 132% */
+  letter-spacing: 0.64px;
+}
+
+.smaller-description.section-description {
+  font-size: 16px !important;
+  font-weight: 300;
+  line-height: 21.12px; /* 132% */
+  letter-spacing: 0.64px;
+}
+
+.section-image img { 
+  max-width: 630px;
+  max-height: 230px;
+  object-fit: cover;
+}
+.select-buttons {
+  display: flex;
+}
+.select-button {
+  font-family: Karla;
+  display: flex;
+  height: 48px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 50%;
+  text-align: center;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid var(--blue-gray-300, #CBD5E1);
+  background: var(--White, #FFF);
+  margin-bottom: 40px;
+}
+
+.select-button.active {
+  color: #D41434;
+  font-weight: 700;
+  border: 1px solid var(--blue-gray-300, #CBD5E1);
+background: var(--blue-gray-100, #F1F5F9);
+}
+
+.presentation-container .subheadline {
+  color: #D41434;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21.12px; /* 132% */
+  letter-spacing: 0.64px;
+}
+
+.presentation-container .headline h3 {
+  color: #D41434;
+  font-family: Mulish;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 136.7%; /* 43.744px */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.presentation-container .description p  {
+  color: #646B82;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21.12px; /* 132% */
+  letter-spacing: 0.64px;
+}
+
+.select-column {
+  margin-right: 70px;
+}
+.select-column-2 {
+  margin-left: 70px;
+}
+
+
+@media (max-width: 1050px) {
+  .column-rwd {
+    flex-direction: column;
+    align-items: center;
+  }
 }
