@@ -3,14 +3,14 @@ import "../styles/global.css";
 
 import { Image } from "astro:assets";
 
-const { headline, description, imageSrc, imageAlt } = Astro.props;
+const props = Astro.props;
 ---
 
 <style>
     .section-description {
         color: #646b82;
         font-family: Karla;
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 300;
         line-height: 27px; /* 150% */
@@ -22,13 +22,14 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
     .section-title {
         margin-top: 18px;
     }
-
-   
 </style>
 
 <div class="section-title-wrapper">
-    <h3 class="section-title">{headline}</h3>
+    <h3 class="section-title">{props.headline}</h3>
     <p class="paragraph section-description">
-        {description}
+        {props.description}
+    </p>
+    <p class="paragraph section-description">
+        {props.descriptionSecond}
     </p>
 </div>

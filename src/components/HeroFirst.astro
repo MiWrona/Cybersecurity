@@ -1,14 +1,7 @@
 ---
 import "../styles/global.css";
 
-const {
-    subheadline,
-    headline,
-    headlineAccent,
-    description,
-    descriptionSecond,
-    descriptionAccent,
-} = Astro.props;
+const props = Astro.props;
 ---
 
 <style>
@@ -24,15 +17,16 @@ const {
 </style>
 
 <div class="hero-content-wrapper">
-    <p class="subheadline third-color">{subheadline}</p>
+    <p class="subheadline third-color">{props.subheadline}</p>
     <h2 class="headline-1 headline-1--bold">
-        {headline}
+        {props.headline}
+        {props.twoLines === "true" && <br />}
         <span class="third-color line-height-1 hero-second-line">
-            {headlineAccent}</span
+            {props.headlineAccent}</span
         >
     </h2>
     <p class="paragraph margin-top-10">
-        {description}<br />
-        {descriptionSecond}<b> {descriptionAccent}</b>
+        {props.description}<br />
+        {props.descriptionSecond}<b> {props.descriptionAccent}</b>
     </p>
 </div>
