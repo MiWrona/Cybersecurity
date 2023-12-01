@@ -64,7 +64,8 @@ import NewsSection from "../components/NewsSection.astro";
       <BoxWithLeftIconButton
         headline="Security Operations Center"
         description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
-      />
+        href="/soc"
+        />
     </div>
     <Image
       class="right-top-blob"
@@ -96,14 +97,16 @@ import NewsSection from "../components/NewsSection.astro";
           imageAlt="Diagram Icon"
           headline="Audyty IT"
           description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-        />
+          href="audyt"
+          />
 
         <ContentBorderBox
           image={RocketIcon.src}
           imageAlt="Rocket Icon"
           headline="Testy Penetracyjne"
           description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-        />
+          href="pentesty"
+          />
 
         <ContentBorderBox
           image={DiagramdIcon.src}
@@ -114,7 +117,7 @@ import NewsSection from "../components/NewsSection.astro";
 
         <div class="text-box">
           <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-          <ButtonLeftArrow href="#" description="Czytaj więcej" />
+          <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
         </div>
       </div>
     </div>
@@ -177,7 +180,7 @@ import NewsSection from "../components/NewsSection.astro";
           headline="Sieci i jej zagrożenia?"
           description="W dzisiejszym świecie sieć teleinformatyczna jest istotnym elementem komunikacji i działalności kluczowych procesów biznesowych ale również niesie ze sobą liczne ryzyka. Dlatego zapewnienie bezpieczeństwa teleinformatycznego oraz świadomość zagrożeń są niezwykle istotne dla zapewnienia stabilności i bezpieczeństwa infrastruktury teleinformatycznej, a przede wszystkim głównych procesów biznesowych."
         />
-        <ButtonLeftArrow href="#" description="Jak się zabezpieczyć" />
+        <ButtonLeftArrow href="pentesty" description="Jak się zabezpieczyć" />
       </div>
     </div>
   </div>
@@ -294,7 +297,7 @@ import NewsSection from "../components/NewsSection.astro";
           imageAlt="zoom Icon"
         />
         <div class="margin-top-50">
-          <ButtonLeftArrow href="#" description="Czytaj więcej" />
+          <ButtonLeftArrow href="audyt" description="Czytaj więcej" />
         </div>
       </div>
       <div class="second-col-flex flex-column">

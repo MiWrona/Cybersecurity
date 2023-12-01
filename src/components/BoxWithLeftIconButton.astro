@@ -6,7 +6,7 @@ import Shield from "../assets/shield-icon.svg";
 import Arrow from "../assets/red-circle-arrow.svg";
 import ButtonLeftArrow from "./ButtonLeftArrow.astro";
 
-const { headline, description } = Astro.props;
+const { headline, description, href } = Astro.props;
 ---
 
 <style>
@@ -58,7 +58,7 @@ const { headline, description } = Astro.props;
             </p>
 
             <ButtonLeftArrow 
-            href="#"
+            href={href}
             description="Czytaj więcej"
             
             />

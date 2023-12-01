@@ -61,8 +61,9 @@ const props = Astro.props;
     position: absolute;
     right: 48px;
     bottom: 40px;
-
 }
+
+
 .content-box-button-icon-background {
     position: absolute;
     top: -10px;
@@ -85,21 +86,31 @@ const props = Astro.props;
     font-size: 12px;
 }
 
+.content-box-button-link {
+    text-decoration: none;
+    color: var(--first-color);
+}
+
 
 
 
 </style>
 
 <div class="content-box content-box--bordered">
+    <a class="content-box-button-link" href={props.href}>
     <div class="content-box-insides">
         <img class="content-box-icon" src={props.image} alt={props.imageAlt} />
         <h5 class="headline-5">{props.headline}</h5>
         <p class="paragraph-5 paragraph--small">{props.description}</p>    
     </div> 
+    
     <div class="button-icon-on-the-edge">
+        
         <svg class="content-box-button-icon-background" xmlns="http://www.w3.org/2000/svg" width="49" height="32" viewBox="0 0 49 32" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M49 9.53674e-06L49 32L15.9999 32C7.16335 32 -7.69202e-05 24.8366 -7.76927e-05 16C-7.84652e-05 7.16345 7.16337 1.31942e-05 15.9999 1.24217e-05L49 9.53674e-06Z" />
         </svg>
-        <img class="content-box-button-icon" src={ArrowInCircle.src} alt="Arrow in circle" />
-    </div>
+         <img class="content-box-button-icon" src={ArrowInCircle.src} alt="Arrow in circle" /> 
+       
+        </div>
+    </a>
 </div>
