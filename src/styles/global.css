@@ -638,3 +638,57 @@ nav {
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+
+.dark .list-element-with-tick {     
+  color: #52ffae !important;
+}
+
+.dark p {     
+  color: #52ffae !important;
+  opacity: 1 !important;;
+} 
+
+.dark h1, .dark h2, .dark h3, .dark h4 {     
+  color: #52ffae; 
+  opacity: 1 !important;;
+} 
+
+.dark div {     
+  color: #52ffae !important;
+  opacity: 1 !important;;
+} 
+
+.dark .section--white, 
+.dark .div, 
+.dark .section--blueish, 
+.dark .content-box, 
+.dark .ordered-list-wrapper,
+.dark .testimonials,
+.dark .box-with-icon-wrapper,
+.dark .orderd-list-number,
+.dark .header  {
+  background-color: #0d0950 !important;
+} 
+.dark span, .dark a {
+  color: #f5f0f6 !important
+}
+
+.dark .list-element-icon, .dark .logo-image, .dark .right-top-blob, .dark .left-bottom-blob {
+  filter: invert(1);
+}
+
+.dark .section-title::after {
+  filter: invert(1);
+}
+.dark .button--bordered {
+  border: 1px solid #f5f0f6 !important
+}
+
+.dark .button-text, .dark .button {
+  color: #fff !important;
+}
+
+.dark .content-box-button-icon-background {
+  filter: invert(1);
+}

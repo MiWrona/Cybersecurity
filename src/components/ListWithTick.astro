@@ -7,7 +7,11 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
 ---
 
 <style>
+
+
+
     .list-element-with-tick {
+        color: #474f62;
         position: relative;
         max-width: 627px;
         padding: 24px;
@@ -17,8 +21,7 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
             0px 8px 12px -6px rgba(162, 182, 212, 0.05);
     }
     .list-element-headline {
-        color: #474f62;
-
+     
         font-family: Mulish;
         font-size: 16px;
         font-style: normal;
@@ -27,7 +30,7 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
     }
 
     .list-element-description {
-        color: #646b82;
+      
         font-family: Karla;
         font-size: 12px;
         font-style: normal;
@@ -40,6 +43,14 @@ const { headline, description, imageSrc, imageAlt } = Astro.props;
         left: -5px;
         top: 30%;
     }
+    .dark .list-element-with-tick { 
+    color: red !important;
+
+
+
+
+
+}
 </style>
 
 <div class="list-element-with-tick">
