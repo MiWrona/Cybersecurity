@@ -19,5 +19,8 @@
     "@fontsource/twinkle-star": "^5.0.17",
     "astro": "^3.4.0",
     "preact": "^10.18.1"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
   }
 }

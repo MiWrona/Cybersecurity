@@ -699,10 +699,14 @@ nav {
 
 
 
-.biggerText .font-size-icon {
+.biggerText .font-size-icon, .biggerText .font-size-bigger {
   transform: scale(1.1);
 }
 
 .biggerText p, .biggerText h1, .biggerText h2, .biggerText h3, .biggerText h4, .biggerText span, .biggerText .orderd-list-description, .biggerText a    {
   transform: scale(1.1);
+}
+
+.dark .font-size-bigger {
+  fill: #fff !important;
 }

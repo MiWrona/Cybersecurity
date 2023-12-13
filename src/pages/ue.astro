@@ -27,59 +27,34 @@ const showButton = true;
 ---
 
 <style>
-    .checked-list-element {
-        color: #646b82;
-        position: relative;
-        font-family: Karla;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 21.12px; /* 132% */
-        letter-spacing: 0.64px;
-        margin-bottom: 15px;
-        list-style: none;
-    }
-    .checked-list-element:before {
-        position: absolute;
-        content: "✔︎";
-        margin-left: -20px;
-    }
-    .paragrpah-highlight {
-        color: #000;
-        font-family: Karla;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 39.44px;
-        letter-spacing: 0.85px;
-        max-width: 743px;
-    }
-    .paragrpah-highlight > span {
-        font-weight: 700;
-    }
-    .section-description {
-        color: #646b82;
-        font-family: Karla;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 27px; /* 150% */
-        letter-spacing: 0.64px;
-        max-width: 462px;
-        margin-bottom: 30px;
-    }
+   .text-wrapper {
+    padding: 20px 20% 100px 20%;
 
-    .image-long {
-        max-width: 100%;
-        object-fit: contain;
-        max-height: 100px;
-        margin-top: 30px;
-        
-    }
+    font-family: "Karla";
+   }
+   .image-long {
+    max-height: 150px;
+    max-width: 100%;
+   }
+   .header-title {
+    padding-left: 20%;
+    padding-right: 20%;
+    font-family: "Karla";
+   
+   }
+
+   .ue-funds-wrapper {
+    margin-bottom: 250px;
+    position: relative;
+   }
+ .dark .text-wrapper {
+    background-color: #0d0950 !important;
+ }
+
 </style>
 
 <BaseLayout>
-    <div class="header">
+    <div class="header ue-funds-wrapper">
 
 
         <div class="header-content header-product">
@@ -105,225 +80,46 @@ const showButton = true;
             alt="Left blob"
             widths={[240, 540, 720, LeftBlob.width]}
         />
-        <div class="padding-bottom-30">
-            <div class="two-col-flex space-around align-items">
-                <div class="first-col flex-column">
-                    <SectionTitleWithoutImage
-                        headline="Czym jest SOC?"
-                        description="Security Operations Center (SOC) to wykwalifikowany zespół specjalistów, którego misją jest monitorowanie i poprawa bezpieczeństwa organizacji, przy wykorzystaniu mechanizmów wykrywania, analizowania i reagowania na incydenty związane z bezpieczeństwem. SOC COIG jest certyfikowany na zgodność z normą ISO 27001. "
-                    />
-                </div>
-                <div class="second-col-flex flex-column">
-                    <Image
-                        class="image-decoration"
-                        src={PeopleCollage}
-                        alt="People collage"
-                        widths={[240, 540, 720, PeopleCollage.width]}
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="flex space-around column-rwd">
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Zwiększenie bezpieczeństwa"
-                description="zwiększa poziom bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa."
-            />
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Zabezpieczanie organizacji"
-                description="pozwala na wykrycie i zabezpieczenie najbardziej kluczowych obszarów w strukturze organizacji."
-            />
-            <VerticalBoxWithIcon
-                iconSrc={IconCyberPadlock}
-                IconSrcAlt="Cyber kłódka"
-                headline="Wykrywanie problemów"
-                description="umożliwia wykrycie wielu problemów związanych z bezpieczeństwem, które wcześniej pozostawały niezauważone."
-            />
-        </div>
-    </div>
-    <div class="section">
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col flex-column col-half">
-                <SectionTitleWithoutImage
-                    headline="O usłudze"
-                    description="Zespół SOC jest odpowiedzialny za całościowe zarządzanie bezpieczeństwem informatycznym w organizacji, obejmujące monitorowanie, wykrywanie, reagowanie i zapobieganie zagrożeniom oraz incydentom związanym z cyberbezpieczeństwem.  "
-                />
-            </div>
-            <div class="second-col-flex col-half">
-                <ul>
-                    <li class="checked-list-element">
-                        Stała kontrolę nad aktualnym poziomem bezpieczeństwa
-                        poprzez identyfikację incydentów za pomocą
-                        oprogramowania SIEM
-                    </li>
-                    <li class="checked-list-element">
-                        Podejmowanie działań w reakcji na pojawiające się
-                        zdarzenia przy wykorzystaniu modułu SOAR.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        <div class="text-wrapper">
+           <p>
+            
+Projekt ma na celu zrealizowanie inwestycji w dziedzinie cyfryzacji, koncentrując się na dostarczaniu zaawansowanych usług cyfrowych z zakresu bezpieczeństwa IT.
+Oferta skierowana będzie do firm operujących na polskim rynku, innych niż kopalnie, spółki wydobywcze oraz jednostki administracji publicznej. 
+Projekt zakłada podniesienie standardu usług cyberbezpieczeństwa COIG, dostosowując się do wymogów Krajowego Systemu Cyberbezpieczeństwa (KSC).
+        </p>
 
-    <div class="section">
-        <div class="section-title-center">
-            <SectionTitleWithoutImage headline="Nasz SOC to:" />
-        </div>
-        <HorizontalSlider
-            showButton = "true";
-            imageSrc={CybersecurityPadlock}
-            imageAlt="Slider image"
-            headline="Ludzie"
-            description="Nasz zespół to wykwalifikowany i kompetentny personel powołany do skutecznego działania, składający się z analityków bezpieczeństwa, specjalistów obsługi incydentów oraz inżynierów wielu specjalności informatycznych którzy mogą monitorować i zarządzać systemami bezpieczeństwa."
-        />
-    </div>
-    <div class="section col-half">
-        <SectionTitleWithoutImage
-            headline="Korzyści"
-            description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
-        />
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col first-col-flex">
-                <ListWithTick
-                    headline="Usługa w trybie 24/7/365"
-                    description="Twoja organizacja jest zawsze chroniona przed zagrożeniami cybernetycznymi. Oznacza to, że możesz spać spokojnie wiedząc, że środowisko IT jest stale monitorowane i chronione."
-                />
-                <ListWithTick
-                    headline="Wiedza i zasoby"
-                    description="Możesz bez przeszkód korzystać z wiedzy i zasobów dedykowanego zespołu bezpieczeństwa cybernetycznego, bez konieczności inwestowania w zatrudnienie i szkolenie własnego zespołu."
-                />
-            </div>
-            <div class="second-col-flex">
-                <ListWithTick
-                    headline="Proaktywne wykrywanie zagrożeń"
-                    description="Wykrywamy zagrożenia Twojej organizacji w celu proaktywnej, szybkiej identyfikacji i reakcji na potencjalne cyberprzestępstwa, co oznacza, że odpowiedź na problemy bezpieczeństwa może nastąpić zanim spowodują wymierne szkody dla Twojej organizacji. "
-                />
-                <ListWithTick
-                    headline="Wymagania dotyczące zgodności i wymagań regulacyjnych:"
-                    description="Pomagamy spełnić wymagania dotyczące zgodności z wymogami prawnymi i innymi regulacjami dotyczącymi bezpieczeństwa danych. Dzięki temu unikniesz kosztownych grzywien i kar oraz utrzymaniu zaufania klientów i interesariuszy."
-                />
-            </div>
-        </div>
-    </div>
-    <div class="section section--not-so-white">
-        <div class="flex space-around column-rwd">
-            <div class="higlighted-text">
-                <p class="paragrpah-highlight">
-                    <span>SOC</span> stanowi integralny element strategii zarządzania
-                    incydentami, dostosowujący się do potrzeb konkretnej organizacji.
-                </p>
-            </div>
-            <ButtonLeftArrow description="Zapytaj o wycenę" />
-        </div>
-    </div>
-    <div class="section">
-        <SectionTitleWithoutImage headline="Organizacja" />
-        <div class="two-col-flex space-around align-items">
-            <div class="first-col flex-column col-half">
-                <p class="paragraph section-description  smaller-description">
-                    Pierwsza, druga i trzecia linia wsparcia dla działań COIG
-                    SOC odnoszą się do różnych poziomów wsparcia zapewnianego
-                    przez zespół SOC w celu zarządzania incydentami
-                    bezpieczeństwa i zapewnienia bezpieczeństwa systemów IT
-                    Twojej organizacji.
-                </p>
-            </div>
-            <div class="second-col-flex col-half">
-                <p class="paragraph section-description smaller-description">
-                    Wszystkie linie wsparcia działań SOC wspomagane są zespołami
-                    inżynierów dziedzinowych z zakresu sieci komputerowych,
-                    serwerów, macierzy, urządzeń końcowych (komputery, laptopy,
-                    telefony) i oprogramowania w grupie Wasko oraz kontaktami z
-                    producentami sprzętu i oprogramowania w szczególnych
-                    przypadkach.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <ClickSlideSection />
-    </div>
-        <div class="section smaller-description section-smaller-top-padding">
-            <div class="section-headline">
-                <SectionTitleWithoutImage
-                    headline="Korzyści"
-                    description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
-                />
-            </div>
-            <div class="two-col-flex space-around align-items">
+        <p>Głównym celem inwestycji jest rozszerzenie zakresu działalności Data Center poprzez wprowadzenie nowych, zaawansowanych usług informatycznych z obszaru cyberbezpieczeństwa. 
+            Te usługi są skierowane do operatorów usług kluczowych, dostawców usług cyfrowych i podmiotów publicznych. 
+                Realizacja projektu ma umożliwić świadczenie usług jedynie przez dostawców spełniających wysokie wymagania dotyczące infrastruktury, uprawnień, certyfikatów oraz posiadających specjalistyczną kadrę. </p>
+                    
+                
+                
+                <p>Usługi będą wdrażane przy wykorzystaniu istniejącego potencjału technicznego i merytorycznego personelu COIG, obsługującego dotychczas obszar Data Center dla sektora górnictwa. 
+                       Jednocześnie planuje się zatrudnienie nowych specjalistów, rekrutując ich m.in. spośród osób poszukujących pracy, w tym zwolnionych z przedsiębiorstw okołogórniczych. </p>
+
+                            <p>Projekt doskonale wpisuje się w systematyczną strategię budowania cyberbezpieczeństwa w krajach UE, w tym Polski, inicjowaną od roku 2016 w związku z dyrektywą NIS. 
+                               Z uwagi na projektową dyrektywę NIS2 (16.12.2020), której implementacja do prawa krajowego jest konieczna w ciągu najbliższych lat, realizacja opisanego przedsięwzięcia staje się niezbędna. 
+                                    Ma to umożliwić Data Center dostosowanie się do wymagań prawa, zarówno z zakresu dyrektywy NIS 2, jak i KSC. </p>
+
+                                        <p>Projekt stanowi kluczowy krok w dostosowaniu COIG do dynamicznie rozwijającego się obszaru cyberbezpieczeństwa. Zintegrowane podejście, uwzględniające zarówno wykorzystanie istniejących zasobów, jak i pozyskanie nowej kadry, pozwoli na świadczenie usług na najwyższym poziomie, spełniając najnowsze standardy bezpieczeństwa IT. </p>
+
+ 
+
+
+ 
+<p>
+<a href="/">#FunduszeUE        </a> 
+<a href="/">#FunduszeEuropejskie  </a>
+</p> 
+<p>
+Wartość projektu: 18 561 725,00 zł  
+</p> 
+<p>
+Wysokość wkładu z Funduszy Europejskich: 6 185 743,25 zł 
+</p>
+</div>
            
-                <div class="first-col flex-column select-column">
-                    <div class="select-buttons">
-                        <div class="select-button active">SIEM</div>
-                        <div class="select-button">SOAR</div>
-                    </div>
-                        <div class="section-image">
-                            <Image
-                            class="image-decoration"
-                            src={CybersecurityPadlock}
-                            alt="CybersecurityPadlock"
-                            widths={[240, 540, 720, CybersecurityPadlock.width]}
-                            />
-                        </div>
-                </div>
-                <div class="second-col-flex select-column-2">
-                   <div class="presentation-container">
-                    <div class="subheadline">Security Information and Event Management</div>
-                    <div class="headline">
-                        <h3>SIEM</h3>
-                    </div>
-                    <div class="description">
-                        <p>jest kluczowym elementem w funkcjonowaniu SOC, ponieważ pomaga w monitorowaniu, analizowaniu i raportowaniu zdarzeń związanych z informatyką. SIEM analizuje dane z różnych źródeł, takich jak systemy bezpieczeństwa, urządzenia sieciowe, serwery, aplikacje oraz aktywności użytkowników. SIEM pozwala na identyfikację podejrzanych wzorców i anomalii, które mogą wskazywać na próby naruszenia bezpieczeństwa. Ponadto, narzędzie to ułatwia raportowanie i archiwizację zdarzeń, co może być niezbędne do celów audytowych. SIEM jest integrowany z innymi narzędziami bezpieczeństwa.</p>
-                    </div>
-                   </div>
-                </div>
-            </div>
-    </div>
-    <div class="section section--white">
-        <div class="two-col-flex space-between">
-          <div class="first-col">
-            <SectionTitle
-              headline="Usługi cyberbezpieczeństwa"
-              description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
-              imageSrc={CyberPadlock}
-              imageAlt="pierońsko kulka"
-            />
-          </div>
-    
-          <div class="second-col-flex">
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Diagram Icon"
-              headline="Audyty IT"
-              description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-              href="audyt"
-              />
-    
-            <ContentBorderBox
-              image={RocketIcon.src}
-              imageAlt="Rocket Icon"
-              headline="Testy Penetracyjne"
-              description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-              href="pentesty"
-              />
-    
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Password Icon"
-              headline="CSIRT COIG"
-              description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
-            />
-    
-            <div class="text-box">
-              <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-              <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
-            </div>
-          </div>
         </div>
-      </div>
+
+
 </BaseLayout>
