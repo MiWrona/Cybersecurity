@@ -1,0 +1,78 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+import TextBigger from './TextBigger.astro'
+import { Image } from "astro:assets";
+import UE1 from "../assets/UE-1.svg";
+import UE2 from "../assets/UE-2.svg";
+---
+
+<style>
+.uber-nav {
+    max-width: 1443px;
+    margin: 0 auto;
+    margin-left: 82px;
+    margin-right: 82px;
+    max-height: 50px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+} 
+
+.uber-nav::after {
+    background: rgba(188, 203, 214, 0.24);
+    content: "";
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.ue-logos {
+    display: flex;
+}
+
+.ue-funds-logo {
+    margin-right: 30px;
+}
+
+.accsesibility {
+    display: flex;
+    align-items: flex-start;
+   
+}
+
+</style>
+
+
+<nav class="uber-nav">
+
+    <div class="ue-logos">
+
+<div class="logo-wrapper ue-funds-logo">
+    <a class="" href="/ue">
+        <Image
+            class="logo-image"
+            src={UE2}
+            alt="Ue funds logo"
+            widths={[240, 540, 720, UE2.width]}
+        />
+    </a>
+</div>
+<div class="logo-wrapper">
+    <a class="" href="/ue">
+        <Image
+            class="logo-image"
+            src={UE1}
+            alt="Unia Europejska "
+            widths={[240, 540, 720, UE1.width]}
+        />
+    </a>
+</div>   
+</div>
+<div class="accsesibility">
+    <ThemeIcon />
+    <TextBigger /> 
+</div>
+
+
+</nav>

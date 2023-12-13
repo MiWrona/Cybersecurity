@@ -692,3 +692,17 @@ nav {
 .dark .content-box-button-icon-background {
   filter: invert(1);
 }
+
+.dark nav {
+  background: none !important;
+}
+
+
+
+.biggerText .font-size-icon {
+  transform: scale(1.1);
+}
+
+.biggerText p, .biggerText h1, .biggerText h2, .biggerText h3, .biggerText h4, .biggerText span, .biggerText .orderd-list-description, .biggerText a    {
+  transform: scale(1.1);
+}
