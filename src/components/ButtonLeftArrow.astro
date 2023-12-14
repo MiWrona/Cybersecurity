@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import Arrow from "../assets/red-circle-arrow.svg";
 
-import CSS from '../styles/animation.scss'
+import CSS from "../styles/animation.scss";
 
 const { href, description } = Astro.props;
 ---
@@ -26,20 +26,15 @@ const { href, description } = Astro.props;
     .button-text {
         margin-left: 40px;
     }
-
- 
-
-
-    
 </style>
 
 <div class={CSS} id="container">
     <a href={href} class="button margin-top-5 third-color">
         <button class="arrow-button learn-more">
-        <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-        </span>
-        <span class="button-text">{description} </span>
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">{description}</span>
         </button>
     </a>
-  </div>
+</div>
