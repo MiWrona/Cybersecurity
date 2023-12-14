@@ -29,11 +29,11 @@ const { href, description } = Astro.props;
 
 <div id="container">
     <a href={href} class="button margin-top-5 third-color">
-        <button class="arrow-button learn-more">
+        <button id="button-with-arrow" class="arrow-button learn-more">
             <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
             </span>
-            <span class="button-text">{description}</span>
+            <span id="arrow-button" class="button-text">{description}</span>
         </button>
     </a>
 </div>
