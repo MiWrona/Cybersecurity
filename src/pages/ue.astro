@@ -24,6 +24,8 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
 
 const showButton = true;
+
+const pageTitle = "Unia Europejska - strona informacyjna";
 ---
 
 <style>
@@ -58,7 +60,11 @@ const showButton = true;
 <BaseLayout>
     <div class="header ue-funds-wrapper">
         <div class="header-content header-product">
-            <Image class="image-long" src={PasekUe} alt="Left blob" />
+            <Image
+                class="image-long"
+                src={PasekUe}
+                alt="Pasek z logotypami Unii Europejskiej i programu finansowania"
+            />
             <div class="header-title">
                 <h2>
                     Firma COIG S.A. uzyskała dotację z Unii Europejskiej na
@@ -70,13 +76,13 @@ const showButton = true;
         <Image
             class="right-top-blob"
             src={RightBlob}
-            alt="Right blob"
+            alt="Prawa plama graficzna"
             widths={[240, 540, 720, RightBlob.width]}
         />
         <Image
             class="left-bottom-blob"
             src={LeftBlob}
-            alt="Left blob"
+            alt="Lewa plama graficzna"
             widths={[240, 540, 720, LeftBlob.width]}
         />
         <div class="text-wrapper">

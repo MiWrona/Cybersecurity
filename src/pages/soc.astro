@@ -9,7 +9,7 @@ import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
 import CyberPadlock from "../assets/cyber-padlock.png";
 import RocketIcon from "../assets/rocket-icon.svg";
 import DiagramdIcon from "../assets/social-media-icon.svg";
-import PeopleCollage from "../assets/people-collage.png"
+import PeopleCollage from "../assets/people-collage.png";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import SectionTitle from "../components/SectionTitle.astro";
@@ -21,6 +21,8 @@ import ListWithTick from "../components/ListWithTick.astro";
 import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
+
+const pageTitle = "SOC";
 
 const showButton = true;
 ---
@@ -159,7 +161,8 @@ const showButton = true;
             <SectionTitleWithoutImage headline="Nasz SOC to:" />
         </div>
         <HorizontalSlider
-            showButton = "true";
+            showButton="true"
+            ;
             imageSrc={CybersecurityPadlock}
             imageAlt="Slider image"
             headline="Ludzie"
@@ -202,14 +205,17 @@ const showButton = true;
                     incydentami, dostosowujący się do potrzeb konkretnej organizacji.
                 </p>
             </div>
-            <ButtonLeftArrow description="Zapytaj o wycenę" href="../contact/"  />
+            <ButtonLeftArrow
+                description="Zapytaj o wycenę"
+                href="../contact/"
+            />
         </div>
     </div>
     <div class="section">
         <SectionTitleWithoutImage headline="Organizacja" />
         <div class="two-col-flex space-around align-items">
             <div class="first-col flex-column col-half">
-                <p class="paragraph section-description  smaller-description">
+                <p class="paragraph section-description smaller-description">
                     Pierwsza, druga i trzecia linia wsparcia dla działań COIG
                     SOC odnoszą się do różnych poziomów wsparcia zapewnianego
                     przez zespół SOC w celu zarządzania incydentami
@@ -232,82 +238,99 @@ const showButton = true;
     <div class="section">
         <ClickSlideSection />
     </div>
-        <div class="section smaller-description section-smaller-top-padding">
-            <div class="section-headline">
-                <SectionTitleWithoutImage
-                    headline="Korzyści"
-                    description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
-                />
-            </div>
-            <div class="two-col-flex space-around align-items">
-           
-                <div class="first-col flex-column select-column">
-                    <div class="select-buttons">
-                        <div class="select-button active">SIEM</div>
-                        <div class="select-button">SOAR</div>
-                    </div>
-                        <div class="section-image">
-                            <Image
-                            class="image-decoration"
-                            src={CybersecurityPadlock}
-                            alt="CybersecurityPadlock"
-                            widths={[240, 540, 720, CybersecurityPadlock.width]}
-                            />
-                        </div>
+    <div class="section smaller-description section-smaller-top-padding">
+        <div class="section-headline">
+            <SectionTitleWithoutImage
+                headline="Korzyści"
+                description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
+            />
+        </div>
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col flex-column select-column">
+                <div class="select-buttons">
+                    <div class="select-button active">SIEM</div>
+                    <div class="select-button">SOAR</div>
                 </div>
-                <div class="second-col-flex select-column-2">
-                   <div class="presentation-container">
-                    <div class="subheadline">Security Information and Event Management</div>
+                <div class="section-image">
+                    <Image
+                        class="image-decoration"
+                        src={CybersecurityPadlock}
+                        alt="CybersecurityPadlock"
+                        widths={[240, 540, 720, CybersecurityPadlock.width]}
+                    />
+                </div>
+            </div>
+            <div class="second-col-flex select-column-2">
+                <div class="presentation-container">
+                    <div class="subheadline">
+                        Security Information and Event Management
+                    </div>
                     <div class="headline">
                         <h3>SIEM</h3>
                     </div>
                     <div class="description">
-                        <p>jest kluczowym elementem w funkcjonowaniu SOC, ponieważ pomaga w monitorowaniu, analizowaniu i raportowaniu zdarzeń związanych z informatyką. SIEM analizuje dane z różnych źródeł, takich jak systemy bezpieczeństwa, urządzenia sieciowe, serwery, aplikacje oraz aktywności użytkowników. SIEM pozwala na identyfikację podejrzanych wzorców i anomalii, które mogą wskazywać na próby naruszenia bezpieczeństwa. Ponadto, narzędzie to ułatwia raportowanie i archiwizację zdarzeń, co może być niezbędne do celów audytowych. SIEM jest integrowany z innymi narzędziami bezpieczeństwa.</p>
+                        <p>
+                            jest kluczowym elementem w funkcjonowaniu SOC,
+                            ponieważ pomaga w monitorowaniu, analizowaniu i
+                            raportowaniu zdarzeń związanych z informatyką. SIEM
+                            analizuje dane z różnych źródeł, takich jak systemy
+                            bezpieczeństwa, urządzenia sieciowe, serwery,
+                            aplikacje oraz aktywności użytkowników. SIEM pozwala
+                            na identyfikację podejrzanych wzorców i anomalii,
+                            które mogą wskazywać na próby naruszenia
+                            bezpieczeństwa. Ponadto, narzędzie to ułatwia
+                            raportowanie i archiwizację zdarzeń, co może być
+                            niezbędne do celów audytowych. SIEM jest integrowany
+                            z innymi narzędziami bezpieczeństwa.
+                        </p>
                     </div>
-                   </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="section section--white">
         <div class="two-col-flex space-between">
-          <div class="first-col">
-            <SectionTitle
-              headline="Usługi cyberbezpieczeństwa"
-              description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
-              imageSrc={CyberPadlock}
-              imageAlt="pierońsko kulka"
-            />
-          </div>
-    
-          <div class="second-col-flex">
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Diagram Icon"
-              headline="Audyty IT"
-              description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-              href="audyt"
-              />
-    
-            <ContentBorderBox
-              image={RocketIcon.src}
-              imageAlt="Rocket Icon"
-              headline="Testy Penetracyjne"
-              description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-              href="pentesty"
-              />
-    
-            <ContentBorderBox
-              image={DiagramdIcon.src}
-              imageAlt="Password Icon"
-              headline="CSIRT COIG"
-              description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
-            />
-    
-            <div class="text-box">
-              <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-              <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
+            <div class="first-col">
+                <SectionTitle
+                    headline="Usługi cyberbezpieczeństwa"
+                    description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+                    imageSrc={CyberPadlock}
+                    imageAlt="pierońsko kulka"
+                />
             </div>
-          </div>
+
+            <div class="second-col-flex">
+                <ContentBorderBox
+                    image={DiagramdIcon.src}
+                    imageAlt="Diagram Icon"
+                    headline="Audyty IT"
+                    description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
+                    href="audyt"
+                />
+
+                <ContentBorderBox
+                    image={RocketIcon.src}
+                    imageAlt="Rocket Icon"
+                    headline="Testy Penetracyjne"
+                    description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
+                    href="pentesty"
+                />
+
+                <ContentBorderBox
+                    image={DiagramdIcon.src}
+                    imageAlt="Password Icon"
+                    headline="CSIRT COIG"
+                    description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
+                />
+
+                <div class="text-box">
+                    <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
+                    <ButtonLeftArrow
+                        href="/contact/"
+                        description="Czytaj więcej"
+                    />
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 </BaseLayout>
