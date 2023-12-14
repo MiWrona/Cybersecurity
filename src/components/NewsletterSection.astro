@@ -59,6 +59,15 @@ const props = Astro.props;
         border-radius: 8px;
         border: 1px solid rgba(159, 159, 159, 0.4);
     }
+    .newsletter-form {
+        position: relative;
+    }
+    .newsletter-form label {
+        position: absolute;
+        top: -25px;
+        font-size: 14px;
+        left: 20px;
+    }
 </style>
 <div class="section section--part-white-blue">
     <div class="two-col-flex space-around align-items">
@@ -76,13 +85,15 @@ const props = Astro.props;
         </div>
         <div class="second-col-flex flex-column">
             <form class="newsletter-form" action="/action_page.php">
+                <label for="fname">Wpisz swój adres e-mail</label>
                 <input
                     class="input"
                     type="text"
                     id="fname"
                     name="fname"
-                    placeholder="Wpisz swój adres e-mail"
+                    placeholder="Twój e-mail"
                 />
+
                 <input class="submit" type="submit" value="Zapisz się" />
             </form>
         </div>
