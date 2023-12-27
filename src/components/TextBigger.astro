@@ -1,75 +1,95 @@
 ---
 ---
-<button id="fontsToggle">
+
+<button id="fontsToggle" type="button">
   <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 47.492 47.492" style="enable-background:new 0 0 47.492 47.492;" xml:space="preserve">
-<g>
-	<path class="font-size-bigger" d="M19.099,31.127H9.837l-2.303,8.611H0L9.837,7.746h9.597L27.75,34.15l5.434-17.421h6.98l7.328,23.017
+    <!--?xml version="1.0" encoding="iso-8859-1"?-->
+    <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 47.492 47.492"
+      style="enable-background:new 0 0 47.492 47.492;"
+      xml:space="preserve"
+    >
+      <g>
+        <path
+          class="font-size-bigger"
+          d="M19.099,31.127H9.837l-2.303,8.611H0L9.837,7.746h9.597L27.75,34.15l5.434-17.421h6.98l7.328,23.017
 		h-5.757l-1.815-6.263h-6.736l-1.675,6.263l-9.915-0.008L19.099,31.127z M10.893,25.924h7.15l-2.015-6.798l-0.852-3.09l-0.78-3.089
 		H14.3l-0.726,3.117l-0.762,3.142L10.893,25.924z M33.952,29.7h5.2l-1.466-4.944l-0.619-2.247L36.5,20.263h-0.07l-0.528,2.267
-		l-0.554,2.285L33.952,29.7z M30.44,7.746h12l-6,6L30.44,7.746z"/>
-</g>
+		l-0.554,2.285L33.952,29.7z M30.44,7.746h12l-6,6L30.44,7.746z"
+        ></path>
+      </g>
+    </svg>
+  </svg>
 
-
-
-
-</svg>
-
-
-</button>
-
-<style>
-  #fontsToggle {
-    border: 0;
-    background: none;
-  }
-  .regular { fill: black; }
-  .Big { fill: transparent; }
-
-
-  :global(.biggerText) .regular { fill: transparent; }
-  :global(.biggerText) .big { fill: white; }
-</style>
-
-<script>
-   document.addEventListener('astro:page-load', () => {
-  const fonts = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('fonts')) {
-      return localStorage.getItem('fonts');
+  <style>
+    #fontsToggle {
+      border: 0;
+      background: none;
     }
-    if (window.matchMedia('(prefers-font-size: biggerText)').matches) {
-      return 'biggerText';
+    .regular {
+      fill: black;
     }
-      return 'regular';
-  })();
+    .Big {
+      fill: transparent;
+    }
 
-  if (fonts === 'regular') {
-    document.documentElement.classList.remove('biggerText');
-  } else {
-    document.documentElement.classList.add('biggerText');
-  }
+    :global(.biggerText) .regular {
+      fill: transparent;
+    }
+    :global(.biggerText) .big {
+      fill: white;
+    }
+  </style>
 
-  window.localStorage.setItem('fonts', fonts);
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const fonts = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("fonts")
+        ) {
+          return localStorage.getItem("fonts");
+        }
+        if (window.matchMedia("(prefers-font-size: biggerText)").matches) {
+          return "biggerText";
+        }
+        return "regular";
+      })();
 
-  const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle("biggerText");
+      if (fonts === "regular") {
+        document.documentElement.classList.remove("biggerText");
+      } else {
+        document.documentElement.classList.add("biggerText");
+      }
 
-    const isbiggerText = element.classList.contains("biggerText");
-    localStorage.setItem("fonts", isbiggerText ? "biggerText" : "regular");
-  }
+      window.localStorage.setItem("fonts", fonts);
 
-  document.getElementById("fontsToggle").addEventListener("click", handleToggleClick);
-   });
-</script>
+      const handleToggleClick = () => {
+        const element = document.documentElement;
+        element.classList.toggle("biggerText");
 
-<script>
-  document.addEventListener('astro:after-swap', () => {
-    localStorage.fonts === 'biggerText'
-    ? document.documentElement.classList.add("biggerText")
-    : document.documentElement.classList.add("regular");
-  });
-</script>
+        const isbiggerText = element.classList.contains("biggerText");
+        localStorage.setItem("fonts", isbiggerText ? "biggerText" : "regular");
+      };
+
+      document
+        .getElementById("fontsToggle")
+        .addEventListener("click", handleToggleClick);
+    });
+  </script>
+
+  <script>
+    document.addEventListener("astro:after-swap", () => {
+      localStorage.fonts === "biggerText"
+        ? document.documentElement.classList.add("biggerText")
+        : document.documentElement.classList.add("regular");
+    });
+  </script></button
+>

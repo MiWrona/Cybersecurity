@@ -48,6 +48,7 @@ import Testimonials from "../components/Testimonials.astro";
 import TesimonialsImages from "../components/TesimonialsImages.astro";
 import NewsletterSection from "../components/NewsletterSection.astro";
 import NewsSection from "../components/NewsSection.astro";
+const pageTitle = "Strona główna";
 ---
 
 <BaseLayout>
@@ -66,7 +67,7 @@ import NewsSection from "../components/NewsSection.astro";
         headline="Security Operations Center"
         description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
         href="/soc"
-        />
+      />
     </div>
     <Image
       class="right-top-blob"
@@ -99,7 +100,7 @@ import NewsSection from "../components/NewsSection.astro";
           headline="Audyty IT"
           description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
           href="audyt"
-          />
+        />
 
         <ContentBorderBox
           image={RocketIcon.src}
@@ -107,7 +108,7 @@ import NewsSection from "../components/NewsSection.astro";
           headline="Testy Penetracyjne"
           description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
           href="pentesty"
-          />
+        />
 
         <ContentBorderBox
           image={DiagramdIcon.src}

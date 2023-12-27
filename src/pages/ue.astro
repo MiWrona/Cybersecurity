@@ -9,8 +9,8 @@ import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
 import CyberPadlock from "../assets/cyber-padlock.png";
 import RocketIcon from "../assets/rocket-icon.svg";
 import DiagramdIcon from "../assets/social-media-icon.svg";
-import PeopleCollage from "../assets/people-collage.png"
-import PasekUe from "../assets/pasek-ue.png"
+import PeopleCollage from "../assets/people-collage.png";
+import PasekUe from "../assets/pasek-ue.png";
 
 import HeroFirst from "../components/HeroFirst.astro";
 import SectionTitle from "../components/SectionTitle.astro";
@@ -24,102 +24,126 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
 
 const showButton = true;
+
+const pageTitle = "Unia Europejska - strona informacyjna";
 ---
 
 <style>
-   .text-wrapper {
-    padding: 20px 20% 100px 20%;
+    .text-wrapper {
+        padding: 20px 20% 100px 20%;
 
-    font-family: "Karla";
-   }
-   .image-long {
-    max-height: 150px;
-    max-width: 100%;
-   }
-   .header-title {
-    padding-left: 20%;
-    padding-right: 20%;
-    font-family: "Karla";
-   
-   }
+        font-family: "Karla";
+    }
+    .image-long {
+        max-height: 150px;
+        max-width: 100%;
+    }
+    .header-title {
+        padding-left: 20%;
+        padding-right: 20%;
+        font-family: "Karla";
+    }
 
-   .ue-funds-wrapper {
-    margin-bottom: 250px;
-    position: relative;
-   }
- .dark .text-wrapper {
-    background-color: #0d0950 !important;
- }
+    .header.ue-funds-wrapper {
+        height: 100%;
+    }
 
+    .ue-funds-wrapper {
+        margin-bottom: 250px;
+        position: relative;
+    }
+    .dark .text-wrapper {
+        background-color: #0d0950 !important;
+    }
 </style>
 
 <BaseLayout>
     <div class="header ue-funds-wrapper">
-
-
         <div class="header-content header-product">
             <Image
-            class="image-long"
-            src={PasekUe}
-            alt="Left blob"
-        />
-        <div class="header-title" >
-            <h2>Firma COIG S.A. uzyskała dotację z Unii Europejskiej na projekt „Kompleksowe Centrum Cyberbezpieczeństwa” o numerze FESL.10.04-IP.01-002E/23-003.
-            </h2>
-        </div>
+                class="image-long"
+                src={PasekUe}
+                alt="Pasek z logotypami Unii Europejskiej i programu finansowania"
+            />
+            <div class="header-title">
+                <h2>
+                    Firma COIG S.A. uzyskała dotację z Unii Europejskiej na
+                    projekt „Kompleksowe Centrum Cyberbezpieczeństwa” o numerze
+                    FESL.10.04-IP.01-002E/23-003.
+                </h2>
+            </div>
         </div>
         <Image
             class="right-top-blob"
             src={RightBlob}
-            alt="Right blob"
+            alt="Prawa plama graficzna"
             widths={[240, 540, 720, RightBlob.width]}
         />
         <Image
             class="left-bottom-blob"
             src={LeftBlob}
-            alt="Left blob"
+            alt="Lewa plama graficzna"
             widths={[240, 540, 720, LeftBlob.width]}
         />
         <div class="text-wrapper">
-           <p>
-            
-Projekt ma na celu zrealizowanie inwestycji w dziedzinie cyfryzacji, koncentrując się na dostarczaniu zaawansowanych usług cyfrowych z zakresu bezpieczeństwa IT.
-Oferta skierowana będzie do firm operujących na polskim rynku, innych niż kopalnie, spółki wydobywcze oraz jednostki administracji publicznej. 
-Projekt zakłada podniesienie standardu usług cyberbezpieczeństwa COIG, dostosowując się do wymogów Krajowego Systemu Cyberbezpieczeństwa (KSC).
-        </p>
+            <p>
+                Projekt ma na celu zrealizowanie inwestycji w dziedzinie
+                cyfryzacji, koncentrując się na dostarczaniu zaawansowanych
+                usług cyfrowych z zakresu bezpieczeństwa IT. Oferta skierowana
+                będzie do firm operujących na polskim rynku, innych niż
+                kopalnie, spółki wydobywcze oraz jednostki administracji
+                publicznej. Projekt zakłada podniesienie standardu usług
+                cyberbezpieczeństwa COIG, dostosowując się do wymogów Krajowego
+                Systemu Cyberbezpieczeństwa (KSC).
+            </p>
 
-        <p>Głównym celem inwestycji jest rozszerzenie zakresu działalności Data Center poprzez wprowadzenie nowych, zaawansowanych usług informatycznych z obszaru cyberbezpieczeństwa. 
-            Te usługi są skierowane do operatorów usług kluczowych, dostawców usług cyfrowych i podmiotów publicznych. 
-                Realizacja projektu ma umożliwić świadczenie usług jedynie przez dostawców spełniających wysokie wymagania dotyczące infrastruktury, uprawnień, certyfikatów oraz posiadających specjalistyczną kadrę. </p>
-                    
-                
-                
-                <p>Usługi będą wdrażane przy wykorzystaniu istniejącego potencjału technicznego i merytorycznego personelu COIG, obsługującego dotychczas obszar Data Center dla sektora górnictwa. 
-                       Jednocześnie planuje się zatrudnienie nowych specjalistów, rekrutując ich m.in. spośród osób poszukujących pracy, w tym zwolnionych z przedsiębiorstw okołogórniczych. </p>
+            <p>
+                Głównym celem inwestycji jest rozszerzenie zakresu działalności
+                Data Center poprzez wprowadzenie nowych, zaawansowanych usług
+                informatycznych z obszaru cyberbezpieczeństwa. Te usługi
+                są skierowane do operatorów usług kluczowych, dostawców usług
+                cyfrowych i podmiotów publicznych. Realizacja projektu ma
+                umożliwić świadczenie usług jedynie przez dostawców
+                spełniających wysokie wymagania dotyczące infrastruktury,
+                uprawnień, certyfikatów oraz posiadających specjalistyczną
+                kadrę.
+            </p>
 
-                            <p>Projekt doskonale wpisuje się w systematyczną strategię budowania cyberbezpieczeństwa w krajach UE, w tym Polski, inicjowaną od roku 2016 w związku z dyrektywą NIS. 
-                               Z uwagi na projektową dyrektywę NIS2 (16.12.2020), której implementacja do prawa krajowego jest konieczna w ciągu najbliższych lat, realizacja opisanego przedsięwzięcia staje się niezbędna. 
-                                    Ma to umożliwić Data Center dostosowanie się do wymagań prawa, zarówno z zakresu dyrektywy NIS 2, jak i KSC. </p>
+            <p>
+                Usługi będą wdrażane przy wykorzystaniu istniejącego potencjału
+                technicznego i merytorycznego personelu COIG, obsługującego
+                dotychczas obszar Data Center dla sektora górnictwa.
+                Jednocześnie planuje się zatrudnienie nowych specjalistów,
+                rekrutując ich m.in. spośród osób poszukujących pracy, w tym
+                zwolnionych z przedsiębiorstw okołogórniczych.
+            </p>
 
-                                        <p>Projekt stanowi kluczowy krok w dostosowaniu COIG do dynamicznie rozwijającego się obszaru cyberbezpieczeństwa. Zintegrowane podejście, uwzględniające zarówno wykorzystanie istniejących zasobów, jak i pozyskanie nowej kadry, pozwoli na świadczenie usług na najwyższym poziomie, spełniając najnowsze standardy bezpieczeństwa IT. </p>
+            <p>
+                Projekt doskonale wpisuje się w systematyczną strategię
+                budowania cyberbezpieczeństwa w krajach UE, w tym Polski,
+                inicjowaną od roku 2016 w związku z dyrektywą NIS. Z uwagi na
+                projektową dyrektywę NIS2 (16.12.2020), której implementacja do
+                prawa krajowego jest konieczna w ciągu najbliższych lat,
+                realizacja opisanego przedsięwzięcia staje się niezbędna. Ma to
+                umożliwić Data Center dostosowanie się do wymagań prawa, zarówno
+                z zakresu dyrektywy NIS 2, jak i KSC.
+            </p>
 
- 
+            <p>
+                Projekt stanowi kluczowy krok w dostosowaniu COIG do dynamicznie
+                rozwijającego się obszaru cyberbezpieczeństwa. Zintegrowane
+                podejście, uwzględniające zarówno wykorzystanie istniejących
+                zasobów, jak i pozyskanie nowej kadry, pozwoli na świadczenie
+                usług na najwyższym poziomie, spełniając najnowsze standardy
+                bezpieczeństwa IT.
+            </p>
 
-
- 
-<p>
-<a href="/">#FunduszeUE        </a> 
-<a href="/">#FunduszeEuropejskie  </a>
-</p> 
-<p>
-Wartość projektu: 18 561 725,00 zł  
-</p> 
-<p>
-Wysokość wkładu z Funduszy Europejskich: 6 185 743,25 zł 
-</p>
-</div>
-           
+            <p>
+                <a href="/">#FunduszeUE</a>
+                <a href="/">#FunduszeEuropejskie</a>
+            </p>
+            <p>Wartość projektu: 18 561 725,00 zł</p>
+            <p>Wysokość wkładu z Funduszy Europejskich: 6 185 743,25 zł</p>
         </div>
-
-
+    </div>
 </BaseLayout>
