@@ -69,7 +69,35 @@ const showButton = true;
         max-width: 462px;
         margin-bottom: 30px;
     }
+
+    .display-none {
+        display: none;
+    }
 </style>
+
+<script>
+function toggleActiveClassAndContent(event) {
+    var clickedButton = event.target;
+    var buttons = document.querySelectorAll('.select-button');
+    var contents = document.querySelectorAll('.presentation-container');
+
+    buttons.forEach(function(button, index) {
+        if (button === clickedButton) {
+            button.classList.add('active');
+            contents[index].style.display = 'block'; // Wyświetlenie odpowiedniego kontenera
+        } else {
+            button.classList.remove('active');
+            contents[index].style.display = 'none'; // Ukrycie pozostałego kontenera
+        }
+    });
+}
+
+var buttons = document.querySelectorAll('.select-button');
+buttons.forEach(function(button) {
+    button.addEventListener('click', toggleActiveClassAndContent);
+});
+
+</script>
 
 <BaseLayout>
     <div class="header">
@@ -267,6 +295,31 @@ const showButton = true;
                     </div>
                     <div class="headline">
                         <h3>SIEM</h3>
+                    </div>
+                    <div class="description">
+                        <p>
+                            jest kluczowym elementem w funkcjonowaniu SOC,
+                            ponieważ pomaga w monitorowaniu, analizowaniu i
+                            raportowaniu zdarzeń związanych z informatyką. SIEM
+                            analizuje dane z różnych źródeł, takich jak systemy
+                            bezpieczeństwa, urządzenia sieciowe, serwery,
+                            aplikacje oraz aktywności użytkowników. SIEM pozwala
+                            na identyfikację podejrzanych wzorców i anomalii,
+                            które mogą wskazywać na próby naruszenia
+                            bezpieczeństwa. Ponadto, narzędzie to ułatwia
+                            raportowanie i archiwizację zdarzeń, co może być
+                            niezbędne do celów audytowych. SIEM jest integrowany
+                            z innymi narzędziami bezpieczeństwa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="presentation-container display-none">
+                    <div class="subheadline">
+                        Security Information and Event Management
+                    </div>
+                    <div class="headline">
+                        <h3>SOAR</h3>
                     </div>
                     <div class="description">
                         <p>

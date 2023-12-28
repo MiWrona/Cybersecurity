@@ -179,7 +179,37 @@ const pageTitle = "audyt";
       min-height: 200px;
     }
   }
+
+  .text-elements.active p {
+    font-weight: 900;
+  }
 </style>
+
+<script>
+  function rotateActiveClass() {
+    const elements = document.querySelectorAll('.text-elements');
+    let currentIndex = 0;
+
+    function updateActiveElement() {
+        // Remove 'active' class from all elements
+        elements.forEach(element => element.classList.remove('active'));
+
+        // Add 'active' class to the current element
+        elements[currentIndex].classList.add('active');
+
+        // Update index for the next element
+        currentIndex = (currentIndex + 1) % elements.length;
+    }
+
+    updateActiveElement(); // Initial call to set the first element as active
+
+    // Set interval to update the active element every 10 seconds
+    setInterval(updateActiveElement, 3000);
+}
+
+// Call the function when you want to start the rotation
+rotateActiveClass();
+</script>
 
 <BaseLayout>
   <div class="header">
@@ -229,7 +259,7 @@ const pageTitle = "audyt";
     />
   </div>
 
-  <div class="section">
+  <div class="section active-trigger">
     <SectionTitleWithoutImage headline="Co dają nasze audyty" />
     <div class="two-col-flex space-around align-items">
       <div class="first-col flex-column col-half">

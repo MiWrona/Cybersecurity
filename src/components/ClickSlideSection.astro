@@ -67,14 +67,44 @@ position: absolute;
     background: #F8F9FD;
 }
 
+.display-none {
+    display: none;
+}
+
 
 </style>
 
+
+
+<script>
+function toggleActiveClass(event) {
+    var clickedElement = event.target;
+    var buttons = document.querySelectorAll('.my-button');
+    var contents = document.querySelectorAll('.click-slide-content-wrapper');
+
+    buttons.forEach(function(button, index) {
+        if (button === clickedElement) {
+            button.classList.add('active');
+            contents[index].style.display = 'block'; // Wyświetlenie odpowiedniego diva
+        } else {
+            button.classList.remove('active');
+            contents[index].style.display = 'none'; // Ukrycie pozostałych divów
+        }
+    });
+}
+
+var buttons = document.querySelectorAll('.my-button');
+buttons.forEach(function(button) {
+    button.addEventListener('click', toggleActiveClass);
+});
+</script>
+
+
 <div class="click-slide-section">
     <div class="click-buttons">
-        <div class="click-button active">L1</div>
-        <div class="click-button">L2</div>
-        <div class="click-button">L3</div>
+        <div class="click-button my-button active">L1</div>
+        <div class="click-button my-button">L2</div>
+        <div class="click-button my-button">L3</div>
     </div>
     <div class="click-slide-content-wrapper">
         <div class="two-col-flex space-between">
@@ -94,7 +124,7 @@ position: absolute;
             </div>  
         </div> 
     </div>
-    <div class="click-slide-content-wrapper">
+    <div class="click-slide-content-wrapper display-none">
         <div class="two-col-flex space-between">
             <div class="first-col"> 
                 <h3 class="click-slide-headline"><span>L2</span> Druga linia wsparcia</h3>
@@ -112,10 +142,10 @@ position: absolute;
             </div>  
         </div> 
     </div>
-    <div class="click-slide-content-wrapper">
+    <div class="click-slide-content-wrapper display-none">
         <div class="two-col-flex space-between">
             <div class="first-col"> 
-                <h3 class="click-slide-headline"><span>L1</span> Trzecia linia wsparcia</h3>
+                <h3 class="click-slide-headline"><span>L3</span> Trzecia linia wsparcia</h3>
                 <p class="click-slide-paragraph">jest odpowiedzialna za początkową identyfikację i reakcję na incydenty bezpieczeństwa. Obejmuje to monitorowanie alertów i powiadomień bezpieczeństwa, identyfikację potencjalnych incydentów bezpieczeństwa oraz przeprowadzanie wstępnych badań w celu ustalenia nasilenia i zakresu incydentu. Pierwsza warstwa wsparcia jest również odpowiedzialna za podjęcie natychmiastowych działań w celu ograniczenia i złagodzenia incydentu oraz eskaluje do następnego poziomu wsparcia w razie potrzeby.</p>
             </div>
             <div class="second-col-flex">
@@ -131,3 +161,8 @@ position: absolute;
         </div> 
     </div>
 </div>
+
+
+
+
+
