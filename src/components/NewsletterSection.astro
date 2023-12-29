@@ -1,0 +1,97 @@
+---
+import "../styles/global.css";
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+<style>
+    .newsletter-text {
+        max-width: 500px;
+    }
+
+    .newsletter-form {
+        display: flex;
+        position: relative;
+    }
+
+    .newsletter-headline {
+        font-family: Mulish;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 48px;
+        max-width: 455px;
+    }
+
+    .newsletter-paragrpah {
+        color: #9e9e9e;
+        font-family: Karla;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px; /* 150% */
+    }
+
+    .submit {
+        display: flex;
+        position: absolute;
+        right: 0;
+        width: 132px;
+        height: 48px;
+        padding: 14px 31px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        color: #fff;
+        font-family: Mulish;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        border: 1px #d41434;
+        border-radius: 0px 9px 9px 0px;
+        background: #d41434;
+    }
+    .input {
+        width: 480px;
+        height: 48px;
+        padding-left: 20px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid rgba(159, 159, 159, 0.4);
+    }
+
+    .section--box-shadow {
+    box-shadow: -1px 22px 37px 0px rgba(162, 182, 212, 0.25);
+    
+    }
+</style>
+<div class="section section--part-white-blue section--box-shadow">
+    <div class="two-col-flex space-around align-items">
+        <div class="first-col flex-column newsletter-text">
+            <h3 class="newsletter-headline">
+                Zapisz się i otrzymuj Biuletyn <span class="third-color"
+                    >Bezpieczeństwa</span
+                >
+            </h3>
+            <p class="newsletter-paragrpah">
+                Raz w tygodniu otrzymasz od nas Biuletyn Bezpieczeństwa, gdzie
+                przestawiamy najnowsze trendy i zagadnienia związane z
+                Cyberbezpieczeństwem.
+            </p>
+        </div>
+        <div class="second-col-flex flex-column">
+            <form class="newsletter-form" action="/action_page.php">
+                <label for="fname"></label>
+                <input
+                    class="input"
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    placeholder="Twój e-mail"
+                />
+
+                <input class="submit" type="submit" value="Zapisz się" />
+            </form>
+        </div>
+    </div>
+</div>

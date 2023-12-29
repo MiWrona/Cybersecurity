@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import BrandLogo1 from "../assets/brand-logo-1.svg";
+import BrandLogo2 from "../assets/brand-logo-2.svg";
+import BrandLogo3 from "../assets/brand-logo-3.svg";
+import BrandLogo4 from "../assets/brand-logo-4.svg";
+import BrandLogo5 from "../assets/brand-logo-5.svg";
+import BrandLogo6 from "../assets/brand-logo-6.svg";
+import BrandLogo7 from "../assets/brand-logo-7.svg";
+
+const props = Astro.props;
+---
+
+<style>
+  .testimonials-images-wrapper {
+    display: inline-flex;
+    margin-top: 20px;
+    min-width: 100%;
+    max-width: 1114px;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 1050px) {
+    .testimonials-images-wrapper {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="testimonials-images-wrapper">
+  <Image
+    class="testimonials-image"
+    src={BrandLogo1}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo2}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo3}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo4}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo5}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo6}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+  <Image
+    class="testimonials-image"
+    src={BrandLogo7}
+    alt="brandlogo7"
+    widths={[240, 540, 720, BrandLogo7.width]}
+  />
+</div>

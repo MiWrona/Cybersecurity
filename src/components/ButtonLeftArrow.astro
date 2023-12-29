@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import Arrow from "../assets/red-circle-arrow.svg";
+import "../styles/animation.scss";
+
+const { href, description } = Astro.props;
+---
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .button .logo-image {
+        margin-right: 10px;
+    }
+
+    .button-text {
+        font-weight: 600;
+        font-family: var(--primary-font);
+        font-size: 16px;
+    }
+
+    .button-text {
+        margin-left: 40px;
+    }
+</style>
+
+<div id="container">
+    <a href={href} class="button margin-top-5 third-color">
+        <button id="button-with-arrow" class="arrow-button learn-more">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span id="arrow-button" class="button-text">{description}</span>
+        </button>
+    </a>
+</div>

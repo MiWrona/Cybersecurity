@@ -1,0 +1,436 @@
+---
+import { Image } from "astro:assets";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RightBlob from "../assets/right-blob.svg";
+import LeftBlob from "../assets/left-blob.png";
+import CybersecurityPadlock from "../assets/cybersecurity-padlock.png";
+import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
+import CyberPadlock from "../assets/cyber-padlock.png";
+import HandKeyboard from "../assets/hand-keyboard.png";
+import RocketIcon from "../assets/rocket-icon.svg";
+import DiagramdIcon from "../assets/social-media-icon.svg";
+import PeopleCollage from "../assets/people-collage.png";
+import ItCouple from "../assets/it-couple.png";
+
+import HeroFirst from "../components/HeroFirst.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ContentBorderBox from "../components/ContentBorderBox.astro";
+import SectionTitleWithoutImage from "../components/SectionTitleWithoutImage.astro";
+import VerticalBoxWithIcon from "../components/VerticalBoxWithIcon.astro";
+import HorizontalSlider from "../components/HorizontalSlider.astro";
+import ListWithTick from "../components/ListWithTick.astro";
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import ButtonWithBorder from "../components/ButtonWithBorder.astro";
+import ClickSlideSection from "../components/ClickSlideSection.astro";
+
+const pageTitle = "audyt";
+---
+
+<style>
+  .checked-list-element {
+    color: #646b82;
+    position: relative;
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 21.12px; /* 132% */
+    letter-spacing: 0.64px;
+    margin-bottom: 15px;
+    list-style: none;
+  }
+  .checked-list-element:before {
+    position: absolute;
+    content: "✔︎";
+    margin-left: -20px;
+  }
+  .paragrpah-highlight {
+    color: #000;
+    font-family: Karla;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 39.44px;
+    letter-spacing: 0.85px;
+    max-width: 743px;
+  }
+  .paragrpah-highlight > span {
+    font-weight: 700;
+  }
+  .section-description {
+    color: #646b82;
+    font-family: Karla;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.64px;
+    max-width: 462px;
+    margin-bottom: 30px;
+  }
+
+  .text-elements {
+    position: relative;
+    display: flex;
+    padding: 1px 0px 1px 48px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .text-elements:after {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    content: "";
+    border-left: 3px solid var(--blue-gray-300, #cbd5e1);
+  }
+  .text-elements.active:after {
+    border-left: 3px solid #d41434;
+  }
+
+  .text-elements p {
+    color: var(--blue-gray-900, #0f172a);
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .paragprah-superhighlighted {
+    color: #d41434;
+    font-family: Mulish;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 73px; /* 228.125% */
+    width: 346px;
+    height: 95px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(170, 176, 183, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-numbers .section-description {
+    max-width: 962px;
+    text-align: center;
+  }
+
+  .circle-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    max-width: 190px;
+    min-width: 120px;
+    min-height: 150px;
+  }
+
+  .circle {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .circle span {
+    font-family: Karla;
+    font-size: 46px;
+    color: transparent; /* Sprawia, że wypełnienie tekstu jest przezroczyste */
+    -webkit-text-stroke: 1px #d41434; /* Kontur tekstu dla przeglądarek opartych na WebKit, jak Chrome czy Safari */
+    text-stroke: 1px #d41434; /* Kontur tekstu, standard */
+  }
+
+  .text {
+    position: absolute;
+    top: 60px; /* Dystans od środka koła */
+    min-width: 120px; /* Szerokość kontenera tekstu */
+    text-align: center;
+    color: #646b82;
+    text-align: center;
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 0.64px;
+    max-width: 190px;
+    margin-top: 30px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1050px) {
+    .circle-wrapper {
+      min-height: 200px;
+    }
+  }
+
+  .text-elements.active p {
+    font-weight: 900;
+  }
+</style>
+
+<script>
+  function rotateActiveClass() {
+    const elements = document.querySelectorAll('.text-elements');
+    let currentIndex = 0;
+
+    function updateActiveElement() {
+        // Remove 'active' class from all elements
+        elements.forEach(element => element.classList.remove('active'));
+
+        // Add 'active' class to the current element
+        elements[currentIndex].classList.add('active');
+
+        // Update index for the next element
+        currentIndex = (currentIndex + 1) % elements.length;
+    }
+
+    updateActiveElement(); // Initial call to set the first element as active
+
+    // Set interval to update the active element every 10 seconds
+    setInterval(updateActiveElement, 3000);
+}
+
+// Call the function when you want to start the rotation
+rotateActiveClass();
+</script>
+
+<BaseLayout>
+  <div class="header">
+    <div class="header-content header-product">
+      <HeroFirst headline="Audyt " headlineAccent="IT" />
+    </div>
+    <Image
+      class="right-top-blob"
+      src={RightBlob}
+      alt="Right blob"
+      widths={[240, 540, 720, RightBlob.width]}
+    />
+    <Image
+      class="left-bottom-blob"
+      src={LeftBlob}
+      alt="Left blob"
+      widths={[240, 540, 720, LeftBlob.width]}
+    />
+    <div class="padding-bottom-30">
+      <div class="two-col-flex space-around align-items">
+        <div class="first-col flex-column">
+          <SectionTitleWithoutImage
+            headline="Czym są Audyty IT?"
+            description="Audyt bezpieczeństwa obejmuje analizę, identyfikację procedur związanych z przetwarzaniem informacji, sprawdzanie zabezpieczeń fizycznych i logicznych, ocenę dokumentacji dotyczącej ochrony danych oraz ocenę zgodności z obowiązującymi przepisami prawnymi i wewnętrznymi standardami. "
+          />
+        </div>
+        <div class="second-col-flex flex-column">
+          <Image
+            class="image-decoration"
+            src={PeopleCollage}
+            alt="People collage"
+            widths={[240, 540, 720, PeopleCollage.width]}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title-center">
+      <SectionTitleWithoutImage headline="Cele usługi" />
+    </div>
+    <HorizontalSlider
+      imageSrc={HandKeyboard}
+      imageAlt="Slider image"
+      headline="Ocena systemów"
+      description="Audyt bezpieczeństwa teleinformatycznego ma na celu przeprowadzenie wnikliwej i niezależnej oceny systemów teleinformatycznych, infrastruktury IT oraz procesów związanych z bezpieczeństwem w organizacji. Jego głównym celem jest identyfikacja potencjalnych zagrożeń, ryzyk oraz podatności w zabezpieczeniach, które mogą narażać organizację na utratę danych, ataki hakerskie, wycieki informacji, czy inne incydenty związane z cyberbezpieczeństwem. Audyt zostaje zakończony raportem z przeprowadzenia audytu, w którym badane wymagania zostają ocenione oraz organizacja otrzymuje rekomendacje, których wdrożenie podnosi poziom cyberbezpieczeństwa."
+    />
+  </div>
+
+  <div class="section active-trigger">
+    <SectionTitleWithoutImage headline="Co dają nasze audyty" />
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column col-half">
+        <div class="text-elements active">
+          <p>
+            Ocena stopnia dojrzałości organizacji w zakresie cyberbezpieczeństwa
+          </p>
+        </div>
+        <div class="text-elements"><p>Ocena ryzyka</p></div>
+        <div class="text-elements"><p>Identyfikacja podatności</p></div>
+        <div class="text-elements"><p>Weryfikacja zgodności</p></div>
+        <div class="text-elements"><p>Zalecenia audytowe</p></div>
+        <p></p>
+      </div>
+      <div class="second-col-flex col-half">
+        <Image
+          class="image-decoration"
+          src={ItCouple}
+          alt="ItCouple"
+          widths={[240, 540, 720, ItCouple.width]}
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="two-col-flex space-around align-items">
+      <div class="first-col flex-column col-half">
+        <SectionTitleWithoutImage
+          headline="Nasze kompetencje"
+          description="Zespół audytorów w COIG składa się z ekspertów oraz specjalistów ds. bezpieczeństwa informacji, którzy posiadają bogate doświadczenie zarówno techniczne jak i praktyczne zdobyte podczas pracy z klientami. "
+        />
+        <p class="section-description">Specjalizujemy się w audytach:</p>
+      </div>
+      <div class="second-col-flex col-half">
+        <p class="paragprah-superhighlighted">ISO/IES 27001</p>
+      </div>
+    </div>
+    <div class="section">
+      <SectionTitleWithoutImage
+        headline="Korzyści"
+        description="Przeprowadzenie audytu bezpieczeństwa teleinformatycznego niesie za sobą wiele korzyści dla organizacji:  "
+      />
+      <div class="two-col-flex space-around align-items">
+        <div class="first-col first-col-flex">
+          <ListWithTick
+            headline="Identyfikacja ryzyka"
+            description="Audyt pozwala zidentyfikować potencjalne zagrożenia i ryzyka związane z bezpieczeństwem teleinformatycznym, umożliwiając organizacji skoncentrowanie się na obszarach wymagających natychmiastowej uwagi."
+          />
+          <ListWithTick
+            headline="Wczesne wykrywanie podatności"
+            description="Wykrycie istniejących podatności w zabezpieczeniach przed atakującymi lub incydentami umożliwia organizacji podjęcie odpowiednich działań naprawczych przed wystąpieniem problemu."
+          />
+          <ListWithTick
+            headline="Zgodność z przepisami"
+            description="Zapewnienie, iż organizacja przestrzega obowiązujących przepisów prawa oraz standardów branżowych związanych z ochroną danych i bezpieczeństwem informacji."
+          />
+          <ListWithTick
+            headline="Minimalizacja ryzyka"
+            description="Poprzez identyfikację i naprawę luk w zabezpieczeniach, organizacja minimalizuje ryzyko materializacji skutków ataków, wycieków danych oraz innych incydentów, które mogą prowadzić do strat finansowych i utraty reputacji."
+          />
+        </div>
+        <div class="second-col-flex">
+          <ListWithTick
+            headline="Poprawa zaufania"
+            description="Dobre praktyki bezpieczeństwa teleinformatycznego przyczyniają się do wzrostu zaufania klientów, partnerów biznesowych i interesariuszy, co ma pozytywny wpływ na reputację organizacji. "
+          />
+          <ListWithTick
+            headline="Optymalizacja zabezpieczeń"
+            description="Wyniki audytu dostarczają organizacji wiedzy na temat najsłabszych punktów w obszarze IT, co pozwala skupić się na strategicznych inwestycjach i działaniach mających na celu zwiększenie skuteczności zabezpieczeń."
+          />
+          <ListWithTick
+            headline="Świadomość personelu"
+            description="Audyt może służyć jako narzędzie edukacyjne, zwiększając świadomość pracowników na temat zagrożeń związanych z cyberbezpieczeństwem i pomagając im zrozumieć, jakie praktyki i zachowania mogą przyczynić się do bezpieczeństwa organizacji."
+          />
+        </div>
+      </div>
+    </div>
+    <div class="section section--not-so-white">
+      <div class="flex space-around column-rwd">
+        <div class="higlighted-text">
+          <p class="paragrpah-highlight">
+            <span>Audyt cyberbezpieczeństwa</span>to kluczowy element strategii
+            zarządzania ryzykiem, dostosowujący się do potrzeb organizacji i
+            identyfikujący słabe punkty.
+          </p>
+        </div>
+        <ButtonLeftArrow href="../contact" description="Zapytaj o wycenę" />
+      </div>
+    </div>
+  </div>
+  <div class="section section-numbers">
+    <div class="section-title-center">
+      <SectionTitleWithoutImage headline="Jak działamy?" />
+    </div>
+    <div class="section-description centered">
+      Audyt z zakresu cyberbezpieczeństwa przynosi korzyści poprzez
+      identyfikację słabości i podatności systemów, co umożliwia skuteczne
+      wzmocnienie zabezpieczeń oraz minimalizację ryzyka ataków i naruszeń
+      bezpieczeństwa.
+    </div>
+
+    <div class="circle-container">
+      <div class="circle-wrapper">
+        <div class="circle"><span>1</span></div>
+        <p class="text">Zgodność z prawem</p>
+      </div>
+      <div class="circle-wrapper">
+        <div class="circle"><span>2</span></div>
+        <p class="text">Zgodność ze standardami i dobrymi praktykami</p>
+      </div>
+      <div class="circle-wrapper">
+        <div class="circle"><span>3</span></div>
+        <p class="text">Bezpieczeństwo techniczne</p>
+      </div>
+      <div class="circle-wrapper">
+        <div class="circle"><span>4</span></div>
+        <p class="text">
+          Bezpieczeństwo organizacyjne, przestrzeganie procedur
+        </p>
+      </div>
+      <div class="circle-wrapper">
+        <div class="circle"><span>5</span></div>
+        <p class="text">Czynnik ludzki – weryfikacja</p>
+      </div>
+      <div class="circle-wrapper">
+        <div class="circle"><span>6</span></div>
+        <p class="text circle-text">Raport końcowy</p>
+      </div>
+    </div>
+  </div>
+  <div class="section section--white">
+    <div class="two-col-flex space-between">
+      <div class="first-col">
+        <SectionTitle
+          headline="Usługi cyberbezpieczeństwa"
+          description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+          imageSrc={CyberPadlock}
+          imageAlt="pierońsko kulka"
+        />
+      </div>
+
+      <div class="second-col-flex">
+        <ContentBorderBox
+          image={DiagramdIcon.src}
+          imageAlt="Diagram Icon"
+          headline="Audyty IT"
+          description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
+          href="../audyt"
+        />
+
+        <ContentBorderBox
+          image={RocketIcon.src}
+          imageAlt="Rocket Icon"
+          headline="Testy Penetracyjne"
+          description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
+          href="../pentesty"
+        />
+
+        <ContentBorderBox
+          image={DiagramdIcon.src}
+          imageAlt="Password Icon"
+          headline="CSIRT COIG"
+          description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
+        />
+
+        <div class="text-box">
+          <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
+          <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,389 @@
+---
+import { Image } from "astro:assets";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RightBlob from "../assets/right-blob.svg";
+import LeftBlob from "../assets/left-blob.png";
+import CybersecurityPadlock from "../assets/cybersecurity-padlock.png";
+import IconCyberPadlock from "../assets/icons/icon-padlock.svg";
+import CyberPadlock from "../assets/cyber-padlock.png";
+import RocketIcon from "../assets/rocket-icon.svg";
+import DiagramdIcon from "../assets/social-media-icon.svg";
+import PeopleCollage from "../assets/people-collage.png";
+
+import HeroFirst from "../components/HeroFirst.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ContentBorderBox from "../components/ContentBorderBox.astro";
+import SectionTitleWithoutImage from "../components/SectionTitleWithoutImage.astro";
+import VerticalBoxWithIcon from "../components/VerticalBoxWithIcon.astro";
+import HorizontalSlider from "../components/HorizontalSlider.astro";
+import ListWithTick from "../components/ListWithTick.astro";
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import ButtonWithBorder from "../components/ButtonWithBorder.astro";
+import ClickSlideSection from "../components/ClickSlideSection.astro";
+
+const pageTitle = "SOC";
+
+const showButton = true;
+---
+
+<style>
+    .checked-list-element {
+        color: #646b82;
+        position: relative;
+        font-family: Karla;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 21.12px; /* 132% */
+        letter-spacing: 0.64px;
+        margin-bottom: 15px;
+        list-style: none;
+    }
+    .checked-list-element:before {
+        position: absolute;
+        content: "✔︎";
+        margin-left: -20px;
+    }
+    .paragrpah-highlight {
+        color: #000;
+        font-family: Karla;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 39.44px;
+        letter-spacing: 0.85px;
+        max-width: 743px;
+    }
+    .paragrpah-highlight > span {
+        font-weight: 700;
+    }
+    .section-description {
+        color: #646b82;
+        font-family: Karla;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 27px; /* 150% */
+        letter-spacing: 0.64px;
+        max-width: 462px;
+        margin-bottom: 30px;
+    }
+
+    .display-none {
+        display: none;
+    }
+</style>
+
+<script>
+function toggleActiveClassAndContent(event) {
+    var clickedButton = event.target;
+    var buttons = document.querySelectorAll('.select-button');
+    var contents = document.querySelectorAll('.presentation-container');
+
+    buttons.forEach(function(button, index) {
+        if (button === clickedButton) {
+            button.classList.add('active');
+            contents[index].style.display = 'block'; // Wyświetlenie odpowiedniego kontenera
+        } else {
+            button.classList.remove('active');
+            contents[index].style.display = 'none'; // Ukrycie pozostałego kontenera
+        }
+    });
+}
+
+var buttons = document.querySelectorAll('.select-button');
+buttons.forEach(function(button) {
+    button.addEventListener('click', toggleActiveClassAndContent);
+});
+
+</script>
+
+<BaseLayout>
+    <div class="header">
+        <div class="header-content header-product">
+            <HeroFirst
+                headline="Security Operations "
+                headlineAccent="Center"
+            />
+        </div>
+        <Image
+            class="right-top-blob"
+            src={RightBlob}
+            alt="Right blob"
+            widths={[240, 540, 720, RightBlob.width]}
+        />
+        <Image
+            class="left-bottom-blob"
+            src={LeftBlob}
+            alt="Left blob"
+            widths={[240, 540, 720, LeftBlob.width]}
+        />
+        <div class="padding-bottom-30">
+            <div class="two-col-flex space-around align-items">
+                <div class="first-col flex-column">
+                    <SectionTitleWithoutImage
+                        headline="Czym jest SOC?"
+                        description="Security Operations Center (SOC) to wykwalifikowany zespół specjalistów, którego misją jest monitorowanie i poprawa bezpieczeństwa organizacji, przy wykorzystaniu mechanizmów wykrywania, analizowania i reagowania na incydenty związane z bezpieczeństwem. SOC COIG jest certyfikowany na zgodność z normą ISO 27001. "
+                    />
+                </div>
+                <div class="second-col-flex flex-column">
+                    <Image
+                        class="image-decoration"
+                        src={PeopleCollage}
+                        alt="People collage"
+                        widths={[240, 540, 720, PeopleCollage.width]}
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="flex space-around column-rwd">
+            <VerticalBoxWithIcon
+                iconSrc={IconCyberPadlock}
+                IconSrcAlt="Cyber kłódka"
+                headline="Zwiększenie bezpieczeństwa"
+                description="zwiększa poziom bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa."
+            />
+            <VerticalBoxWithIcon
+                iconSrc={IconCyberPadlock}
+                IconSrcAlt="Cyber kłódka"
+                headline="Zabezpieczanie organizacji"
+                description="pozwala na wykrycie i zabezpieczenie najbardziej kluczowych obszarów w strukturze organizacji."
+            />
+            <VerticalBoxWithIcon
+                iconSrc={IconCyberPadlock}
+                IconSrcAlt="Cyber kłódka"
+                headline="Wykrywanie problemów"
+                description="umożliwia wykrycie wielu problemów związanych z bezpieczeństwem, które wcześniej pozostawały niezauważone."
+            />
+        </div>
+    </div>
+    <div class="section">
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col flex-column col-half">
+                <SectionTitleWithoutImage
+                    headline="O usłudze"
+                    description="Zespół SOC jest odpowiedzialny za całościowe zarządzanie bezpieczeństwem informatycznym w organizacji, obejmujące monitorowanie, wykrywanie, reagowanie i zapobieganie zagrożeniom oraz incydentom związanym z cyberbezpieczeństwem.  "
+                />
+            </div>
+            <div class="second-col-flex col-half">
+                <ul>
+                    <li class="checked-list-element">
+                        Stała kontrolę nad aktualnym poziomem bezpieczeństwa
+                        poprzez identyfikację incydentów za pomocą
+                        oprogramowania SIEM
+                    </li>
+                    <li class="checked-list-element">
+                        Podejmowanie działań w reakcji na pojawiające się
+                        zdarzenia przy wykorzystaniu modułu SOAR.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title-center">
+            <SectionTitleWithoutImage headline="Nasz SOC to:" />
+        </div>
+        <HorizontalSlider
+            showButton="true"
+            ;
+            imageSrc={CybersecurityPadlock}
+            imageAlt="Slider image"
+            headline="Ludzie"
+            description="Nasz zespół to wykwalifikowany i kompetentny personel powołany do skutecznego działania, składający się z analityków bezpieczeństwa, specjalistów obsługi incydentów oraz inżynierów wielu specjalności informatycznych którzy mogą monitorować i zarządzać systemami bezpieczeństwa."
+        />
+    </div>
+    <div class="section col-half">
+        <SectionTitleWithoutImage
+            headline="Korzyści"
+            description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
+        />
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col first-col-flex">
+                <ListWithTick
+                    headline="Usługa w trybie 24/7/365"
+                    description="Twoja organizacja jest zawsze chroniona przed zagrożeniami cybernetycznymi. Oznacza to, że możesz spać spokojnie wiedząc, że środowisko IT jest stale monitorowane i chronione."
+                />
+                <ListWithTick
+                    headline="Wiedza i zasoby"
+                    description="Możesz bez przeszkód korzystać z wiedzy i zasobów dedykowanego zespołu bezpieczeństwa cybernetycznego, bez konieczności inwestowania w zatrudnienie i szkolenie własnego zespołu."
+                />
+            </div>
+            <div class="second-col-flex">
+                <ListWithTick
+                    headline="Proaktywne wykrywanie zagrożeń"
+                    description="Wykrywamy zagrożenia Twojej organizacji w celu proaktywnej, szybkiej identyfikacji i reakcji na potencjalne cyberprzestępstwa, co oznacza, że odpowiedź na problemy bezpieczeństwa może nastąpić zanim spowodują wymierne szkody dla Twojej organizacji. "
+                />
+                <ListWithTick
+                    headline="Wymagania dotyczące zgodności i wymagań regulacyjnych:"
+                    description="Pomagamy spełnić wymagania dotyczące zgodności z wymogami prawnymi i innymi regulacjami dotyczącymi bezpieczeństwa danych. Dzięki temu unikniesz kosztownych grzywien i kar oraz utrzymaniu zaufania klientów i interesariuszy."
+                />
+            </div>
+        </div>
+    </div>
+    <div class="section section--not-so-white">
+        <div class="flex space-around column-rwd">
+            <div class="higlighted-text">
+                <p class="paragrpah-highlight">
+                    <span>SOC</span> stanowi integralny element strategii zarządzania
+                    incydentami, dostosowujący się do potrzeb konkretnej organizacji.
+                </p>
+            </div>
+            <ButtonLeftArrow
+                description="Zapytaj o wycenę"
+                href="../contact/"
+            />
+        </div>
+    </div>
+    <div class="section">
+        <SectionTitleWithoutImage headline="Organizacja" />
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col flex-column col-half">
+                <p class="paragraph section-description smaller-description">
+                    Pierwsza, druga i trzecia linia wsparcia dla działań COIG
+                    SOC odnoszą się do różnych poziomów wsparcia zapewnianego
+                    przez zespół SOC w celu zarządzania incydentami
+                    bezpieczeństwa i zapewnienia bezpieczeństwa systemów IT
+                    Twojej organizacji.
+                </p>
+            </div>
+            <div class="second-col-flex col-half">
+                <p class="paragraph section-description smaller-description">
+                    Wszystkie linie wsparcia działań SOC wspomagane są zespołami
+                    inżynierów dziedzinowych z zakresu sieci komputerowych,
+                    serwerów, macierzy, urządzeń końcowych (komputery, laptopy,
+                    telefony) i oprogramowania w grupie Wasko oraz kontaktami z
+                    producentami sprzętu i oprogramowania w szczególnych
+                    przypadkach.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <ClickSlideSection />
+    </div>
+    <div class="section smaller-description section-smaller-top-padding">
+        <div class="section-headline">
+            <SectionTitleWithoutImage
+                headline="Korzyści"
+                description="Wdrożenie Security Operations Center (SOC) ma na celu zwiększenie poziomu bezpieczeństwa informatycznego oraz efektywności w reagowaniu na zagrożenia i incydenty bezpieczeństwa.  "
+            />
+        </div>
+        <div class="two-col-flex space-around align-items">
+            <div class="first-col flex-column select-column">
+                <div class="select-buttons">
+                    <div class="select-button active">SIEM</div>
+                    <div class="select-button">SOAR</div>
+                </div>
+                <div class="section-image">
+                    <Image
+                        class="image-decoration"
+                        src={CybersecurityPadlock}
+                        alt="CybersecurityPadlock"
+                        widths={[240, 540, 720, CybersecurityPadlock.width]}
+                    />
+                </div>
+            </div>
+            <div class="second-col-flex select-column-2">
+                <div class="presentation-container">
+                    <div class="subheadline">
+                        Security Information and Event Management
+                    </div>
+                    <div class="headline">
+                        <h3>SIEM</h3>
+                    </div>
+                    <div class="description">
+                        <p>
+                            jest kluczowym elementem w funkcjonowaniu SOC,
+                            ponieważ pomaga w monitorowaniu, analizowaniu i
+                            raportowaniu zdarzeń związanych z informatyką. SIEM
+                            analizuje dane z różnych źródeł, takich jak systemy
+                            bezpieczeństwa, urządzenia sieciowe, serwery,
+                            aplikacje oraz aktywności użytkowników. SIEM pozwala
+                            na identyfikację podejrzanych wzorców i anomalii,
+                            które mogą wskazywać na próby naruszenia
+                            bezpieczeństwa. Ponadto, narzędzie to ułatwia
+                            raportowanie i archiwizację zdarzeń, co może być
+                            niezbędne do celów audytowych. SIEM jest integrowany
+                            z innymi narzędziami bezpieczeństwa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="presentation-container display-none">
+                    <div class="subheadline">
+                        Security Information and Event Management
+                    </div>
+                    <div class="headline">
+                        <h3>SOAR</h3>
+                    </div>
+                    <div class="description">
+                        <p>
+                            jest kluczowym elementem w funkcjonowaniu SOC,
+                            ponieważ pomaga w monitorowaniu, analizowaniu i
+                            raportowaniu zdarzeń związanych z informatyką. SIEM
+                            analizuje dane z różnych źródeł, takich jak systemy
+                            bezpieczeństwa, urządzenia sieciowe, serwery,
+                            aplikacje oraz aktywności użytkowników. SIEM pozwala
+                            na identyfikację podejrzanych wzorców i anomalii,
+                            które mogą wskazywać na próby naruszenia
+                            bezpieczeństwa. Ponadto, narzędzie to ułatwia
+                            raportowanie i archiwizację zdarzeń, co może być
+                            niezbędne do celów audytowych. SIEM jest integrowany
+                            z innymi narzędziami bezpieczeństwa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section--white">
+        <div class="two-col-flex space-between">
+            <div class="first-col">
+                <SectionTitle
+                    headline="Usługi cyberbezpieczeństwa"
+                    description="Zwiększ bezpieczeństwo w swojej firmie. Wybierz zestaw usług stosowny do potrzeb:"
+                    imageSrc={CyberPadlock}
+                    imageAlt="pierońsko kulka"
+                />
+            </div>
+
+            <div class="second-col-flex">
+                <ContentBorderBox
+                    image={DiagramdIcon.src}
+                    imageAlt="Diagram Icon"
+                    headline="Audyty IT"
+                    description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
+                    href="audyt"
+                />
+
+                <ContentBorderBox
+                    image={RocketIcon.src}
+                    imageAlt="Rocket Icon"
+                    headline="Testy Penetracyjne"
+                    description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
+                    href="pentesty"
+                />
+
+                <ContentBorderBox
+                    image={DiagramdIcon.src}
+                    imageAlt="Password Icon"
+                    headline="CSIRT COIG"
+                    description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
+                />
+
+                <div class="text-box">
+                    <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
+                    <ButtonLeftArrow
+                        href="/contact/"
+                        description="Czytaj więcej"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

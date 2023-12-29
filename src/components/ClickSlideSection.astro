@@ -1,0 +1,168 @@
+---
+import '../styles/global.css';
+import { Image } from "astro:assets";
+import PadlockKeyboard from "../assets/padlock-keyboard.png"
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+<style>
+.click-buttons {
+    display: flex;
+}
+.click-slide-content-wrapper {
+    border-radius: 0px 21px 21px 21px;
+    background: linear-gradient(234deg, #FFF 11.05%, #F5F7FC 69.12%);
+    padding: 100px;
+}
+
+.click-slide-headline {
+    position: relative;
+    color: #474F62;
+    font-family: Mulish;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 136.7%;
+}
+
+.click-slide-headline span {
+    color: #D41434;
+}
+
+.click-slide-paragraph {
+.color: #474F62;
+font-family: Mulish;
+font-size: 16px;
+opacity: 0.7;
+max-width: 600px;
+}
+
+.click-slide-headline::after {
+position: absolute;
+  background-color: var(--third-color);
+  content: "";
+  height: 2px;
+  width: 64px;
+  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -15px;
+  left: 0;
+  /* animation: move 10s infinite; */
+}
+
+.click-slide-image-wrapper {
+    max-width: 392px;
+}
+
+.click-button {
+    display: flex;
+    width: 236px;
+    height: 49px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.click-button.active {
+    border-radius: 20px 20px 0px 0px;
+    background: #F8F9FD;
+}
+
+.display-none {
+    display: none;
+}
+
+
+</style>
+
+
+
+<script>
+function toggleActiveClass(event) {
+    var clickedElement = event.target;
+    var buttons = document.querySelectorAll('.my-button');
+    var contents = document.querySelectorAll('.click-slide-content-wrapper');
+
+    buttons.forEach(function(button, index) {
+        if (button === clickedElement) {
+            button.classList.add('active');
+            contents[index].style.display = 'block'; // Wyświetlenie odpowiedniego diva
+        } else {
+            button.classList.remove('active');
+            contents[index].style.display = 'none'; // Ukrycie pozostałych divów
+        }
+    });
+}
+
+var buttons = document.querySelectorAll('.my-button');
+buttons.forEach(function(button) {
+    button.addEventListener('click', toggleActiveClass);
+});
+</script>
+
+
+<div class="click-slide-section">
+    <div class="click-buttons">
+        <div class="click-button my-button active">L1</div>
+        <div class="click-button my-button">L2</div>
+        <div class="click-button my-button">L3</div>
+    </div>
+    <div class="click-slide-content-wrapper">
+        <div class="two-col-flex space-between">
+            <div class="first-col"> 
+                <h3 class="click-slide-headline"><span>L1</span> Pierwsza linia wsparcia</h3>
+                <p class="click-slide-paragraph">jest odpowiedzialna za początkową identyfikację i reakcję na incydenty bezpieczeństwa. Obejmuje to monitorowanie alertów i powiadomień bezpieczeństwa, identyfikację potencjalnych incydentów bezpieczeństwa oraz przeprowadzanie wstępnych badań w celu ustalenia nasilenia i zakresu incydentu. Pierwsza warstwa wsparcia jest również odpowiedzialna za podjęcie natychmiastowych działań w celu ograniczenia i złagodzenia incydentu oraz eskaluje do następnego poziomu wsparcia w razie potrzeby.</p>
+            </div>
+            <div class="second-col-flex">
+                <div class="click-slide-image-wrapper">
+                    <Image
+                    class="image-decoration"
+                    src={PadlockKeyboard}
+                    alt="CybersecurityPadlock"
+                    widths={[240, 540, 720, PadlockKeyboard.width]}
+                />
+            </div>
+            </div>  
+        </div> 
+    </div>
+    <div class="click-slide-content-wrapper display-none">
+        <div class="two-col-flex space-between">
+            <div class="first-col"> 
+                <h3 class="click-slide-headline"><span>L2</span> Druga linia wsparcia</h3>
+                <p class="click-slide-paragraph">jest odpowiedzialna za początkową identyfikację i reakcję na incydenty bezpieczeństwa. Obejmuje to monitorowanie alertów i powiadomień bezpieczeństwa, identyfikację potencjalnych incydentów bezpieczeństwa oraz przeprowadzanie wstępnych badań w celu ustalenia nasilenia i zakresu incydentu. Pierwsza warstwa wsparcia jest również odpowiedzialna za podjęcie natychmiastowych działań w celu ograniczenia i złagodzenia incydentu oraz eskaluje do następnego poziomu wsparcia w razie potrzeby.</p>
+            </div>
+            <div class="second-col-flex">
+                <div class="click-slide-image-wrapper">
+                    <Image
+                    class="image-decoration"
+                    src={PadlockKeyboard}
+                    alt="CybersecurityPadlock"
+                    widths={[240, 540, 720, PadlockKeyboard.width]}
+                />
+            </div>
+            </div>  
+        </div> 
+    </div>
+    <div class="click-slide-content-wrapper display-none">
+        <div class="two-col-flex space-between">
+            <div class="first-col"> 
+                <h3 class="click-slide-headline"><span>L3</span> Trzecia linia wsparcia</h3>
+                <p class="click-slide-paragraph">jest odpowiedzialna za początkową identyfikację i reakcję na incydenty bezpieczeństwa. Obejmuje to monitorowanie alertów i powiadomień bezpieczeństwa, identyfikację potencjalnych incydentów bezpieczeństwa oraz przeprowadzanie wstępnych badań w celu ustalenia nasilenia i zakresu incydentu. Pierwsza warstwa wsparcia jest również odpowiedzialna za podjęcie natychmiastowych działań w celu ograniczenia i złagodzenia incydentu oraz eskaluje do następnego poziomu wsparcia w razie potrzeby.</p>
+            </div>
+            <div class="second-col-flex">
+                <div class="click-slide-image-wrapper">
+                    <Image
+                    class="image-decoration"
+                    src={PadlockKeyboard}
+                    alt="CybersecurityPadlock"
+                    widths={[240, 540, 720, PadlockKeyboard.width]}
+                />
+            </div>
+            </div>  
+        </div> 
+    </div>
+</div>
+
+
+
+
+

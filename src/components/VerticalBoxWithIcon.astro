@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+<style>
+    .vertical-icon-box {
+        width: 362px;
+        height: 326px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+    .vertical-icon-box-content {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 290px;
+        margin-top: 20px;
+    }
+
+    .vertical-icon-box-headline {
+        color: #474f62;
+        text-align: center;
+        font-family: Mulish;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 136.7%; /* 32.808px */
+        max-width: 240px;
+        margin: 0 auto;
+    }
+    .vertical-icon-box-description {
+        color: #474f62;
+
+        text-align: center;
+        font-family: Karla;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 0.7;
+    }
+    .vertical-icon-box:hover {
+        background: #fff;
+
+        box-shadow: 0px 50px 70px 0px rgba(162, 182, 212, 0.16);
+    }
+</style>
+
+<div class="vertical-icon-box">
+    <Image
+        class="testimonials-image"
+        src={props.iconSrc}
+        alt={props.IconSrcAlt}
+        widths={[240, 540, 720, props.iconSrc.width]}
+    />
+    <div class="vertical-icon-box-content">
+        <p class="vertical-icon-box-headline">{props.headline}</p>
+        <p class="vertical-icon-box-description">{props.description}</p>
+    </div>
+</div>

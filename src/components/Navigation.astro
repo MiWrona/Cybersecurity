@@ -1,0 +1,56 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<style>
+    .nav-link {
+        color: #000;
+        font-family: Karla;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 100% */
+        text-wrap: nowrap;
+    }
+
+    .nav-link--button {
+        color: #d41434;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 50px;
+        border: 1px solid #d41434;
+        padding: 10px 24px;
+        text-wrap: nowrap;
+    }
+
+    .nav-link--anchor {
+        display: block;
+    }
+
+    @media screen and (max-width: 1195px) {
+        .nav-link--anchor {
+            display: none;
+        }
+    }
+
+    .nav-links.expanded a {
+        color: aliceblue;
+        background-color: #d41434;
+    }
+</style>
+
+<div class="nav-links">
+    <a class="nav-link" href="/soc/">SOC</a>
+    <a class="nav-link" href="/audyt/">Audyt IT</a>
+    <a class="nav-link" href="/pentesty/">Pentesty</a>
+    <a class="nav-link" href="/#CSIRT">CSIRT COIG</a>
+    <a class="nav-link" href="/contact/">Kontakt</a>
+    <!-- <a class="nav-link" href="/tags/">News</a> -->
+</div>
+
+<div class="buttons-nav-link">
+    <a class="nav-link nav-link--button nav-link--anchor" href="https://coig.pl"
+        >Coig S.A</a
+    >
+
+</div>

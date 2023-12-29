@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+
+import { Image } from "astro:assets";
+
+const { headline, description, imageSrc, imageAlt } = Astro.props;
+---
+
+<style>
+    .box-with-icon-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 412px;
+        height: 83px;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        border-radius: 5px;
+        background: #FFF;
+        filter: drop-shadow(0px 3px 34px rgba(162, 182, 212, 0.25));
+    }
+    .icon-boximage {
+        margin-left: 32px;
+        margin-right: 47px;
+    }
+    .icon-box-description-headline {
+        font-weight: bold;
+    }
+
+    .icon-box-description-headline span {
+        font-weight: 300;
+    }
+
+
+</style>
+
+
+<div class="box-with-icon-wrapper">
+    <Image class="icon-boximage" src={imageSrc} alt={imageAlt} />
+    <p class="icon-box-description-headline">
+        {headline} <span>{description}</span>
+    </p>
+</div>

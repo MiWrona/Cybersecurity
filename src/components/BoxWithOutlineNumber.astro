@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+
+import { Image } from "astro:assets";
+
+const props = Astro.props;
+---
+
+<style>
+    .box-with-outline-number-wrapper {
+        width: 280px;
+        max-height: 440px;
+        border-radius: 5px;
+        border: 1px solid var(--jasny-szary, #bccbd6);
+        margin: 10px;
+    }
+    .box-with-outline-number-header {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .box-with-outline-number-header h3 {
+        color: #000;
+        margin-left: 36px;
+        font-family: Mulish;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 23.4px; /* 117% */
+        letter-spacing: 0.9px;
+    }
+
+    .box-with-outline-number-header span {
+        font-family: Karla;
+        margin-left: 36px;
+        font-size: 46px;
+        color: transparent; /* Sprawia, że wypełnienie tekstu jest przezroczyste */
+        -webkit-text-stroke: 1px #d41434; /* Kontur tekstu dla przeglądarek opartych na WebKit, jak Chrome czy Safari */
+        text-stroke: 1px #d41434; /* Kontur tekstu, standard */
+    }
+    .box-with-outline-number-wrapper .paragraph {
+        margin: 21px;
+        color: #646b82;
+
+        font-family: Karla;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 26px; /* 162.5% */
+    }
+</style>
+
+<div class="box-with-outline-number-wrapper">
+    <div class="box-with-outline-number-header">
+        <span>{props.number}</span>
+        <h3>{props.headline}</h3>
+    </div>
+    <p class="paragraph">{props.description}</p>
+</div>

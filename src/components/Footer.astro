@@ -1,0 +1,93 @@
+---
+import Logo from "./Logo.astro";
+import Social from "./Social.astro";
+import "../styles/global.css";
+---
+
+<style>
+  footer {
+    gap: 1rem;
+    margin-top: 4rem;
+
+        max-width: 1443px;
+        margin: 0 auto;
+
+  }
+
+  .footer-first {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.134);
+  }
+  .footer-paragraph {
+    color: var(--d-9-d-9-d-9, #646b82);
+    font-family: Karla;
+    font-size: 14.08px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 21.12px; /* 150% */
+    letter-spacing: 0.64px;
+    max-height: 18px;
+    margin: 0.5px;
+  }
+  .footer-logo-wrapper {
+    min-width: 40%;
+    margin-left: 148px;
+  }
+  .footer-contact-info {
+    margin-right: 148px;
+  }
+  .footer-brand {
+    color: var(--Ciemny, #111b24);
+    font-family: Karla;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23.4px; /* 137.647% */
+    letter-spacing: 0.9px;
+    margin-bottom: 5px;
+  }
+
+  .footer-copy {
+    color: var(--d-9-d-9-d-9, #646b82);
+    text-align: center;
+    font-family: Karla;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .footer-second-column {
+    margin-left: 15px;
+  }
+</style>
+
+<footer>
+  <div class="two-col-flex space-between align-items footer-first">
+    <div class="first-col flex-column footer-logo-wrapper">
+      <Logo />
+    </div>
+    <div class="second-col-flex flex-column footer-contact-info">
+      <h4 class="footer-brand">COIG S.A.</h4>
+      <div class="two-col-flex">
+        <div class="first-col">
+          <p class="footer-paragraph">ul.Mikołowska 100</p>
+          <p class="footer-paragraph">40-065 Katowice</p>
+          <p class="footer-paragraph">NIP 634-013-42-05</p>
+          <p class="footer-paragraph">REGON 272171512</p>
+        </div>
+        <div class="flex flex-start flex-column footer-second-column">
+
+          <p class="footer-paragraph">tel. 32 757 42 39</p>
+          <p class="footer-paragraph">coig@coig.pl</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-second">
+    <p class="footer-copy">COIG S.A. 2023. All right reserved</p>
+  </div>
+  <script>
+    import "../scripts/menu.js";
+  </script>
+</footer>
