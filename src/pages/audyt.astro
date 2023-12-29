@@ -25,6 +25,7 @@ import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
 
 const pageTitle = "audyt";
+const baseURL = '/cyber-test/';
 ---
 
 <style>
@@ -347,7 +348,7 @@ rotateActiveClass();
             identyfikujący słabe punkty.
           </p>
         </div>
-        <ButtonLeftArrow href="../contact" description="Zapytaj o wycenę" />
+        <ButtonLeftArrow href={`${baseURL}contact/`} description="Zapytaj o wycenę" />
       </div>
     </div>
   </div>
@@ -408,7 +409,7 @@ rotateActiveClass();
           imageAlt="Diagram Icon"
           headline="Audyty IT"
           description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-          href="../audyt"
+          href={`${baseURL}audyt`}
         />
 
         <ContentBorderBox
@@ -416,7 +417,7 @@ rotateActiveClass();
           imageAlt="Rocket Icon"
           headline="Testy Penetracyjne"
           description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-          href="../pentesty"
+          href={`${baseURL}pentesty`}
         />
 
         <ContentBorderBox
@@ -428,7 +429,7 @@ rotateActiveClass();
 
         <div class="text-box">
           <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-          <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
+          <ButtonLeftArrow href={`${baseURL}contact/`} description="Czytaj więcej" />
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ import ClickSlideSection from "../components/ClickSlideSection.astro";
 const pageTitle = "SOC";
 
 const showButton = true;
+const baseURL = '/cyber-test/';
 ---
 
 <style>
@@ -235,7 +236,7 @@ buttons.forEach(function(button) {
             </div>
             <ButtonLeftArrow
                 description="Zapytaj o wycenę"
-                href="../contact/"
+                href={`${baseURL}contact/`}
             />
         </div>
     </div>
@@ -358,7 +359,7 @@ buttons.forEach(function(button) {
                     imageAlt="Diagram Icon"
                     headline="Audyty IT"
                     description="Audyt IT składa się z analizy procesów, weryfikacji zabezpieczeń, dokumentacji i oceny zgodności z regulacjami."
-                    href="audyt"
+                    href={`${baseURL}audyt`}
                 />
 
                 <ContentBorderBox
@@ -366,7 +367,7 @@ buttons.forEach(function(button) {
                     imageAlt="Rocket Icon"
                     headline="Testy Penetracyjne"
                     description="Kontrolowany atak pozwalający ocenić stan bezpieczeństwa systemu teleinformatycznego oraz jego odporność na zagrożenia i podatności."
-                    href="pentesty"
+                    href={`${baseURL}pentesty`}
                 />
 
                 <ContentBorderBox
@@ -379,7 +380,7 @@ buttons.forEach(function(button) {
                 <div class="text-box">
                     <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
                     <ButtonLeftArrow
-                        href="/contact/"
+                        href={`${baseURL}contact/`}
                         description="Czytaj więcej"
                     />
                 </div>

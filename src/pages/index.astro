@@ -49,6 +49,9 @@ import TesimonialsImages from "../components/TesimonialsImages.astro";
 import NewsletterSection from "../components/NewsletterSection.astro";
 import NewsSection from "../components/NewsSection.astro";
 const pageTitle = "Strona główna";
+const baseURL = '/cyber-test/';
+
+
 ---
 
 <BaseLayout>
@@ -66,7 +69,7 @@ const pageTitle = "Strona główna";
       <BoxWithLeftIconButton
         headline="Security Operations Center"
         description="SOC zwiększa bezpieczeństwo firmy przez monitoring, wykrywanie zagrożeń i zarządzanie incydentami."
-        href="/soc"
+        href="./soc"
       />
     </div>
     <Image
@@ -119,7 +122,7 @@ const pageTitle = "Strona główna";
 
         <div class="text-box">
           <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
-          <ButtonLeftArrow href="/contact/" description="Czytaj więcej" />
+          <ButtonLeftArrow href={`${baseURL}contact/`} description="Czytaj więcej" />
         </div>
       </div>
     </div>
