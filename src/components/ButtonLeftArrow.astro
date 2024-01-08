@@ -25,9 +25,14 @@ const { href, description } = Astro.props;
     .button-text {
         margin-left: 40px;
     }
+    .button-container-flex {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
 </style>
 
-<div id="container">
+<div id="container" class="button-container-flex">
     <a href={href} class="button margin-top-5 third-color">
         <button id="button-with-arrow" class="arrow-button learn-more">
             <span class="circle" aria-hidden="true">

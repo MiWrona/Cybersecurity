@@ -2,8 +2,31 @@
 
 ---
 
+<style>
+  .hamburger.open {
+    z-index: 999999;
+  }
+
+
+  .hamburger.open .line-1{
+    transform: rotate(45deg);
+    margin-bottom: -4px;
+    transition: all 0.5s ease;
+  }
+
+  .hamburger.open .line-2{
+    transform: rotate(-45deg);
+    margin-bottom: -4px;
+    transition: all 0.5s ease;
+  }
+
+  .hamburger.open .line-3{
+    display: none;
+  }
+</style>
+
 <div class="hamburger">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+    <span class="line line-1"></span>
+    <span class="line line-2"></span>
+    <span class="line line-3"></span>
   </div>

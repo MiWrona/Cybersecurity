@@ -1,0 +1,217 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import HandsComputersMore from "../assets/hands-computers-more.png";
+import PeopleCollage1 from "../assets/people-collage-2.png";
+import PeopleCollage2 from "../assets/people-collage-3.png";
+import HandsComputersMore from "../assets/hands-computers-more.png";
+import HandsKeyboard from "../assets/hand-keyboard.png";
+import PadlockKeyboard from "../assets/padlock-keyboard.png";
+
+import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
+import { transitionEnabledOnThisPage } from "astro:transitions/client";
+
+// const { headline, headlineAccent, description, image, imageAlt} = Astro.props;
+const props = Astro.props;
+---
+
+
+<script>
+function toggleActiveClass(event) {
+    var clickedElement = event.target;
+    var buttons = document.querySelectorAll('.my-button-select');
+    var contents = document.querySelectorAll('.slide');
+
+    buttons.forEach(function(button, index) {
+        if (button === clickedElement) {
+            button.classList.add('active');
+            contents[index].style.display = 'flex'; // Wyświetlenie odpowiedniego diva
+        } else {
+            button.classList.remove('active');
+            contents[index].style.display = 'none'; // Ukrycie pozostałych divów
+        }
+    });
+}
+
+var buttons = document.querySelectorAll('.my-button-select');
+buttons.forEach(function(button) {
+    button.addEventListener('click', toggleActiveClass);
+});
+</script>
+
+
+<style>
+    .slide {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-top: 40px;
+    }
+    .slider-content {
+        position: absolute;
+        background-color: #fff;
+        padding: 48px;
+        left: 50%;
+    }
+    .slider-headline {
+        color: var(--blue-gray-600, #475569);
+        font-family: Mulish;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 20px */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+    .slider-description {
+        color: #646b82;
+        font-family: Mulish;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 25.6px */
+    }
+    .slide-image-wrapper {
+        max-width: 100%;
+    }
+    .slide-image-wrapper img {
+        max-width: 100%;
+    }
+    
+        @media (max-width: 1050px) {
+            .slider-wrapper .slide {
+                flex-direction: column;
+                align-items: center;
+        }
+        .slider-content {
+            width: 100%;
+            left: 0;
+        }
+    }
+    .slide {
+        display: flex;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+   .controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #475569;
+   }
+
+   .my-button-select {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    
+   }
+
+   .my-button-select::after {
+    position: absolute;
+    background-color: var(--third-color);
+    content: "";
+    height: 1px;
+    width: 24px;
+    bottom: -5px;
+    left: 0;
+    transition: width .5s;
+    /* animation: move 10s infinite; */
+}
+.my-button-select.active::after {
+    position: absolute;
+    background-color: var(--third-color);
+    content: "";
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    /* animation: move 10s infinite; */
+}
+
+</style>
+
+<div class="slider-wrapper">
+    <div class="slide">
+        <div class="slide-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={HandsComputersMore}
+            alt="HandsComputersMore image"
+            widths={[240, 540, 720, HandsComputersMore.width]}
+          />
+        </div>
+        <div class="slider-content">
+            <h3 class="slider-headline">Ludzie</h3>
+            <p class="slider-description">Nasz zespół to wykwalifikowany i kompetentny personel powołany do skutecznego działaniam, składający się z analityków bezpieczeństwa, specjalistów obsługi incydentów oraz inżynierów wielu specjalności informatycznych którzy mogą monitorować i zarządzać systemami bezpieczeństwa.</p>
+        </div>
+    </div>
+    <div class="slide display-none">
+        <div class="slide-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={HandsKeyboard}
+            alt={props.imageAlt}
+            widths={[240, 540, 720, HandsKeyboard.width]}
+          />
+        </div>
+        <div class="slider-content">
+            <h3 class="slider-headline">Procesy</h3>
+            <p class="slider-description">COIG SOC opiera się na doskonale zdefiniowanych procesach, procedurach i playbookach, co sprawia, że zdarzenia i incydenty bezpieczeństwa są skutecznie wykrywane, analizowane oraz następuje  stosowna i  szybka reakcja.  </p>
+        </div>
+    </div>
+    <div class="slide display-none">
+        <div class="slide-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={HandsComputersMore}
+            alt="HandsComputersMore image"
+            widths={[240, 540, 720, HandsComputersMore.width]}
+          />
+        </div>
+        <div class="slider-content">
+            <h3 class="slider-headline">Technologia</h3>
+            <p class="slider-description">SOC wymaga szeregu nowoczesnych technologii, aby umożliwić skuteczne monitorowanie i zarządzanie. W COIG dysponujemy szeregiem systemów bezpieczeństwa i zarządzania zdarzeniami (SIEM i SOAR, XDR, …), systemami wykrywania i zapobiegania włamaniom, skanerami podatności oraz innymi narzędziami i technologiami, które mogą pomóc w identyfikacji i reagowaniu na potencjalne zagrożenia bezpieczeństwa.</p>
+        </div>
+    </div>
+    <div class="slide display-none">
+        <div class="slide-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={HandsKeyboard}
+            alt={props.imageAlt}
+            widths={[240, 540, 720, HandsKeyboard.width]}
+          />
+        </div>
+        <div class="slider-content">
+            <h3 class="slider-headline">Zarządzanie</h3>
+            <p class="slider-description">Nasz SOC działa na podstawie silnych praktyk zarządzania, które zapewniają skuteczność i wydajność. Obejmuje to zasady, procedury i mierniki efektywności, które pomagają zarządzać zespołem SOC i sprawiają, że SOC jest dostosowywane do strategii bezpieczeństwa klienta i z celami zarządzania ryzykiem.</p>
+        </div>
+    </div>
+    <div class="slide display-none">
+        <div class="slide-image-wrapper">
+            <Image
+            class="case-study-image"
+            src={HandsComputersMore}
+            alt="HandsComputersMore image"
+            widths={[240, 540, 720, HandsComputersMore.width]}
+          />
+        </div>
+        <div class="slider-content">
+            <h3 class="slider-headline">Integracja</h3>
+            <p class="slider-description">W SOC integrujemy się z systemami i procesami bezpieczeństwa cybernetycznego w Twojej organizacji, co umożliwia skuteczne wykrywanie zagrożeń i reakcję. Obejmuje to integrację z praktycznie dowolnymi systemami bezpieczeństwa oraz, jeśli to potrzebne, z systemami biznesowymi.</p>
+        </div>
+    </div>
+<div class="controls">
+    <p class="my-button-select active">Ludzie</p>
+    <p class="my-button-select">Procesy</p>  
+    <p class="my-button-select">Technologia</p>
+    <p class="my-button-select">Zarządzanie</p>
+    <p class="my-button-select">Integracja</p>
+</div>
+
+</div>

@@ -32,6 +32,8 @@ body {
   background-color: #fafafc;
 }
 
+
+
 .header-content {
   margin: 0 auto;
   max-width: 1443px;
@@ -42,8 +44,10 @@ html.dark {
   color: #fff;
 }
 
+@media screen and (max-width: 1196px) {
 .dark .nav-links a {
-  color: #fff;
+  color: #000 !important;
+}
 }
 
 h1 {
@@ -127,7 +131,7 @@ nav {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: #d72543
 }
 
 .nav-links {
@@ -151,7 +155,10 @@ nav {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: #d41434;
+  color: #fff;
+  border-radius: 10px;
+  transition: all 0.5s;
 }
 
 .buttons-nav-link {
@@ -166,7 +173,20 @@ nav {
 
 .expanded {
   display: unset;
+  position: absolute;
+  top: 0;
+  z-index: 100000;
+  left: 0;
+  background-color: #fcfcfc;
+  
 }
+@media screen and (min-width: 1196px) {
+  .expanded .nav-link {
+    color: #111b24;
+    border: solid 3px #ffffff;
+  }
+}
+
 
 .logo-wrapper {
   display: flex;
@@ -260,6 +280,12 @@ nav {
   letter-spacing: 0.85px;
 }
 
+@media (max-width: 1050px) { 
+  .section-title {
+    font-size: 22px;
+  }
+}
+
 .section-title::after {
   position: absolute;
   background-color: var(--third-color);
@@ -288,6 +314,12 @@ nav {
   border-radius: 5px;
   background: #f8f9fd;
   padding: 20px 80px;
+}
+
+@media (max-width: 850px) { 
+  .ordered-list-wrapper {
+    padding: 10px 10px;
+  }
 }
 
 /* Helpers */
@@ -345,6 +377,8 @@ nav {
 @media (max-width: 1050px) {
   .two-col-flex {
     flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -364,6 +398,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 1050px) {
+  .second-col-flex {
+    justify-content: center;
+  }
 }
 
 .centered {
@@ -390,6 +430,13 @@ nav {
   background-color: #fafafc;
   z-index: 100;
 }
+
+@media screen and (max-width: 1050px) {
+  .header {
+    height: auto;
+  }
+}
+
 
 .button .logo-image {
   margin-right: 10px;
@@ -441,6 +488,7 @@ nav {
 
 .image-decoration {
   border-radius: 20px;
+  max-width: 100%;
 }
 
 .paragraph-highlight {
@@ -564,6 +612,13 @@ nav {
   max-height: 230px;
   object-fit: cover;
 }
+
+@media (max-width: 1050px) { 
+  .section-image img {
+    max-width: 100%;
+  }  
+}
+
 .select-buttons {
   display: flex;
 }

@@ -21,6 +21,7 @@ import ListWithTick from "../components/ListWithTick.astro";
 import ButtonLeftArrow from "../components/ButtonLeftArrow.astro";
 import ButtonWithBorder from "../components/ButtonWithBorder.astro";
 import ClickSlideSection from "../components/ClickSlideSection.astro";
+import NewSlider from "../components/NewSlider.astro"
 
 const pageTitle = "SOC";
 
@@ -189,6 +190,13 @@ buttons.forEach(function(button) {
         <div class="section-title-center">
             <SectionTitleWithoutImage headline="Nasz SOC to:" />
         </div>
+<NewSlider 
+showButton="true"
+;
+imageSrc={CybersecurityPadlock}
+imageAlt="Slider image"
+headline="Ludzie"
+description="Nasz zespół to wykwalifikowany i kompetentny personel powołany do skutecznego działania, składający się z analityków bezpieczeństwa, specjalistów obsługi incydentów oraz inżynierów wielu specjalności informatycznych którzy mogą monitorować i zarządzać systemami bezpieczeństwa."/>
         <HorizontalSlider
             showButton="true"
             ;
@@ -375,7 +383,8 @@ buttons.forEach(function(button) {
                     imageAlt="Password Icon"
                     headline="CSIRT COIG"
                     description="Zespół CSIRT COIG reaguje na incydenty bezpieczeństwa, chroniąc usługi świadczone przez COIG S.A"
-                />
+                    href={`${baseURL}#CSIRT`}
+                    />
 
                 <div class="text-box">
                     <h3>Dowiedz się <br /><span>o COIG S.A</span></h3>
